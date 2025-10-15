@@ -35,7 +35,7 @@ export default function Home() {
               <p className="text-sm text-muted-foreground">للتربية والتعليم الأولي</p>
             </div>
             <Image
-              src="/Logo.png"
+              src="/makka-edu.png"
               alt="شعار مؤسسة مكة المكرمة"
               width={70}
               height={70}
