@@ -32,7 +32,7 @@ export const metadata = {
   openGraph: {
     title: "مؤسسة مكة المكرمة للتربية والتعليم الأولي",
     description: "بيئة تربوية آمنة لتنمية طفلك - مؤسسة مكة المكرمة بالعيون",
-    url: "https://www.makka-edu.ma",
+    url: "https://makka-edu.vercel.app",
     siteName: "مؤسسة مكة المكرمة",
     images: [
       {
