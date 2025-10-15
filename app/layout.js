@@ -19,26 +19,26 @@ const amiri = Amiri({
 })
 
 export const metadata = {
-  title: "مؤسسة مكة المكرمة للتربية والتعليم الأولي",
-  description: "بيئة تربوية آمنة لتنمية طفلك - مؤسسة مكة المكرمة للتربية والتعليم الأولي بالعيون",
+  title: "مؤسسة مكة المكرمة للتربية والتعليم الأولي – العيون",
+  description: "نوفر برامج تعليمية مبتكرة وآمنة للأطفال في مرحلة الروضة. انضم إلى بيئة تعليمية محفزة في العيون.",
   keywords: [
-    "مؤسسة مكة المكرمة",
-    "التربية والتعليم الأولي",
-    "روضة أطفال",
-    "تنمية مهارات الأطفال",
-    "العيون المغرب",
-    "برامج تعليمية للأطفال"
+    "مؤسسة مكة المكرمة", 
+    "روضة أطفال العيون", 
+    "التعليم الأولي المغرب", 
+    "برامج تعليمية للأطفال", 
+    "تنمية مهارات الأطفال"
   ],
   openGraph: {
-    title: "مؤسسة مكة المكرمة للتربية والتعليم الأولي",
-    description: "بيئة تربوية آمنة لتنمية طفلك - مؤسسة مكة المكرمة بالعيون",
+    title: "مؤسسة مكة المكرمة للتربية والتعليم الأولي – العيون",
+    description: "نوفر برامج تعليمية مبتكرة وآمنة للأطفال في مرحلة الروضة. انضم إلى بيئة تعليمية محفزة في العيون.",
     url: "https://makka-edu.vercel.app",
     siteName: "مؤسسة مكة المكرمة",
     images: [
       {
         url: "https://res.cloudinary.com/dynprvsfg/image/upload/v1760481753/oyaxhkpfooyrcpbdz7ox.png",
-        width: 800,
-        height: 600,
+        width: 1200,
+        height: 630,
+        alt: "شعار مؤسسة مكة المكرمة للتربية والتعليم الأولي",
       },
     ],
     locale: "ar_MA",
@@ -50,7 +50,34 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="ar" dir="">
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "EducationalOrganization",
+              "name": "مؤسسة مكة المكرمة للتربية والتعليم الأولي",
+              "url": "https://makka-edu.vercel.app",
+              "logo": "https://res.cloudinary.com/dynprvsfg/image/upload/v1760481753/oyaxhkpfooyrcpbdz7ox.png",
+              "sameAs": [],
+              "contactPoint": {
+                "@type": "ContactPoint",
+                "telephone": "+212615075314",
+                "contactType": "customer service",
+                "areaServed": "MA",
+                "availableLanguage": ["Arabic"]
+              },
+              "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "العيون",
+                "addressCountry": "MA"
+              }
+            })
+          }}
+        />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${amiri.variable} antialiased`}
       >
@@ -59,3 +86,4 @@ export default function RootLayout({ children }) {
     </html>
   );
 }
+
