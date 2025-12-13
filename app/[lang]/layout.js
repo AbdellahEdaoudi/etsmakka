@@ -39,9 +39,7 @@ export async function generateMetadata({ params }) {
       siteName: "مؤسسة مكة المكرمة / Makka Foundation",
       images: [
         {
-          url: "https://res.cloudinary.com/dynprvsfg/image/upload/v1760481753/oyaxhkpfooyrcpbdz7ox.png",
-          width: 1200,
-          height: 630,
+          url: "/Logo.png",
           alt: dict.meta.title,
         },
       ],
@@ -52,7 +50,7 @@ export async function generateMetadata({ params }) {
       card: 'summary_large_image',
       title: dict.meta.title,
       description: dict.meta.description,
-      images: ["https://res.cloudinary.com/dynprvsfg/image/upload/v1760481753/oyaxhkpfooyrcpbdz7ox.png"],
+      images: ["/Logo.png"],
     },
     alternates: {
       canonical: `https://makka-edu.vercel.app/${lang}`,
@@ -87,7 +85,7 @@ export default async function RootLayout({ children, params }) {
               "@type": "EducationalOrganization",
               "name": "Makka Foundation / مؤسسة مكة المكرمة",
               "url": "https://makka-edu.vercel.app",
-              "logo": "https://res.cloudinary.com/dynprvsfg/image/upload/v1760481753/oyaxhkpfooyrcpbdz7ox.png",
+              "logo": "/Logo.png",
               "sameAs": [],
               "contactPoint": {
                 "@type": "ContactPoint",
