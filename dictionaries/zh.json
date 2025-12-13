@@ -58,7 +58,9 @@
     "title": "联系我们",
     "subtitle": "我们随时为您解答",
     "phone": "电话",
-    "email": "邮箱"
+    "email": "邮箱",
+    "location": "地点",
+    "address": "摩洛哥阿尤恩（点击查看）"
   },
   "footer": {
     "rights": "版权所有 — 麦加基金会 — 阿尤恩"

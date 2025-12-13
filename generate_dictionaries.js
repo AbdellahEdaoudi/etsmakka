@@ -46,7 +46,9 @@ const translations = {
             title: "تواصل معنا",
             subtitle: "نحن هنا للإجابة على جميع استفساراتكم",
             phone: "الهاتف",
-            email: "البريد الإلكتروني"
+            email: "البريد الإلكتروني",
+            location: "الموقع",
+            address: "العيون، المغرب (اضغط للعرض)"
         },
         footer: {
             rights: "جميع الحقوق محفوظة — مؤسسة مكة المكرمة للتربية والتعليم الأولي — العيون"
@@ -96,7 +98,9 @@ const translations = {
             title: "Contact Us",
             subtitle: "We are here to answer all your inquiries",
             phone: "Phone",
-            email: "Email"
+            email: "Email",
+            location: "Location",
+            address: "Laayoune, Morocco (Click to View)"
         },
         footer: {
             rights: "All rights reserved — Makka Foundation for Education and Pre-school — Laayoune"
@@ -113,7 +117,7 @@ const translations = {
         stats: { satisfaction: "Satisfaction des Parents", graduates: "Enfants Diplômés", experience: "Années d'Expérience" },
         about: { title: "À propos", p1: "La Fondation Makka pour l'Éducation et le Préscolaire est une institution éducative de premier plan à Laayoune, créée pour offrir une éducation de qualité.", p2: "Nous croyons que les premières années sont fondamentales pour construire le caractère et l'avenir de l'enfant." },
         programs: { title: "Nos Programmes", subtitle: "Programmes éducatifs intégrés pour tous les âges", items: [{ title: "Deuxième Préliminaire", description: "Préparation complète à l'école primaire pour les 5-6 ans", icon: "🎓" }, { title: "Premier Préliminaire", description: "Développement des compétences de base pour les 4-5 ans", icon: "📚" }, { title: "Maternelle", description: "Programme éducatif intégré pour les 3-4 ans", icon: "🌱" }], more: "En savoir plus" },
-        contact: { title: "Contactez-nous", subtitle: "Nous sommes là pour répondre à toutes vos questions", phone: "Téléphone", email: "Email" },
+        contact: { title: "Contactez-nous", subtitle: "Nous sommes là pour répondre à toutes vos questions", phone: "Téléphone", email: "Email", location: "Emplacement", address: "Laayoune, Maroc (Cliquer pour voir)" },
         footer: { rights: "Tous droits réservés — Fondation Makka — Laayoune" }
     },
     es: {
@@ -123,7 +127,7 @@ const translations = {
         stats: { satisfaction: "Satisfacción de Padres", graduates: "Niños Graduados", experience: "Años de Experiencia" },
         about: { title: "Sobre nosotros", p1: "La Fundación Makka es una institución educativa líder en El Aaiún.", p2: "Creemos que los primeros años son fundamentales para el futuro del niño." },
         programs: { title: "Nuestros Programas", subtitle: "Programas educativos integrados", items: [{ title: "Segundo Prelimina", description: "Preparación para la escuela primaria (5-6 años)", icon: "🎓" }, { title: "Primer Preliminar", description: "Desarrollo de habilidades básicas (4-5 años)", icon: "📚" }, { title: "Jardín de Infancia", description: "Programa educativo para 3-4 años", icon: "🌱" }], more: "Ver más" },
-        contact: { title: "Contáctenos", subtitle: "Estamos aquí para responder sus consultas", phone: "Teléfono", email: "Correo" },
+        contact: { title: "Contáctenos", subtitle: "Estamos aquí para responder sus consultas", phone: "Teléfono", email: "Correo", location: "Ubicación", address: "El Aaiún, Marruecos (Clic para ver)" },
         footer: { rights: "Todos los derechos reservados — Fundación Makka — El Aaiún" }
     },
     // Adding placeholder/simplified for others to match brevity, assuming user accepts standard translations. I will try to be accurate.
@@ -134,7 +138,7 @@ const translations = {
         stats: { satisfaction: "Elternzufriedenheit", graduates: "Absolventen", experience: "Jahre Erfahrung" },
         about: { title: "Über uns", p1: "Die Makka Stiftung ist eine führende Bildungseinrichtung in Laayoune.", p2: "Wir glauben, dass die frühen Jahre das Fundament sind." },
         programs: { title: "Unsere Programme", subtitle: "Integrierte Bildungsprogramme", items: [{ title: "Vorstufe 2", description: "Vorbereitung auf die Grundschule (5-6 Jahre)", icon: "🎓" }, { title: "Vorstufe 1", description: "Entwicklung von Grundfertigkeiten (4-5 Jahre)", icon: "📚" }, { title: "Kindergarten", description: "Programm für 3-4 Jahre", icon: "🌱" }], more: "Mehr erfahren" },
-        contact: { title: "Kontakt", subtitle: "Wir sind hier, um zu antworten", phone: "Telefon", email: "E-Mail" },
+        contact: { title: "Kontakt", subtitle: "Wir sind hier, um zu antworten", phone: "Telefon", email: "E-Mail", location: "Standort", address: "Laayoune, Marokko (Klicken zum Anzeigen)" },
         footer: { rights: "Alle Rechte vorbehalten — Makka Stiftung — Laayoune" }
     },
     ru: {
@@ -144,7 +148,7 @@ const translations = {
         stats: { satisfaction: "Доверие родителей", graduates: "Выпускников", experience: "Лет опыта" },
         about: { title: "О нас", p1: "Фонд Макка — ведущее образовательное учреждение в Эль-Аюне.", p2: "Мы верим, что ранние годы — это фундамент." },
         programs: { title: "Наши программы", subtitle: "Интегрированные программы", items: [{ title: "Подготовительная 2", description: "Подготовка к школе (5-6 лет)", icon: "🎓" }, { title: "Подготовительная 1", description: "Базовые навыки (4-5 лет)", icon: "📚" }, { title: "Детский сад", description: "Программа для 3-4 лет", icon: "🌱" }], more: "Подробнее" },
-        contact: { title: "Контакты", subtitle: "Мы готовы ответить на вопросы", phone: "Телефон", email: "Email" },
+        contact: { title: "Контакты", subtitle: "Мы готовы ответить на вопросы", phone: "Телефон", email: "Email", location: "Расположение", address: "Эль-Аюн, Марокко (Нажмите для просмотра)" },
         footer: { rights: "Все права защищены — Фонд Макка — Эль-Аюн" }
     },
     pt: {
@@ -154,7 +158,7 @@ const translations = {
         stats: { satisfaction: "Satisfação dos Pais", graduates: "Graduados", experience: "Anos de Experiência" },
         about: { title: "Sobre Nós", p1: "A Fundação Makka é uma instituição educacional líder em Laayoune.", p2: "Acreditamos que os primeiros anos são a base." },
         programs: { title: "Nossos Programas", subtitle: "Programas integrados", items: [{ title: "Preliminar 2", description: "Preparação para escola primária (5-6 anos)", icon: "🎓" }, { title: "Preliminar 1", description: "Habilidades básicas (4-5 anos)", icon: "📚" }, { title: "Jardim de Infância", description: "Para 3-4 anos", icon: "🌱" }], more: "Saiba mais" },
-        contact: { title: "Contato", subtitle: "Estamos aqui para ajudar", phone: "Telefone", email: "Email" },
+        contact: { title: "Contato", subtitle: "Estamos aqui para ajudar", phone: "Telefone", email: "Email", location: "Localização", address: "Laayoune, Marrocos (Clique para ver)" },
         footer: { rights: "Todos os direitos reservados — Fundação Makka — Laayoune" }
     },
     ja: {
@@ -164,7 +168,7 @@ const translations = {
         stats: { satisfaction: "保護者の満足度", graduates: "卒業生", experience: "長年の経験" },
         about: { title: "私たちについて", p1: "マッカ財団はラユーンの主要な教育機関です。", p2: "幼少期は人格形成の基礎であると信じています。" },
         programs: { title: "プログラム", subtitle: "統合された教育プログラム", items: [{ title: "年長クラス", description: "小学校への準備（5-6歳）", icon: "🎓" }, { title: "年中クラス", description: "基本スキルの開発（4-5歳）", icon: "📚" }, { title: "年少クラス", description: "3-4歳向けプログラム", icon: "🌱" }], more: "詳細" },
-        contact: { title: "お問い合わせ", subtitle: "ご質問にお答えします", phone: "電話", email: "メール" },
+        contact: { title: "お問い合わせ", subtitle: "ご質問にお答えします", phone: "電話", email: "メール", location: "所在地", address: "ラユーン、モロッコ（クリックして表示）" },
         footer: { rights: "無断転載禁止 — マッカ財団 — ラユーン" }
     },
     hi: {
@@ -174,7 +178,7 @@ const translations = {
         stats: { satisfaction: "माता-पिता की संतुष्टि", graduates: "स्नातक बच्चे", experience: "वर्षों का अनुभव" },
         about: { title: "हमारे बारे में", p1: "मक्का फाउंडेशन लायून में एक प्रमुख शैक्षणिक संस्थान है।", p2: "हम मानते हैं कि शुरुआती साल बच्चे के चरित्र निर्माण की नींव हैं।" },
         programs: { title: "हमारे कार्यक्रम", subtitle: "एकीकृत शैक्षिक कार्यक्रम", items: [{ title: "प्रारंभिक द्वितीय", description: "प्राथमिक स्कूल की तैयारी (5-6 वर्ष)", icon: "🎓" }, { title: "प्रारंभिक प्रथम", description: "बुनियादी कौशल विकास (4-5 वर्ष)", icon: "📚" }, { title: "किंडरगार्टन", description: "3-4 वर्ष के लिए कार्यक्रम", icon: "🌱" }], more: "और जानें" },
-        contact: { title: "संपर्क करें", subtitle: "हम आपके सवालों के जवाब देने के लिए यहां हैं", phone: "फ़ोन", email: "ईमेल" },
+        contact: { title: "संपर्क करें", subtitle: "हम आपके सवालों के जवाब देने के लिए यहां हैं", phone: "फ़ोन", email: "ईमेल", location: "स्थान", address: "लायून, मोरक्को (देखने के लिए क्लिक करें)" },
         footer: { rights: "सर्वाधिकार सुरक्षित — मक्का फाउंडेशन — लायून" }
     },
     zh: {
@@ -184,7 +188,7 @@ const translations = {
         stats: { satisfaction: "家长满意度", graduates: "毕业生", experience: "多年经验" },
         about: { title: "关于我们", p1: "麦加基金会是阿尤恩领先的教育机构。", p2: "我们相信早期是建立孩子性格的基础。" },
         programs: { title: "我们的课程", subtitle: "综合教育课程", items: [{ title: "学前二班", description: "小学预备班（5-6岁）", icon: "🎓" }, { title: "学前一班", description: "基础技能开发（4-5岁）", icon: "📚" }, { title: "幼儿园", description: "3-4岁综合课程", icon: "🌱" }], more: "了解更多" },
-        contact: { title: "联系我们", subtitle: "我们随时为您解答", phone: "电话", email: "邮箱" },
+        contact: { title: "联系我们", subtitle: "我们随时为您解答", phone: "电话", email: "邮箱", location: "地点", address: "摩洛哥阿尤恩（点击查看）" },
         footer: { rights: "版权所有 — 麦加基金会 — 阿尤恩" }
     }
 };

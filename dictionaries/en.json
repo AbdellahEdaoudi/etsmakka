@@ -58,7 +58,9 @@
     "title": "Contact Us",
     "subtitle": "We are here to answer all your inquiries",
     "phone": "Phone",
-    "email": "Email"
+    "email": "Email",
+    "location": "Location",
+    "address": "Laayoune, Morocco (Click to View)"
   },
   "footer": {
     "rights": "All rights reserved — Makka Foundation for Education and Pre-school — Laayoune"

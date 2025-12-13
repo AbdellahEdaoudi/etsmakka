@@ -58,7 +58,9 @@
     "title": "Contáctenos",
     "subtitle": "Estamos aquí para responder sus consultas",
     "phone": "Teléfono",
-    "email": "Correo"
+    "email": "Correo",
+    "location": "Ubicación",
+    "address": "El Aaiún, Marruecos (Clic para ver)"
   },
   "footer": {
     "rights": "Todos los derechos reservados — Fundación Makka — El Aaiún"

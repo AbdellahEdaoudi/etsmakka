@@ -58,7 +58,9 @@
     "title": "Kontakt",
     "subtitle": "Wir sind hier, um zu antworten",
     "phone": "Telefon",
-    "email": "E-Mail"
+    "email": "E-Mail",
+    "location": "Standort",
+    "address": "Laayoune, Marokko (Klicken zum Anzeigen)"
   },
   "footer": {
     "rights": "Alle Rechte vorbehalten — Makka Stiftung — Laayoune"

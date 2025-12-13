@@ -201,6 +201,50 @@ export default async function Home({ params }) {
                 </div>
               </a>
             </Card>
+
+            {/* Map Card */}
+            <Card className="group overflow-hidden border-none bg-accent/50 transition-all hover:bg-accent md:col-span-2">
+              <div className="p-2">
+                <div className="flex items-center gap-4 p-6">
+                  <div className="flex h-14 w-14 items-center justify-center rounded-full bg-primary/10 transition-all group-hover:bg-primary/20">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      className="h-6 w-6 text-primary"
+                    >
+                      <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
+                      <circle cx="12" cy="10" r="3" />
+                    </svg>
+                  </div>
+                  <div className="text-start">
+                    <div className="mb-1 font-sans text-sm text-muted-foreground">{dict.contact.location}</div>
+                    <a href="https://maps.app.goo.gl/jYiT9zbzR4x1faYf8" target="_blank" rel="noopener noreferrer" className="text-lg font-bold text-foreground hover:underline">
+                      {dict.contact.address}
+                    </a>
+                  </div>
+                </div>
+
+                <div className="w-full h-[300px] rounded-xl overflow-hidden relative bg-muted shadow-inner m-2">
+                  <iframe
+                    src="https://maps.google.com/maps?q=27.136371,-13.199033&t=&z=17&ie=UTF8&iwloc=&output=embed"
+                    title="Location Map"
+                    width="100%"
+                    height="100%"
+                    style={{ border: 0 }}
+                    allowFullScreen=""
+                    loading="lazy"
+                    className="absolute inset-0 w-full h-full"
+                  ></iframe>
+                </div>
+              </div>
+            </Card>
           </div>
         </div>
       </section>

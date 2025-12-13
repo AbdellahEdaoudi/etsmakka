@@ -58,7 +58,9 @@
     "title": "Contato",
     "subtitle": "Estamos aqui para ajudar",
     "phone": "Telefone",
-    "email": "Email"
+    "email": "Email",
+    "location": "Localização",
+    "address": "Laayoune, Marrocos (Clique para ver)"
   },
   "footer": {
     "rights": "Todos os direitos reservados — Fundação Makka — Laayoune"
