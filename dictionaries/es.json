@@ -1,0 +1,66 @@
+{
+  "meta": {
+    "title": "Fundación Makka para la Educación",
+    "description": "Entorno educativo distinguido en El Aaiún.",
+    "keywords": "jardín de infancia, preescolar, El Aaiún, educación"
+  },
+  "header": {
+    "title": "Fundación Makka",
+    "subtitle": "Para la Educación y Preescolar",
+    "nav": {
+      "about": "Sobre nosotros",
+      "programs": "Programas",
+      "contact": "Contacto"
+    }
+  },
+  "hero": {
+    "badge": "Entorno Distinguido",
+    "title_1": "Futuro Brillante",
+    "title_2": "Para Sus Hijos",
+    "description": "Ofrecemos un entorno educativo seguro y estimulante que ayuda a desarrollar las habilidades básicas.",
+    "cta_contact": "Contáctenos",
+    "cta_programs": "Descubrir",
+    "image_alt": "Niños felices"
+  },
+  "stats": {
+    "satisfaction": "Satisfacción de Padres",
+    "graduates": "Niños Graduados",
+    "experience": "Años de Experiencia"
+  },
+  "about": {
+    "title": "Sobre nosotros",
+    "p1": "La Fundación Makka es una institución educativa líder en El Aaiún.",
+    "p2": "Creemos que los primeros años son fundamentales para el futuro del niño."
+  },
+  "programs": {
+    "title": "Nuestros Programas",
+    "subtitle": "Programas educativos integrados",
+    "items": [
+      {
+        "title": "Segundo Prelimina",
+        "description": "Preparación para la escuela primaria (5-6 años)",
+        "icon": "🎓"
+      },
+      {
+        "title": "Primer Preliminar",
+        "description": "Desarrollo de habilidades básicas (4-5 años)",
+        "icon": "📚"
+      },
+      {
+        "title": "Jardín de Infancia",
+        "description": "Programa educativo para 3-4 años",
+        "icon": "🌱"
+      }
+    ],
+    "more": "Ver más"
+  },
+  "contact": {
+    "title": "Contáctenos",
+    "subtitle": "Estamos aquí para responder sus consultas",
+    "phone": "Teléfono",
+    "email": "Correo"
+  },
+  "footer": {
+    "rights": "Todos los derechos reservados — Fundación Makka — El Aaiún"
+  }
+}

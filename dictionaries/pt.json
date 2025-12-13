@@ -1,0 +1,66 @@
+{
+  "meta": {
+    "title": "Fundação Makka",
+    "description": "Ambiente educacional distinto em Laayoune.",
+    "keywords": "jardim de infância, pré-escola, educação"
+  },
+  "header": {
+    "title": "Fundação Makka",
+    "subtitle": "Para Educação e Pré-escola",
+    "nav": {
+      "about": "Sobre",
+      "programs": "Programas",
+      "contact": "Contato"
+    }
+  },
+  "hero": {
+    "badge": "Ambiente Distinto",
+    "title_1": "Futuro Brilhante",
+    "title_2": "Para Seus Filhos",
+    "description": "Oferecemos um ambiente educacional seguro e estimulante.",
+    "cta_contact": "Contato",
+    "cta_programs": "Descobrir",
+    "image_alt": "Crianças felizes"
+  },
+  "stats": {
+    "satisfaction": "Satisfação dos Pais",
+    "graduates": "Graduados",
+    "experience": "Anos de Experiência"
+  },
+  "about": {
+    "title": "Sobre Nós",
+    "p1": "A Fundação Makka é uma instituição educacional líder em Laayoune.",
+    "p2": "Acreditamos que os primeiros anos são a base."
+  },
+  "programs": {
+    "title": "Nossos Programas",
+    "subtitle": "Programas integrados",
+    "items": [
+      {
+        "title": "Preliminar 2",
+        "description": "Preparação para escola primária (5-6 anos)",
+        "icon": "🎓"
+      },
+      {
+        "title": "Preliminar 1",
+        "description": "Habilidades básicas (4-5 anos)",
+        "icon": "📚"
+      },
+      {
+        "title": "Jardim de Infância",
+        "description": "Para 3-4 anos",
+        "icon": "🌱"
+      }
+    ],
+    "more": "Saiba mais"
+  },
+  "contact": {
+    "title": "Contato",
+    "subtitle": "Estamos aqui para ajudar",
+    "phone": "Telefone",
+    "email": "Email"
+  },
+  "footer": {
+    "rights": "Todos os direitos reservados — Fundação Makka — Laayoune"
+  }
+}

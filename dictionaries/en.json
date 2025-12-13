@@ -1,0 +1,66 @@
+{
+  "meta": {
+    "title": "Makka Foundation for Education and Pre-school",
+    "description": "Makka Foundation provides a distinguished educational environment for children in Laayoune. Modern preschool and kindergarten programs.",
+    "keywords": "kindergarten, preschool, Laayoune, Makka Foundation, education, children"
+  },
+  "header": {
+    "title": "Makka Foundation",
+    "subtitle": "For Education and Pre-school",
+    "nav": {
+      "about": "About Us",
+      "programs": "Programs",
+      "contact": "Contact Us"
+    }
+  },
+  "hero": {
+    "badge": "Distinguished Environment",
+    "title_1": "Bright Future",
+    "title_2": "For Your Children",
+    "description": "We provide a safe and stimulating educational environment that helps develop children's basic skills through modern educational programs.",
+    "cta_contact": "Contact Us",
+    "cta_programs": "Discover Programs",
+    "image_alt": "Happy children in kindergarten"
+  },
+  "stats": {
+    "satisfaction": "Parents Satisfaction",
+    "graduates": "Graduated Children",
+    "experience": "Years of Experience"
+  },
+  "about": {
+    "title": "About Us",
+    "p1": "Makka Foundation for Education and Pre-school is a leading educational institution in Laayoune, established to provide quality education for pre-school children.",
+    "p2": "We believe the early years are the foundation for building a child's character and future, so we ensure a safe and stimulating environment."
+  },
+  "programs": {
+    "title": "Our Programs",
+    "subtitle": "Integrated educational programs for all age groups",
+    "items": [
+      {
+        "title": "Second Preliminary",
+        "description": "Comprehensive preparation for primary school for children aged 5-6 years",
+        "icon": "🎓"
+      },
+      {
+        "title": "First Preliminary",
+        "description": "Developing basic skills for children aged 4-5 years",
+        "icon": "📚"
+      },
+      {
+        "title": "Kindergarten",
+        "description": "Integrated educational program for children aged 3-4 years",
+        "icon": "🌱"
+      }
+    ],
+    "more": "Learn More"
+  },
+  "contact": {
+    "title": "Contact Us",
+    "subtitle": "We are here to answer all your inquiries",
+    "phone": "Phone",
+    "email": "Email"
+  },
+  "footer": {
+    "rights": "All rights reserved — Makka Foundation for Education and Pre-school — Laayoune"
+  }
+}

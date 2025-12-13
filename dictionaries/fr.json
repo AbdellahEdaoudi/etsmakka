@@ -1,0 +1,66 @@
+{
+  "meta": {
+    "title": "Fondation Makka pour l'Éducation et le Préscolaire",
+    "description": "La Fondation Makka offre un environnement éducatif distingué pour les enfants à Laayoune. Programmes modernes de préscolaire et maternelle.",
+    "keywords": "maternelle, préscolaire, Laayoune, Fondation Makka, éducation, enfants"
+  },
+  "header": {
+    "title": "Fondation Makka",
+    "subtitle": "Pour l'Éducation et le Préscolaire",
+    "nav": {
+      "about": "À propos",
+      "programs": "Programmes",
+      "contact": "Contact"
+    }
+  },
+  "hero": {
+    "badge": "Environnement Distingué",
+    "title_1": "Un Avenir Brillant",
+    "title_2": "Pour Vos Enfants",
+    "description": "Nous offrons un environnement éducatif sûr et stimulant qui aide à développer les compétences de base des enfants grâce à des programmes modernes.",
+    "cta_contact": "Contactez-nous",
+    "cta_programs": "Découvrir",
+    "image_alt": "Enfants heureux"
+  },
+  "stats": {
+    "satisfaction": "Satisfaction des Parents",
+    "graduates": "Enfants Diplômés",
+    "experience": "Années d'Expérience"
+  },
+  "about": {
+    "title": "À propos",
+    "p1": "La Fondation Makka pour l'Éducation et le Préscolaire est une institution éducative de premier plan à Laayoune, créée pour offrir une éducation de qualité.",
+    "p2": "Nous croyons que les premières années sont fondamentales pour construire le caractère et l'avenir de l'enfant."
+  },
+  "programs": {
+    "title": "Nos Programmes",
+    "subtitle": "Programmes éducatifs intégrés pour tous les âges",
+    "items": [
+      {
+        "title": "Deuxième Préliminaire",
+        "description": "Préparation complète à l'école primaire pour les 5-6 ans",
+        "icon": "🎓"
+      },
+      {
+        "title": "Premier Préliminaire",
+        "description": "Développement des compétences de base pour les 4-5 ans",
+        "icon": "📚"
+      },
+      {
+        "title": "Maternelle",
+        "description": "Programme éducatif intégré pour les 3-4 ans",
+        "icon": "🌱"
+      }
+    ],
+    "more": "En savoir plus"
+  },
+  "contact": {
+    "title": "Contactez-nous",
+    "subtitle": "Nous sommes là pour répondre à toutes vos questions",
+    "phone": "Téléphone",
+    "email": "Email"
+  },
+  "footer": {
+    "rights": "Tous droits réservés — Fondation Makka — Laayoune"
+  }
+}

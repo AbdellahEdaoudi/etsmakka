@@ -1,0 +1,66 @@
+{
+  "meta": {
+    "title": "麦加基金会",
+    "description": "阿尤恩的卓越教育环境。",
+    "keywords": "幼儿园, 学前教育, 阿尤恩"
+  },
+  "header": {
+    "title": "麦加基金会",
+    "subtitle": "幼儿教育",
+    "nav": {
+      "about": "关于我们",
+      "programs": "课程项目",
+      "contact": "联系我们"
+    }
+  },
+  "hero": {
+    "badge": "卓越环境",
+    "title_1": "光明的未来",
+    "title_2": "为了您的孩子",
+    "description": "我们提供安全且富有启发性的教育环境。",
+    "cta_contact": "联系我们",
+    "cta_programs": "探索课程",
+    "image_alt": "快乐的孩子"
+  },
+  "stats": {
+    "satisfaction": "家长满意度",
+    "graduates": "毕业生",
+    "experience": "多年经验"
+  },
+  "about": {
+    "title": "关于我们",
+    "p1": "麦加基金会是阿尤恩领先的教育机构。",
+    "p2": "我们相信早期是建立孩子性格的基础。"
+  },
+  "programs": {
+    "title": "我们的课程",
+    "subtitle": "综合教育课程",
+    "items": [
+      {
+        "title": "学前二班",
+        "description": "小学预备班（5-6岁）",
+        "icon": "🎓"
+      },
+      {
+        "title": "学前一班",
+        "description": "基础技能开发（4-5岁）",
+        "icon": "📚"
+      },
+      {
+        "title": "幼儿园",
+        "description": "3-4岁综合课程",
+        "icon": "🌱"
+      }
+    ],
+    "more": "了解更多"
+  },
+  "contact": {
+    "title": "联系我们",
+    "subtitle": "我们随时为您解答",
+    "phone": "电话",
+    "email": "邮箱"
+  },
+  "footer": {
+    "rights": "版权所有 — 麦加基金会 — 阿尤恩"
+  }
+}

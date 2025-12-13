@@ -1,4 +1,0 @@
-User-agent: *
-Disallow:
-
-Sitemap: https://makka-edu.vercel.app/sitemap.xml

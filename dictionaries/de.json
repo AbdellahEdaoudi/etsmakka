@@ -1,0 +1,66 @@
+{
+  "meta": {
+    "title": "Makka Stiftung für Bildung",
+    "description": "Ausgezeichnetes Bildungsumfeld in Laayoune.",
+    "keywords": "kindergarten, vorschule, Laayoune, bildung"
+  },
+  "header": {
+    "title": "Makka Stiftung",
+    "subtitle": "Für Bildung und Vorschule",
+    "nav": {
+      "about": "Über uns",
+      "programs": "Programme",
+      "contact": "Kontakt"
+    }
+  },
+  "hero": {
+    "badge": "Ausgezeichnetes Umfeld",
+    "title_1": "Strahlende Zukunft",
+    "title_2": "Für Ihre Kinder",
+    "description": "Wir bieten ein sicheres und anregendes Bildungsumfeld.",
+    "cta_contact": "Kontakt",
+    "cta_programs": "Programme",
+    "image_alt": "Glückliche Kinder"
+  },
+  "stats": {
+    "satisfaction": "Elternzufriedenheit",
+    "graduates": "Absolventen",
+    "experience": "Jahre Erfahrung"
+  },
+  "about": {
+    "title": "Über uns",
+    "p1": "Die Makka Stiftung ist eine führende Bildungseinrichtung in Laayoune.",
+    "p2": "Wir glauben, dass die frühen Jahre das Fundament sind."
+  },
+  "programs": {
+    "title": "Unsere Programme",
+    "subtitle": "Integrierte Bildungsprogramme",
+    "items": [
+      {
+        "title": "Vorstufe 2",
+        "description": "Vorbereitung auf die Grundschule (5-6 Jahre)",
+        "icon": "🎓"
+      },
+      {
+        "title": "Vorstufe 1",
+        "description": "Entwicklung von Grundfertigkeiten (4-5 Jahre)",
+        "icon": "📚"
+      },
+      {
+        "title": "Kindergarten",
+        "description": "Programm für 3-4 Jahre",
+        "icon": "🌱"
+      }
+    ],
+    "more": "Mehr erfahren"
+  },
+  "contact": {
+    "title": "Kontakt",
+    "subtitle": "Wir sind hier, um zu antworten",
+    "phone": "Telefon",
+    "email": "E-Mail"
+  },
+  "footer": {
+    "rights": "Alle Rechte vorbehalten — Makka Stiftung — Laayoune"
+  }
+}
