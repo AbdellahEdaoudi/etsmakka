@@ -13,11 +13,25 @@ export async function generateMetadata({ params }) {
     return {
         title: dict.meta.title,
         description: dict.meta.description,
+        keywords: dict.meta.keywords ? dict.meta.keywords.split(',') : [],
         openGraph: {
             title: dict.meta.title,
             description: dict.meta.description,
             url: `https://makka-edu.vercel.app/${lang}`,
             locale: lang,
+            type: "website",
+            images: [
+                {
+                    url: "https://makka-edu.vercel.app/Logo.png",
+                    alt: dict.meta.title,
+                },
+            ],
+        },
+        twitter: {
+            card: 'summary_large_image',
+            title: dict.meta.title,
+            description: dict.meta.description,
+            images: ["https://makka-edu.vercel.app/Logo.png"],
         },
         alternates: {
             canonical: `https://makka-edu.vercel.app/${lang}`,
