@@ -10,9 +10,15 @@ export default function LanguageSwitcher() {
         const newLocale = e.target.value
         if (!pathname) return router.push(`/${newLocale}`)
 
-        // Replace the first segment (locale) with the new one
         // pathname is like /en/some/path or /en
         const segments = pathname.split('/')
+
+        // Replace the first segment (locale) with the new one
+        if (newLocale === 'ar') {
+            const newPath = `/${segments.slice(2).join('/')}`
+            router.push(newPath || '/')
+            return
+        }
         // segments[0] is empty, segments[1] is the locale
         segments[1] = newLocale
         router.push(segments.join('/'))
