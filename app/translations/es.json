@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Fundación Makka Al Mukarramah - El Aaiún",
-    "description": "Entorno educativo distinguido en El Aaiún.",
+    "description": "La Fundación Makka Al Mukarramah ofrece un entorno educativo distinguido para los niños de El Aaiún. Ofrecemos programas modernos de preescolar y guardería.",
     "keywords": "jardín de infancia, preescolar, El Aaiún, educación"
   },
   "header": {
@@ -17,7 +17,7 @@
     "badge": "Entorno Distinguido",
     "title_1": "Futuro Brillante",
     "title_2": "Para Sus Hijos",
-    "description": "Ofrecemos un entorno educativo seguro y estimulante que ayuda a desarrollar las habilidades básicas.",
+    "description": "Ofrecemos un entorno educativo seguro y estimulante que ayuda a desarrollar las habilidades básicas de los niños a través de programas educativos modernos.",
     "cta_contact": "Contáctenos",
     "cta_programs": "Descubrir",
     "image_alt": "Niños felices"
@@ -29,8 +29,8 @@
   },
   "about": {
     "title": "Sobre nosotros",
-    "p1": "La Fundación Makka es una institución educativa líder en El Aaiún.",
-    "p2": "Creemos que los primeros años son fundamentales para el futuro del niño."
+    "p1": "La Fundación Makka Al Mukarramah para la Educación y el Preescolar es una institución educativa líder en El Aaiún, Marruecos.",
+    "p2": "Creemos que los primeros años de vida de un niño son la base esencial para construir su carácter y su futuro."
   },
   "programs": {
     "title": "Nuestros Programas",
@@ -60,7 +60,24 @@
     "phone": "Teléfono",
     "email": "Correo",
     "location": "Ubicación",
-    "address": "El Aaiún, Marruecos (Clic para ver)"
+    "address": "Quartier Al Wahda 01, Rue Araucaria No. 02 - Laayoune",
+    "form": {
+      "name": "Nombre Completo",
+      "name_placeholder": "Ingrese su nombre completo",
+      "email": "Correo Electrónico",
+      "email_placeholder": "ejemplo@email.com",
+      "subject": "Asunto",
+      "subject_placeholder": "Asunto de su mensaje",
+      "message": "Mensaje",
+      "message_placeholder": "¿Cómo podemos ayudarle?",
+      "submit": "Enviar Mensaje",
+      "sending": "Enviando...",
+      "sent": "Enviado con éxito",
+      "success_msg": "¡Gracias! Su mensaje ha sido enviado con éxito.",
+      "error_required": "Este campo es obligatorio",
+      "error_email": "Por favor, introduzca una dirección de correo electrónico válida",
+      "error_server": "Algo salió mal. Por favor, inténtelo de nuevo más tarde."
+    }
   },
   "footer": {
     "rights": "Todos los derechos reservados — Fundación Makka — El Aaiún"

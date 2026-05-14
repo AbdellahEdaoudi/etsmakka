@@ -1,0 +1,85 @@
+{
+  "meta": {
+    "title": "Fondazione Makka Al Mukarramah - El Aaiún",
+    "description": "La Fondazione Makka Al Mukarramah offre un ambiente educativo distinto per i bambini di Laayoune. Offriamo programmi moderni per la scuola dell'infanzia.",
+    "keywords": "asilo, scuola materna, El Aaiún, Fondazione Makka, educazione, bambini"
+  },
+  "header": {
+    "title": "Fondazione Makka Al Mukarramah - El Aaiún",
+    "subtitle": "Per l'Istruzione e la Scuola Materna",
+    "nav": {
+      "about": "Chi siamo",
+      "programs": "Programmi",
+      "contact": "Contattaci"
+    }
+  },
+  "hero": {
+    "badge": "Ambiente d'Eccellenza",
+    "title_1": "Futuro Radioso",
+    "title_2": "Per i vostri Bambini",
+    "description": "Forniamo un ambiente educativo sicuro e stimolante che aiuta a sviluppare le abilità di base dei bambini attraverso programmi moderni.",
+    "cta_contact": "Contattaci",
+    "cta_programs": "Scopri i Programmi",
+    "image_alt": "Bambini felici all'asilo"
+  },
+  "stats": {
+    "satisfaction": "Soddisfazione dei Genitori",
+    "graduates": "Bambini Diplomati",
+    "experience": "Anni di Esperienza"
+  },
+  "about": {
+    "title": "Chi siamo",
+    "p1": "La Fondazione Makka Al Mukarramah per l'istruzione e la scuola dell'infanzia è un istituto educativo leader a Laayoune, in Marocco.",
+    "p2": "Crediamo che i primi anni della vita di un bambino siano le fondamenta essenziali per costruire il suo carattere e il suo futuro."
+  },
+  "programs": {
+    "title": "I nostri Programmi",
+    "subtitle": "Programmi educativi integrati per tutte le fasce d'età",
+    "items": [
+      {
+        "title": "Secondo Preliminare",
+        "description": "Preparazione completa per la scuola primaria per bambini dai 5 ai 6 anni",
+        "icon": "🎓"
+      },
+      {
+        "title": "Primo Preliminare",
+        "description": "Sviluppo delle abilità di base per bambini dai 4 ai 5 anni",
+        "icon": "📚"
+      },
+      {
+        "title": "Asilo",
+        "description": "Programma educativo integrato per bambini dai 3 ai 4 anni",
+        "icon": "🌱"
+      }
+    ],
+    "more": "Scopri di più"
+  },
+  "contact": {
+    "title": "Contattaci",
+    "subtitle": "Siamo qui per rispondere a tutte le vostre domande",
+    "phone": "Telefono",
+    "email": "Email",
+    "location": "Posizione",
+    "address": "Quartier Al Wahda 01, Rue Araucaria No. 02 - Laayoune",
+    "form": {
+      "name": "Nome Completo",
+      "name_placeholder": "Inserisci il tuo nome completo",
+      "email": "Indirizzo Email",
+      "email_placeholder": "esempio@email.com",
+      "subject": "Oggetto",
+      "subject_placeholder": "Oggetto del messaggio",
+      "message": "Messaggio",
+      "message_placeholder": "Come possiamo aiutarti?",
+      "submit": "Invia Messaggio",
+      "sending": "Invio in corso...",
+      "sent": "Inviato con successo",
+      "success_msg": "Grazie! Il tuo messaggio è stato inviato con successo.",
+      "error_required": "Questo campo è obbligatorio",
+      "error_email": "Inserisci un indirizzo email valido",
+      "error_server": "Qualcosa è andato storto. Riprova più tardi."
+    }
+  },
+  "footer": {
+    "rights": "Tutti i diritti riservati — Fondazione Makka per l'Istruzione e la Scuola Materna — El Aaiún"
+  }
+}

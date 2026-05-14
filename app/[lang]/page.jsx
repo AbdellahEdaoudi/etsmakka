@@ -1,14 +1,19 @@
-import HomeContent from "@/components/HomeContent";
-import { getDictionary } from '@/lib/dictionaries';
+import { getTranslation } from '@/app/translations/load-translations';
+import Header from '@/app/components/pages/Header';
+import Hero from '@/app/components/pages/Hero';
+import Stats from '@/app/components/pages/Stats';
+import About from '@/app/components/pages/About';
+import Programs from '@/app/components/pages/Programs';
+import Contact from '@/app/components/pages/Contact';
+import Footer from '@/app/components/pages/Footer';
 
-// Generate static params for supported languages
 export async function generateStaticParams() {
-    return ['en', 'fr', 'es', 'de', 'ru', 'pt', 'ja', 'hi', 'zh', 'ar'].map((lang) => ({ lang }));
+    return ['en', 'de', 'fr', 'es', 'sv', 'vi', 'pt', 'it', 'nl', 'ar', 'ru', 'zh', 'ja', 'hi', 'tr', 'ko', 'id', 'pl'].map((lang) => ({ lang }));
 }
 
 export async function generateMetadata({ params }) {
     const { lang } = await params;
-    const dict = await getDictionary(lang);
+    const dict = await getTranslation(lang);
 
     return {
         title: dict.meta.title,
@@ -41,5 +46,19 @@ export async function generateMetadata({ params }) {
 
 export default async function Page({ params }) {
     const { lang } = await params;
-    return <HomeContent lang={lang} />;
+    const dict = await getTranslation(lang);
+    const isArabic = lang === 'ar';
+    const fontClass = isArabic ? 'font-serif' : 'font-sans';
+
+    return (
+        <div dir={isArabic ? 'rtl' : 'ltr'} className={`min-h-screen bg-background ${fontClass}`}>
+            <Header dict={dict} />
+            <Hero dict={dict} />
+            <Stats dict={dict} />
+            <About dict={dict} />
+            <Programs dict={dict} />
+            <Contact dict={dict} />
+            <Footer dict={dict} />
+        </div>
+    );
 }

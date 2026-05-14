@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Fundação Makka Al Mukarramah - Laayoune",
-    "description": "Ambiente educacional distinto em Laayoune.",
+    "description": "A Fundação Makka Al Mukarramah oferece um ambiente educacional distinto para crianças em Laayoune. Oferecemos programas modernos de pré-escola e jardim de infância.",
     "keywords": "jardim de infância, pré-escola, educação"
   },
   "header": {
@@ -17,7 +17,7 @@
     "badge": "Ambiente Distinto",
     "title_1": "Futuro Brilhante",
     "title_2": "Para Seus Filhos",
-    "description": "Oferecemos um ambiente educacional seguro e estimulante.",
+    "description": "Oferecemos um ambiente educacional seguro e estimulante que ajuda a desenvolver as competências básicas das crianças através de programas modernos.",
     "cta_contact": "Contato",
     "cta_programs": "Descobrir",
     "image_alt": "Crianças felizes"
@@ -29,8 +29,8 @@
   },
   "about": {
     "title": "Sobre Nós",
-    "p1": "A Fundação Makka é uma instituição educacional líder em Laayoune.",
-    "p2": "Acreditamos que os primeiros anos são a base."
+    "p1": "A Fundação Makka Al Mukarramah para Educação e Pré-escola é uma instituição educacional líder em Laayoune, Marrocos.",
+    "p2": "Acreditamos que os primeiros anos da vida de uma criança são a base essencial para a construção do seu caráter e futuro."
   },
   "programs": {
     "title": "Nossos Programas",
@@ -60,7 +60,24 @@
     "phone": "Telefone",
     "email": "Email",
     "location": "Localização",
-    "address": "Laayoune, Marrocos (Clique para ver)"
+    "address": "Quartier Al Wahda 01, Rue Araucaria No. 02 - Laayoune",
+    "form": {
+      "name": "Nome Completo",
+      "name_placeholder": "Insira seu nome completo",
+      "email": "Endereço de E-mail",
+      "email_placeholder": "exemplo@email.com",
+      "subject": "Assunto",
+      "subject_placeholder": "Assunto da sua mensagem",
+      "message": "Mensagem",
+      "message_placeholder": "Como podemos ajudar?",
+      "submit": "Enviar Mensagem",
+      "sending": "Enviando...",
+      "sent": "Enviado com sucesso",
+      "success_msg": "Obrigado! Sua mensagem foi enviada com sucesso.",
+      "error_required": "Este campo é obrigatório",
+      "error_email": "Por favor, insira um endereço de e-mail válido",
+      "error_server": "Algo deu errado. Por favor, tente novamente mais tarde."
+    }
   },
   "footer": {
     "rights": "Todos os direitos reservados — Fundação Makka — Laayoune"

@@ -1,21 +1,17 @@
 export default function sitemap() {
-    const languages = ['en', 'fr', 'es', 'de', 'ru', 'pt', 'ja', 'hi', 'zh', 'ar']
+    const languages = ['en', 'de', 'fr', 'es', 'sv', 'vi', 'pt', 'it', 'nl', 'ar', 'ru', 'zh', 'ja', 'hi', 'tr', 'ko', 'id', 'pl']
     const baseUrl = 'https://makka-edu.vercel.app'
 
     const urls = languages.map((lang) => ({
-        url: `${baseUrl}/${lang}`,
+        url: lang === 'ar' ? baseUrl : `${baseUrl}/${lang}`,
         lastModified: new Date(),
         changeFrequency: 'weekly',
         priority: lang === 'ar' ? 1 : 0.8,
     }))
 
-    return [
-        {
-            url: baseUrl,
-            lastModified: new Date(),
-            changeFrequency: 'daily',
-            priority: 1,
-        },
-        ...urls
-    ]
+    // Remove duplicates if any (e.g. if baseUrl is already in urls)
+    const uniqueUrls = Array.from(new Set(urls.map(u => u.url)))
+        .map(url => urls.find(u => u.url === url))
+
+    return uniqueUrls
 }

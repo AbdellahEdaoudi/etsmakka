@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Fondation Makka Al Mukarramah - Laayoune",
-    "description": "La Fondation Makka offre un environnement éducatif distingué pour les enfants à Laayoune. Programmes modernes de préscolaire et maternelle.",
+    "description": "La Fondation Makka Al Mukarramah offre un environnement éducatif distingué pour les enfants à Laayoune. Nous proposons des programmes modernes de préscolaire et maternelle axés sur le développement des compétences de base.",
     "keywords": "maternelle, préscolaire, Laayoune, Fondation Makka, éducation, enfants"
   },
   "header": {
@@ -17,7 +17,7 @@
     "badge": "Environnement Distingué",
     "title_1": "Un Avenir Brillant",
     "title_2": "Pour Vos Enfants",
-    "description": "Nous offrons un environnement éducatif sûr et stimulant qui aide à développer les compétences de base des enfants grâce à des programmes modernes.",
+    "description": "Nous offrons un environnement éducatif sûr et stimulant qui aide à développer les compétences de base des enfants grâce à des programmes éducatifs modernes.",
     "cta_contact": "Contactez-nous",
     "cta_programs": "Découvrir",
     "image_alt": "Enfants heureux"
@@ -29,8 +29,8 @@
   },
   "about": {
     "title": "À propos",
-    "p1": "La Fondation Makka pour l'Éducation et le Préscolaire est une institution éducative de premier plan à Laayoune, créée pour offrir une éducation de qualité.",
-    "p2": "Nous croyons que les premières années sont fondamentales pour construire le caractère et l'avenir de l'enfant."
+    "p1": "La Fondation Makka Al Mukarramah pour l'Éducation et le Préscolaire est une institution éducative de premier plan à Laayoune, au Maroc, dédiée à l'éducation de la petite enfance.",
+    "p2": "Nous croyons que les premières années de la vie d'un enfant sont le fondement essentiel de la construction de son caractère et de son avenir."
   },
   "programs": {
     "title": "Nos Programmes",
@@ -60,7 +60,24 @@
     "phone": "Téléphone",
     "email": "Email",
     "location": "Emplacement",
-    "address": "Laayoune, Maroc (Cliquer pour voir)"
+    "address": "Quartier Al Wahda 01, Rue Araucaria No. 02 - Laayoune",
+    "form": {
+      "name": "Nom Complet",
+      "name_placeholder": "Entrez votre nom complet",
+      "email": "Adresse E-mail",
+      "email_placeholder": "exemple@email.com",
+      "subject": "Sujet",
+      "subject_placeholder": "Sujet de votre message",
+      "message": "Message",
+      "message_placeholder": "Comment pouvons-nous vous aider ?",
+      "submit": "Envoyer le message",
+      "sending": "Envoi en cours...",
+      "sent": "Envoyé avec succès",
+      "success_msg": "Merci ! Votre message a été envoyé avec succès.",
+      "error_required": "Ce champ est obligatoire",
+      "error_email": "Veuillez entrer une adresse email valide",
+      "error_server": "Une erreur est survenue. Veuillez réessayer plus tard."
+    }
   },
   "footer": {
     "rights": "Tous droits réservés — Fondation Makka — Laayoune"

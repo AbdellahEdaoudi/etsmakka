@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Makka Al-Mukarramah Stiftung - Laayoune",
-    "description": "Ausgezeichnetes Bildungsumfeld in Laayoune.",
+    "description": "Die Makka Al Mukarramah Stiftung bietet eine herausragende Bildungsumgebung für Kinder in Laayoune. Wir bieten moderne Vorschul- und Kindergartenprogramme an.",
     "keywords": "kindergarten, vorschule, Laayoune, bildung"
   },
   "header": {
@@ -17,7 +17,7 @@
     "badge": "Ausgezeichnetes Umfeld",
     "title_1": "Strahlende Zukunft",
     "title_2": "Für Ihre Kinder",
-    "description": "Wir bieten ein sicheres und anregendes Bildungsumfeld.",
+    "description": "Wir bieten eine sichere und anregende Bildungsumgebung, die die Grundfertigkeiten der Kinder durch moderne Bildungsprogramme fördert.",
     "cta_contact": "Kontakt",
     "cta_programs": "Programme",
     "image_alt": "Glückliche Kinder"
@@ -29,8 +29,8 @@
   },
   "about": {
     "title": "Über uns",
-    "p1": "Die Makka Stiftung ist eine führende Bildungseinrichtung in Laayoune.",
-    "p2": "Wir glauben, dass die frühen Jahre das Fundament sind."
+    "p1": "Die Makka Al Mukarramah Stiftung für Bildung und Vorschule ist eine führende Bildungseinrichtung in Laayoune, Marokko.",
+    "p2": "Wir glauben, dass die frühen Jahre im Leben eines Kindes das wesentliche Fundament für den Aufbau seines Charakters und seiner Zukunft sind."
   },
   "programs": {
     "title": "Unsere Programme",
@@ -60,7 +60,24 @@
     "phone": "Telefon",
     "email": "E-Mail",
     "location": "Standort",
-    "address": "Laayoune, Marokko (Klicken zum Anzeigen)"
+    "address": "Quartier Al Wahda 01, Rue Araucaria No. 02 - Laayoune",
+    "form": {
+      "name": "Vollständiger Name",
+      "name_placeholder": "Geben Sie Ihren vollständigen Namen ein",
+      "email": "E-Mail-Adresse",
+      "email_placeholder": "beispiel@email.com",
+      "subject": "Betreff",
+      "subject_placeholder": "Betreff Ihrer Nachricht",
+      "message": "Nachricht",
+      "message_placeholder": "Wie können wir Ihnen helfen?",
+      "submit": "Nachricht senden",
+      "sending": "Wird gesendet...",
+      "sent": "Erfolgreich gesendet",
+      "success_msg": "Vielen Dank! Ihre Nachricht wurde erfolgreich gesendet.",
+      "error_required": "Dieses Feld ist erforderlich",
+      "error_email": "Bitte geben Sie eine gültige E-Mail-Adresse ein",
+      "error_server": "Etwas ist schief gelaufen. Bitte versuchen Sie es später noch einmal."
+    }
   },
   "footer": {
     "rights": "Alle Rechte vorbehalten — Makka Stiftung — Laayoune"

@@ -1,0 +1,85 @@
+{
+  "meta": {
+    "title": "Stichting Makka Al Mukarramah - Laayoune",
+    "description": "Makka Al Mukarramah Foundation biedt een uitstekende educatieve omgeving voor kinderen in Laayoune. Wij bieden moderne peuter- en kleuterprogramma's.",
+    "keywords": "kleuterschool, peuterspeelzaal, Laayoune, Stichting Makka, onderwijs, kinderen"
+  },
+  "header": {
+    "title": "Stichting Makka Al Mukarramah - Laayoune",
+    "subtitle": "Voor Onderwijs en Voorschool",
+    "nav": {
+      "about": "Over ons",
+      "programs": "Programma's",
+      "contact": "Neem contact op"
+    }
+  },
+  "hero": {
+    "badge": "Uitstekende Omgeving",
+    "title_1": "Stralende Toekomst",
+    "title_2": "Voor uw Kinderen",
+    "description": "Wij bieden een veilige en stimulerende educatieve omgeving die de basisvaardigheden van kinderen helpt ontwikkelen via moderne programma's.",
+    "cta_contact": "Neem contact op",
+    "cta_programs": "Ontdek Programma's",
+    "image_alt": "Blije kinderen op de kleuterschool"
+  },
+  "stats": {
+    "satisfaction": "Tevredenheid Ouders",
+    "graduates": "Gediplomeerde Kinderen",
+    "experience": "Jaren Ervaring"
+  },
+  "about": {
+    "title": "Over ons",
+    "p1": "Makka Al Mukarramah Foundation voor Onderwijs en Voorschoolse opvang is een vooraanstaande onderwijsinstelling in Laayoune, Marokko.",
+    "p2": "Wij geloven dat de vroege jaren in het leven van een kind de essentiële basis vormen voor het opbouwen van hun karakter en toekomst."
+  },
+  "programs": {
+    "title": "Onze Programma's",
+    "subtitle": "Geïntegreerde onderwijsprogramma's för alle leeftijdsgroepen",
+    "items": [
+      {
+        "title": "Tweede Voorbereidend",
+        "description": "Uitgebreide voorbereiding op de basisschool för kinderen van 5-6 jaar",
+        "icon": "🎓"
+      },
+      {
+        "title": "Eerste Voorbereidend",
+        "description": "Ontwikkeling van basisvaardigheden för kinderen van 4-5 jaar",
+        "icon": "📚"
+      },
+      {
+        "title": "Kleuterschool",
+        "description": "Geïntegreerd onderwijsprogramma för kinderen van 3-4 jaar",
+        "icon": "🌱"
+      }
+    ],
+    "more": "Lees meer"
+  },
+  "contact": {
+    "title": "Neem contact op",
+    "subtitle": "Wij zijn er om al uw vragen te beantwoorden",
+    "phone": "Telefoon",
+    "email": "E-mail",
+    "location": "Locatie",
+    "address": "Quartier Al Wahda 01, Rue Araucaria No. 02 - Laayoune",
+    "form": {
+      "name": "Volledige Naam",
+      "name_placeholder": "Voer uw volledige naam in",
+      "email": "E-mailadres",
+      "email_placeholder": "voorbeeld@email.com",
+      "subject": "Onderwerp",
+      "subject_placeholder": "Onderwerp van uw bericht",
+      "message": "Bericht",
+      "message_placeholder": "Hoe kunnen we u helpen?",
+      "submit": "Bericht Verzenden",
+      "sending": "Verzenden...",
+      "sent": "Succesvol verzonden",
+      "success_msg": "Bedankt! Uw bericht is succesvol verzonden.",
+      "error_required": "Dit veld is verplicht",
+      "error_email": "Voer een geldig e-mailadres in",
+      "error_server": "Er is iets misgegaan. Probeer het later opnieuw."
+    }
+  },
+  "footer": {
+    "rights": "Alle rechten voorbehouden — Stichting Makka voor Onderwijs en Voorschool — Laayoune"
+  }
+}

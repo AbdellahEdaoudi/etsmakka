@@ -1,0 +1,85 @@
+{
+  "meta": {
+    "title": "Fundacja Makka Al Mukarramah - Laayoune",
+    "description": "Fundacja Makka Al Mukarramah zapewnia wyróżniające się środowisko edukacyjne dla dzieci w Laayoune. Oferujemy nowoczesne programy przedszkolne i wczesnoszkolne skoncentrowane на rozwijaniu podstawowych umiejętności w bezpiecznej i stymulującej atmosferze.",
+    "keywords": "przedszkole, edukacja przedszkolna, Laayoune, Fundacja Makka, edukacja, dzieci"
+  },
+  "header": {
+    "title": "Fundacja Makka Al Mukarramah - Laayoune",
+    "subtitle": "Dla Edukacji i Przedszkola",
+    "nav": {
+      "about": "O nas",
+      "programs": "Programy",
+      "contact": "Kontakt"
+    }
+  },
+  "hero": {
+    "badge": "Wyjątkowe Środowisko",
+    "title_1": "Jasna Przyszłość",
+    "title_2": "Dla Twoich Dzieci",
+    "description": "Zapewniamy bezpieczne i stymulujące środowisko edukacyjne, które pomaga rozwijać podstawowe umiejętności dzieci poprzez nowoczesne programy edukacyjne i specjalistyczne podejście pedagogiczne.",
+    "cta_contact": "Skontaktuj się z nami",
+    "cta_programs": "Odkryj programy",
+    "image_alt": "Radosne dzieci في przedszkolu"
+  },
+  "stats": {
+    "satisfaction": "Satysfakcja rodziców",
+    "graduates": "Absolwenci",
+    "experience": "Lata doświadczenia"
+  },
+  "about": {
+    "title": "O nas",
+    "p1": "Fundacja Makka Al Mukarramah na rzecz Edukacji i Przedszkoli jest wiodącą instytucją edukacyjną w Laayoune w Maroku. Założona z wizją zapewnienia wysokiej jakości edukacji wczesnoszkolnej, koncentrujemy się na pielęgnowaniu młodych umysłów.",
+    "p2": "Wierzymy, że wczesne lata życia dziecka są niezbędnym fundamentem dla budowania jego charakteru i przyszłości. Dlatego dążymy do zapewnienia bezpiecznego, szczęśliwego i angażującego środowiska, które sprzyja wzrostowi i nauce."
+  },
+  "programs": {
+    "title": "Nasze programy",
+    "subtitle": "Zintegrowane programy edukacyjne dla wszystkich grup wiekowych",
+    "items": [
+      {
+        "title": "Drugi etap przygotowawczy",
+        "description": "Kompleksowe przygotowanie do szkoły podstawowej dla dzieci في wieku 5-6 lat",
+        "icon": "🎓"
+      },
+      {
+        "title": "Pierwszy etap przygotowawczy",
+        "description": "Rozwijanie podstawowych umiejętności dla dzieci في wieku 4-5 lat",
+        "icon": "📚"
+      },
+      {
+        "title": "Przedszkole",
+        "description": "Zintegrowany program edukacyjny dla dzieci في wieku 3-4 lat",
+        "icon": "🌱"
+      }
+    ],
+    "more": "Dowiedz się więcej"
+  },
+  "contact": {
+    "title": "Kontakt",
+    "subtitle": "Jesteśmy tutaj, aby odpowiedzieć na wszystkie Twoje pytania",
+    "phone": "Telefon",
+    "email": "E-mail",
+    "location": "Lokalizacja",
+    "address": "Quartier Al Wahda 01, Rue Araucaria No. 02 - Laayoune",
+    "form": {
+      "name": "Imię i Nazwisko",
+      "name_placeholder": "Wpisz swoje imię i nazwisko",
+      "email": "Adres E-mail",
+      "email_placeholder": "przyklad@email.com",
+      "subject": "Temat",
+      "subject_placeholder": "Temat Twojej wiadomości",
+      "message": "Wiadomość",
+      "message_placeholder": "W czym możemy pomóc?",
+      "submit": "Wyślij Wiadomość",
+      "sending": "Wysyłanie...",
+      "sent": "Wysłano pomyślnie",
+      "success_msg": "Dziękujemy! Twoja wiadomość została pomyślnie wysłana.",
+      "error_required": "To pole jest wymagane",
+      "error_email": "Wprowadź poprawny adres e-mail",
+      "error_server": "Coś poszło nie tak. Spróbuj ponownie później."
+    }
+  },
+  "footer": {
+    "rights": "Wszelkie prawa zastrzeżone — Fundacja Makka na rzecz Edukacji i Przedszkola — Laayoune"
+  }
+}

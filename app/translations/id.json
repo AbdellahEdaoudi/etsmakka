@@ -1,0 +1,85 @@
+{
+  "meta": {
+    "title": "Yayasan Makka Al Mukarramah - Laayoune",
+    "description": "Yayasan Makka Al Mukarramah menyediakan lingkungan pendidikan yang istimewa bagi anak-anak di Laayoune. Kami menawarkan program prasekolah dan taman kanak-kanak modern yang berfokus pada pengembangan keterampilan dasar dalam suasana yang aman dan merangsang.",
+    "keywords": "taman kanak-kanak, prasekolah, Laayoune, Yayasan Makka, pendidikan, anak-anak"
+  },
+  "header": {
+    "title": "Yayasan Makka Al Mukarramah - Laayoune",
+    "subtitle": "Untuk Pendidikan dan Prasekolah",
+    "nav": {
+      "about": "Tentang Kami",
+      "programs": "Program",
+      "contact": "Hubungi Kami"
+    }
+  },
+  "hero": {
+    "badge": "Lingkungan Unggul",
+    "title_1": "Masa Depan Cerah",
+    "title_2": "Untuk Anak-Anak Anda",
+    "description": "Kami menyediakan lingkungan pendidikan yang aman dan merangsang yang membantu mengembangkan keterampilan dasar anak-anak melalui program pendidikan modern dan pendekatan pedagogis khusus.",
+    "cta_contact": "Hubungi Kami",
+    "cta_programs": "Temukan Program",
+    "image_alt": "Anak-anak bahagia di taman kanak-kanak"
+  },
+  "stats": {
+    "satisfaction": "Kepuasan Orang Tua",
+    "graduates": "Anak yang Lulus",
+    "experience": "Tahun Pengalaman"
+  },
+  "about": {
+    "title": "Tentang Kami",
+    "p1": "Yayasan Makka Al Mukarramah untuk Pendidikan dan Prasekolah adalah lembaga pendidikan terkemuka di Laayoune, Maroko. Didirikan dengan visi untuk menyediakan pendidikan anak usia dini yang berkualitas, kami fokus pada pengembangan pikiran muda.",
+    "p2": "Kami percaya bahwa tahun-tahun awal kehidupan seorang anak adalah fondasi penting untuk membangun karakter dan masa depan mereka. Oleh karena itu, kami berkomitmen untuk menyediakan lingkungan yang aman, bahagia, dan menarik yang mendorong pertumbuhan dan pembelajaran."
+  },
+  "programs": {
+    "title": "Program Kami",
+    "subtitle": "Program pendidikan terpadu untuk semua kelompok umur",
+    "items": [
+      {
+        "title": "Persiapan Kedua",
+        "description": "Persiapan komprehensif untuk sekolah dasar bagi anak usia 5-6 tahun",
+        "icon": "🎓"
+      },
+      {
+        "title": "Persiapan Pertama",
+        "description": "Mengembangkan keterampilan dasar bagi anak usia 4-5 tahun",
+        "icon": "📚"
+      },
+      {
+        "title": "Taman Kanak-Kanak",
+        "description": "Program pendidikan terpadu untuk anak usia 3-4 tahun",
+        "icon": "🌱"
+      }
+    ],
+    "more": "Pelajari Lebih Lanjut"
+  },
+  "contact": {
+    "title": "Hubungi Kami",
+    "subtitle": "Kami di sini untuk menjawab semua pertanyaan Anda",
+    "phone": "Telepon",
+    "email": "Email",
+    "location": "Lokasi",
+    "address": "Quartier Al Wahda 01, Rue Araucaria No. 02 - Laayoune",
+    "form": {
+      "name": "Nama Lengkap",
+      "name_placeholder": "Masukkan nama lengkap Anda",
+      "email": "Alamat Email",
+      "email_placeholder": "contoh@email.com",
+      "subject": "Subjek",
+      "subject_placeholder": "Subjek pesan Anda",
+      "message": "Pesan",
+      "message_placeholder": "Apa yang bisa kami bantu?",
+      "submit": "Kirim Pesan",
+      "sending": "Mengirim...",
+      "sent": "Berhasil Terkirim",
+      "success_msg": "Terima kasih! Pesan Anda telah berhasil terkirim.",
+      "error_required": "Bidang ini wajib diisi",
+      "error_email": "Silakan masukkan alamat email yang valid",
+      "error_server": "Terjadi kesalahan. Silakan coba lagi nanti."
+    }
+  },
+  "footer": {
+    "rights": "Seluruh hak cipta — Yayasan Makka untuk Pendidikan dan Prasekolah — Laayoune"
+  }
+}

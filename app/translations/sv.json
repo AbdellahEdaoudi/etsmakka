@@ -1,0 +1,85 @@
+{
+  "meta": {
+    "title": "Makka Al Mukarramah Foundation - Laayoune",
+    "description": "Makka Al Mukarramah Foundation erbjuder en framstående utbildningsmiljö för barn i Laayoune. Vi erbjuder moderna förskole- och dagisprogram.",
+    "keywords": "dagis, förskola, Laayoune, Makka Foundation, utbildning, barn"
+  },
+  "header": {
+    "title": "Makka Al Mukarramah Foundation - Laayoune",
+    "subtitle": "För utbildning och förskola",
+    "nav": {
+      "about": "Om oss",
+      "programs": "Program",
+      "contact": "Kontakta oss"
+    }
+  },
+  "hero": {
+    "badge": "Framstående miljö",
+    "title_1": "Ljus framtid",
+    "title_2": "För dina barn",
+    "description": "Vi tillhandahåller en säker och stimulerande utbildningsmiljö som hjälper till att utveckla barns grundläggande färdigheter genom moderna program.",
+    "cta_contact": "Kontakta oss",
+    "cta_programs": "Upptäck program",
+    "image_alt": "Glada barn i förskolan"
+  },
+  "stats": {
+    "satisfaction": "Föräldrarnas nöjdhet",
+    "graduates": "Examinerade barn",
+    "experience": "Års erfarenhet"
+  },
+  "about": {
+    "title": "Om oss",
+    "p1": "Makka Al Mukarramah Foundation för utbildning och förskola är en ledande utbildningsinstitution i Laayoune, Marocko.",
+    "p2": "Vi tror att de första åren i ett barns liv är den nödvändiga grunden för att bygga deras karaktär och framtid."
+  },
+  "programs": {
+    "title": "Våra program",
+    "subtitle": "Integrerade utbildningsprogram för alla åldersgrupper",
+    "items": [
+      {
+        "title": "Andra förberedande",
+        "description": "Omfattande förberedelse för grundskolan för barn i åldern 5-6 år",
+        "icon": "🎓"
+      },
+      {
+        "title": "Första förberedande",
+        "description": "Utveckling av grundläggande färdigheter för barn i åldern 4-5 år",
+        "icon": "📚"
+      },
+      {
+        "title": "Dagis",
+        "description": "Integrerat utbildningsprogram för barn i åldern 3-4 år",
+        "icon": "🌱"
+      }
+    ],
+    "more": "Läs mer"
+  },
+  "contact": {
+    "title": "Kontakta oss",
+    "subtitle": "Vi är här för att svara på alla dina frågor",
+    "phone": "Telefon",
+    "email": "E-post",
+    "location": "Plats",
+    "address": "Quartier Al Wahda 01, Rue Araucaria No. 02 - Laayoune",
+    "form": {
+      "name": "Fullständigt Namn",
+      "name_placeholder": "Ange ditt fullständiga namn",
+      "email": "E-postadress",
+      "email_placeholder": "exempel@email.com",
+      "subject": "Ämne",
+      "subject_placeholder": "Ämne för ditt meddelande",
+      "message": "Meddelande",
+      "message_placeholder": "Hur kan vi hjälpa dig?",
+      "submit": "Skicka Meddelande",
+      "sending": "Skickar...",
+      "sent": "Skickat framgångsrikt",
+      "success_msg": "Tack! Ditt meddelande har skickats framgångsrikt.",
+      "error_required": "Detta fält är obligatoriskt",
+      "error_email": "Ange en giltig e-postadress",
+      "error_server": "Något gick fel. Försök igen senare."
+    }
+  },
+  "footer": {
+    "rights": "Alla rättigheter förbehållna — Makka Foundation för utbildning och förskola — Laayoune"
+  }
+}
