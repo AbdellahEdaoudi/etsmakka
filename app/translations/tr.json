@@ -20,6 +20,8 @@
     "description": "Modern eğitim programları ve uzman pedagojik yaklaşımlarla çocukların temel becerilerini geliştirmeye yardımcı olan güvenli ve teşvik edici bir eğitim ortamı sağlıyoruz.",
     "cta_contact": "Bize Ulaşın",
     "cta_programs": "Programları Keşfet",
+    "cta_arrow": "→",
+    "rating": "Puan 4.9",
     "image_alt": "Anaokulunda mutlu çocuklar"
   },
   "stats": {
@@ -30,7 +32,15 @@
   "about": {
     "title": "Hakkımızda",
     "p1": "Makka Al Mukarramah Eğitim ve Okul Öncesi Vakfı, Fas'ın Laayoune kentinde önde gelen bir eğitim kurumudur. Kaliteli erken çocukluk eğitimi sağlamak amacıyla kurulan vakfımız, genç zihinleri beslemeye odaklanmaktadır.",
-    "p2": "Bir çocuğun hayatının ilk yıllarının, karakterini ve geleceğini inşa etmek için temel temel olduğuna inanıyoruz. Bu nedenle büyümeyi ve öğrenmeyi teşvik eden güvenli, mutlu ve ilgi çekici bir ortam sağlamaya kararlıyız."
+    "p2": "Bir çocuğun hayatının ilk yıllarının, karakterini ve geleceğini inşa etmek için temel temel olduğuna inanıyoruz. Bu nedenle büyümeyi ve öğrenmeyi teşvik eden güvenli, mutlu ve ilgi çekici bir ortam sağlamaya kararlıyız.",
+    "badge": "Hakkımızda",
+    "quote": "Her çocuğun içinde keşfedilmeyi bekleyen eşsiz bir yetenek taşıdığına inanıyoruz.",
+    "values": [
+      { "icon": "🌱", "title": "Keşfederek Öğrenme", "text": "Çocuğunuzun merakını ve bilgi sevgisini uyaran etkileşimli etkinlikler" },
+      { "icon": "🤝", "title": "Güvenli ve Şefkatli Ortam", "text": "Çocuğun duygusal ve sosyal yönlerine her şeyden önce önem veriyoruz" },
+      { "icon": "🎨", "title": "Yaratıcılık ve Sanat", "text": "Sanat ve el sanatları aracılığıyla yaratıcı enerjiyi serbest bırakıyoruz" },
+      { "icon": "👨‍👩‍👧", "title": "Aile Ortaklığı", "text": "Çocuğun gelişimini takip etmek için velilerle sürekli iletişim" }
+    ]
   },
   "programs": {
     "title": "Programlarımız",

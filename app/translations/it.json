@@ -20,6 +20,8 @@
     "description": "Forniamo un ambiente educativo sicuro e stimolante che aiuta a sviluppare le abilità di base dei bambini attraverso programmi moderni.",
     "cta_contact": "Contattaci",
     "cta_programs": "Scopri i Programmi",
+    "cta_arrow": "→",
+    "rating": "Valutazione 4.9",
     "image_alt": "Bambini felici all'asilo"
   },
   "stats": {
@@ -30,7 +32,15 @@
   "about": {
     "title": "Chi siamo",
     "p1": "La Fondazione Makka Al Mukarramah per l'istruzione e la scuola dell'infanzia è un istituto educativo leader a Laayoune, in Marocco.",
-    "p2": "Crediamo che i primi anni della vita di un bambino siano le fondamenta essenziali per costruire il suo carattere e il suo futuro."
+    "p2": "Crediamo che i primi anni della vita di un bambino siano le fondamenta essenziali per costruire il suo carattere e il suo futuro.",
+    "badge": "Chi siamo",
+    "quote": "Crediamo che ogni bambino porti in sé un talento unico che aspetta di essere scoperto.",
+    "values": [
+      { "icon": "🌱", "title": "Apprendimento per Esplorazione", "text": "Attività interattive che stimolano la curiosità e l'amore per la conoscenza" },
+      { "icon": "🤝", "title": "Ambiente Sicuro e Amorevole", "text": "Ci prendiamo cura dell'aspetto emotivo e sociale del bambino prima di tutto" },
+      { "icon": "🎨", "title": "Creatività e Arte", "text": "Liberiamo l'energia creativa attraverso arti e artigianato" },
+      { "icon": "👨‍👩‍👧", "title": "Partnership Familiare", "text": "Comunicazione continua con i genitori per monitorare i progressi del bambino" }
+    ]
   },
   "programs": {
     "title": "I nostri Programmi",

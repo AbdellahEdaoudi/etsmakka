@@ -20,6 +20,8 @@
     "description": "We provide a safe and stimulating educational environment that helps develop children's basic skills through modern educational programs and specialized pedagogical approaches.",
     "cta_contact": "Contact Us",
     "cta_programs": "Discover Programs",
+    "cta_arrow": "→",
+    "rating": "Rating 4.9",
     "image_alt": "Happy children in kindergarten"
   },
   "stats": {
@@ -30,7 +32,15 @@
   "about": {
     "title": "About Us",
     "p1": "Makka Al Mukarramah Foundation for Education and Pre-school is a leading educational institution in Laayoune, Morocco. Established with a vision to provide quality early childhood education, we focus on nurturing young minds.",
-    "p2": "We believe that the early years of a child's life are the essential foundation for building their character and future. Therefore, we are committed to providing a safe, happy, and engaging environment that fosters growth and learning."
+    "p2": "We believe that the early years of a child's life are the essential foundation for building their character and future. Therefore, we are committed to providing a safe, happy, and engaging environment that fosters growth and learning.",
+    "badge": "About Us",
+    "quote": "We believe that every child carries within them a unique talent waiting to be discovered.",
+    "values": [
+      { "icon": "🌱", "title": "Learning through Exploration", "text": "Interactive activities that stimulate curiosity and love of knowledge in your child" },
+      { "icon": "🤝", "title": "Safe & Nurturing Environment", "text": "We care about the emotional and social well-being of the child above all" },
+      { "icon": "🎨", "title": "Creativity & Arts", "text": "We unleash creative energy through arts and crafts" },
+      { "icon": "👨‍👩‍👧", "title": "Family Partnership", "text": "Continuous communication with parents to track each child's progress" }
+    ]
   },
   "programs": {
     "title": "Our Programs",

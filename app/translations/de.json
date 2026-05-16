@@ -2,7 +2,7 @@
   "meta": {
     "title": "Makka Al-Mukarramah Stiftung - Laayoune",
     "description": "Die Makka Al Mukarramah Stiftung bietet eine herausragende Bildungsumgebung für Kinder in Laayoune. Wir bieten moderne Vorschul- und Kindergartenprogramme an.",
-    "keywords": "kindergarten, vorschule, Laayoune, bildung"
+    "keywords": "kindergarten, vorschule, Laayoune, Makka Stiftung, bildung, kinder"
   },
   "header": {
     "title": "Makka Al-Mukarramah Stiftung - Laayoune",
@@ -20,6 +20,8 @@
     "description": "Wir bieten eine sichere und anregende Bildungsumgebung, die die Grundfertigkeiten der Kinder durch moderne Bildungsprogramme fördert.",
     "cta_contact": "Kontakt",
     "cta_programs": "Programme",
+    "cta_arrow": "→",
+    "rating": "Bewertung 4.9",
     "image_alt": "Glückliche Kinder"
   },
   "stats": {
@@ -30,11 +32,19 @@
   "about": {
     "title": "Über uns",
     "p1": "Die Makka Al Mukarramah Stiftung für Bildung und Vorschule ist eine führende Bildungseinrichtung in Laayoune, Marokko.",
-    "p2": "Wir glauben, dass die frühen Jahre im Leben eines Kindes das wesentliche Fundament für den Aufbau seines Charakters und seiner Zukunft sind."
+    "p2": "Wir glauben, dass die frühen Jahre im Leben eines Kindes das wesentliche Fundament für den Aufbau seines Charakters und seiner Zukunft sind.",
+    "badge": "Über uns",
+    "quote": "Wir glauben, dass jedes Kind ein einzigartiges Talent in sich trägt, das darauf wartet, entdeckt zu werden.",
+    "values": [
+      { "icon": "🌱", "title": "Lernen durch Entdecken", "text": "Interaktive Aktivitäten, die Neugier und Wissensdurst wecken" },
+      { "icon": "🤝", "title": "Sichere und Fürsorgliche Umgebung", "text": "Wir kümmern uns vor allem um das emotionale und soziale Wohlbefinden des Kindes" },
+      { "icon": "🎨", "title": "Kreativität und Kunst", "text": "Wir entfalten kreative Energie durch Kunst und Handwerk" },
+      { "icon": "👨‍👩‍👧", "title": "Familienpartnerschaft", "text": "Kontinuierliche Kommunikation mit Eltern zur Verfolgung des Fortschritts" }
+    ]
   },
   "programs": {
     "title": "Unsere Programme",
-    "subtitle": "Integrierte Bildungsprogramme",
+    "subtitle": "Integrierte Bildungsprogramme für alle Altersgruppen",
     "items": [
       {
         "title": "Vorstufe 2",
@@ -56,7 +66,7 @@
   },
   "contact": {
     "title": "Kontakt",
-    "subtitle": "Wir sind hier, um zu antworten",
+    "subtitle": "Wir sind hier, um alle Ihre Fragen zu beantworten und Unterstützung zu bieten.",
     "phone": "Telefon",
     "email": "E-Mail",
     "location": "Standort",

@@ -2,7 +2,7 @@
   "meta": {
     "title": "Fundación Makka Al Mukarramah - El Aaiún",
     "description": "La Fundación Makka Al Mukarramah ofrece un entorno educativo distinguido para los niños de El Aaiún. Ofrecemos programas modernos de preescolar y guardería.",
-    "keywords": "jardín de infancia, preescolar, El Aaiún, educación"
+    "keywords": "jardín de infancia, preescolar, El Aaiún, Fundación Makka, educación temprana, niños, crianza"
   },
   "header": {
     "title": "Fundación Makka Al Mukarramah - El Aaiún",
@@ -20,6 +20,8 @@
     "description": "Ofrecemos un entorno educativo seguro y estimulante que ayuda a desarrollar las habilidades básicas de los niños a través de programas educativos modernos.",
     "cta_contact": "Contáctenos",
     "cta_programs": "Descubrir",
+    "cta_arrow": "→",
+    "rating": "Calificación 4.9",
     "image_alt": "Niños felices"
   },
   "stats": {
@@ -29,26 +31,34 @@
   },
   "about": {
     "title": "Sobre nosotros",
-    "p1": "La Fundación Makka Al Mukarramah para la Educación y el Preescolar es una institución educativa líder en El Aaiún, Marruecos.",
-    "p2": "Creemos que los primeros años de vida de un niño son la base esencial para construir su carácter y su futuro."
+    "p1": "La Fundación Makka Al Mukarramah para la Educación y el Preescolar es una institución educativa líder en El Aaiún, Marruecos. Fundada con la visión de ofrecer una educación de alta calidad en la primera infancia, con enfoque en el desarrollo de las mentes jóvenes.",
+    "p2": "Creemos que los primeros años de vida de un niño son la base esencial para construir su carácter y su futuro.",
+    "badge": "Sobre nosotros",
+    "quote": "Creemos que cada niño lleva dentro un talento único que espera ser descubierto.",
+    "values": [
+      { "icon": "🌱", "title": "Aprendizaje por Exploración", "text": "Actividades interactivas que estimulan la curiosidad y el amor por el conocimiento" },
+      { "icon": "🤝", "title": "Entorno Seguro y Amoroso", "text": "Nos preocupamos por el bienestar emocional y social del niño ante todo" },
+      { "icon": "🎨", "title": "Creatividad y Arte", "text": "Liberamos la energía creativa a través del arte y las manualidades" },
+      { "icon": "👨‍👩‍👧", "title": "Asociación Familiar", "text": "Comunicación continua con los padres para seguir el progreso del niño" }
+    ]
   },
   "programs": {
     "title": "Nuestros Programas",
-    "subtitle": "Programas educativos integrados",
+    "subtitle": "Programas educativos integrados para todas las etapas de edad",
     "items": [
       {
-        "title": "Segundo Prelimina",
-        "description": "Preparación para la escuela primaria (5-6 años)",
+        "title": "Segundo Preliminar",
+        "description": "Preparación completa para la escuela primaria para niños de 5 a 6 años",
         "icon": "🎓"
       },
       {
         "title": "Primer Preliminar",
-        "description": "Desarrollo de habilidades básicas (4-5 años)",
+        "description": "Desarrollo de habilidades básicas para niños de 4 a 5 años",
         "icon": "📚"
       },
       {
         "title": "Jardín de Infancia",
-        "description": "Programa educativo para 3-4 años",
+        "description": "Programa educativo integrado para niños de 3 a 4 años",
         "icon": "🌱"
       }
     ],
@@ -56,7 +66,7 @@
   },
   "contact": {
     "title": "Contáctenos",
-    "subtitle": "Estamos aquí para responder sus consultas",
+    "subtitle": "Estamos aquí para responder a todas sus consultas y brindarle el apoyo necesario.",
     "phone": "Teléfono",
     "email": "Correo",
     "location": "Ubicación",

@@ -20,6 +20,8 @@
     "description": "Kami menyediakan lingkungan pendidikan yang aman dan merangsang yang membantu mengembangkan keterampilan dasar anak-anak melalui program pendidikan modern dan pendekatan pedagogis khusus.",
     "cta_contact": "Hubungi Kami",
     "cta_programs": "Temukan Program",
+    "cta_arrow": "→",
+    "rating": "Rating 4.9",
     "image_alt": "Anak-anak bahagia di taman kanak-kanak"
   },
   "stats": {
@@ -30,7 +32,15 @@
   "about": {
     "title": "Tentang Kami",
     "p1": "Yayasan Makka Al Mukarramah untuk Pendidikan dan Prasekolah adalah lembaga pendidikan terkemuka di Laayoune, Maroko. Didirikan dengan visi untuk menyediakan pendidikan anak usia dini yang berkualitas, kami fokus pada pengembangan pikiran muda.",
-    "p2": "Kami percaya bahwa tahun-tahun awal kehidupan seorang anak adalah fondasi penting untuk membangun karakter dan masa depan mereka. Oleh karena itu, kami berkomitmen untuk menyediakan lingkungan yang aman, bahagia, dan menarik yang mendorong pertumbuhan dan pembelajaran."
+    "p2": "Kami percaya bahwa tahun-tahun awal kehidupan seorang anak adalah fondasi penting untuk membangun karakter dan masa depan mereka. Oleh karena itu, kami berkomitmen untuk menyediakan lingkungan yang aman, bahagia, dan menarik yang mendorong pertumbuhan dan pembelajaran.",
+    "badge": "Tentang Kami",
+    "quote": "Kami percaya bahwa setiap anak membawa bakat unik dalam dirinya yang menunggu untuk ditemukan.",
+    "values": [
+      { "icon": "🌱", "title": "Belajar Melalui Eksplorasi", "text": "Aktivitas interaktif yang merangsang rasa ingin tahu dan kecintaan terhadap pengetahuan" },
+      { "icon": "🤝", "title": "Lingkungan Aman & Penuh Kasih", "text": "Kami peduli pada aspek emosional dan sosial anak di atas segalanya" },
+      { "icon": "🎨", "title": "Kreativitas & Seni", "text": "Kami melepaskan energi kreatif melalui seni dan kerajinan" },
+      { "icon": "👨‍👩‍👧", "title": "Kemitraan Keluarga", "text": "Komunikasi berkelanjutan dengan orang tua untuk memantau kemajuan anak" }
+    ]
   },
   "programs": {
     "title": "Program Kami",

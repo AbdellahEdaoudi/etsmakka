@@ -20,6 +20,8 @@
     "description": "Nous offrons un environnement éducatif sûr et stimulant qui aide à développer les compétences de base des enfants grâce à des programmes éducatifs modernes.",
     "cta_contact": "Contactez-nous",
     "cta_programs": "Découvrir",
+    "cta_arrow": "→",
+    "rating": "Note 4.9",
     "image_alt": "Enfants heureux"
   },
   "stats": {
@@ -30,7 +32,15 @@
   "about": {
     "title": "À propos",
     "p1": "La Fondation Makka Al Mukarramah pour l'Éducation et le Préscolaire est une institution éducative de premier plan à Laayoune, au Maroc, dédiée à l'éducation de la petite enfance.",
-    "p2": "Nous croyons que les premières années de la vie d'un enfant sont le fondement essentiel de la construction de son caractère et de son avenir."
+    "p2": "Nous croyons que les premières années de la vie d'un enfant sont le fondement essentiel de la construction de son caractère et de son avenir.",
+    "badge": "À propos",
+    "quote": "Nous croyons que chaque enfant porte en lui un talent unique qui attend d'être découvert.",
+    "values": [
+      { "icon": "🌱", "title": "Apprentissage par l'Exploration", "text": "Activités interactives qui stimulent la curiosité et l'amour du savoir" },
+      { "icon": "🤝", "title": "Environnement Sûr et Bienveillant", "text": "Nous veillons au bien-être émotionnel et social de l'enfant avant tout" },
+      { "icon": "🎨", "title": "Créativité et Arts", "text": "Nous libérons l'énergie créative à travers les arts et l'artisanat" },
+      { "icon": "👨‍👩‍👧", "title": "Partenariat Familial", "text": "Communication continue avec les parents pour suivre la progression de l'enfant" }
+    ]
   },
   "programs": {
     "title": "Nos Programmes",

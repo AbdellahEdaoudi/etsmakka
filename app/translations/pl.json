@@ -20,7 +20,9 @@
     "description": "Zapewniamy bezpieczne i stymulujące środowisko edukacyjne, które pomaga rozwijać podstawowe umiejętności dzieci poprzez nowoczesne programy edukacyjne i specjalistyczne podejście pedagogiczne.",
     "cta_contact": "Skontaktuj się z nami",
     "cta_programs": "Odkryj programy",
-    "image_alt": "Radosne dzieci في przedszkolu"
+    "cta_arrow": "→",
+    "rating": "Ocena 4.9",
+    "image_alt": "Radosne dzieci w przedszkolu"
   },
   "stats": {
     "satisfaction": "Satysfakcja rodziców",
@@ -30,7 +32,15 @@
   "about": {
     "title": "O nas",
     "p1": "Fundacja Makka Al Mukarramah na rzecz Edukacji i Przedszkoli jest wiodącą instytucją edukacyjną w Laayoune w Maroku. Założona z wizją zapewnienia wysokiej jakości edukacji wczesnoszkolnej, koncentrujemy się na pielęgnowaniu młodych umysłów.",
-    "p2": "Wierzymy, że wczesne lata życia dziecka są niezbędnym fundamentem dla budowania jego charakteru i przyszłości. Dlatego dążymy do zapewnienia bezpiecznego, szczęśliwego i angażującego środowiska, które sprzyja wzrostowi i nauce."
+    "p2": "Wierzymy, że wczesne lata życia dziecka są niezbędnym fundamentem dla budowania jego charakteru i przyszłości. Dlatego dążymy do zapewnienia bezpiecznego, szczęśliwego i angażującego środowiska, które sprzyja wzrostowi i nauce.",
+    "badge": "O nas",
+    "quote": "Wierzymy, że każde dziecko nosi w sobie wyjątkowy talent czekający na odkrycie.",
+    "values": [
+      { "icon": "🌱", "title": "Nauka przez Odkrywanie", "text": "Interaktywne zajęcia stymulujące ciekawość i miłość do wiedzy" },
+      { "icon": "🤝", "title": "Bezpieczne i Troskliwe Środowisko", "text": "Dbamy o emocjonalne i społeczne aspekty dziecka przede wszystkim" },
+      { "icon": "🎨", "title": "Kreatywność i Sztuka", "text": "Wyzwalamy energię twórczą poprzez sztukę i rzemiosło" },
+      { "icon": "👨‍👩‍👧", "title": "Partnerstwo Rodzinne", "text": "Ciągła komunikacja z rodzicami w celu śledzenia postępów dziecka" }
+    ]
   },
   "programs": {
     "title": "Nasze programy",
@@ -38,17 +48,17 @@
     "items": [
       {
         "title": "Drugi etap przygotowawczy",
-        "description": "Kompleksowe przygotowanie do szkoły podstawowej dla dzieci في wieku 5-6 lat",
+        "description": "Kompleksowe przygotowanie do szkoły podstawowej dla dzieci w wieku 5-6 lat",
         "icon": "🎓"
       },
       {
         "title": "Pierwszy etap przygotowawczy",
-        "description": "Rozwijanie podstawowych umiejętności dla dzieci في wieku 4-5 lat",
+        "description": "Rozwijanie podstawowych umiejętności dla dzieci w wieku 4-5 lat",
         "icon": "📚"
       },
       {
         "title": "Przedszkole",
-        "description": "Zintegrowany program edukacyjny dla dzieci في wieku 3-4 lat",
+        "description": "Zintegrowany program edukacyjny dla dzieci w wieku 3-4 lat",
         "icon": "🌱"
       }
     ],

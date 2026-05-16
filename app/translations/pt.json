@@ -20,6 +20,8 @@
     "description": "Oferecemos um ambiente educacional seguro e estimulante que ajuda a desenvolver as competências básicas das crianças através de programas modernos.",
     "cta_contact": "Contato",
     "cta_programs": "Descobrir",
+    "cta_arrow": "→",
+    "rating": "Avaliação 4.9",
     "image_alt": "Crianças felizes"
   },
   "stats": {
@@ -30,25 +32,33 @@
   "about": {
     "title": "Sobre Nós",
     "p1": "A Fundação Makka Al Mukarramah para Educação e Pré-escola é uma instituição educacional líder em Laayoune, Marrocos.",
-    "p2": "Acreditamos que os primeiros anos da vida de uma criança são a base essencial para a construção do seu caráter e futuro."
+    "p2": "Acreditamos que os primeiros anos da vida de uma criança são a base essencial para a construção do seu caráter e futuro.",
+    "badge": "Sobre Nós",
+    "quote": "Acreditamos que cada criança carrega em si um talento único esperando para ser descoberto.",
+    "values": [
+      { "icon": "🌱", "title": "Aprendizagem por Exploração", "text": "Atividades interativas que estimulam a curiosidade e o amor pelo conhecimento" },
+      { "icon": "🤝", "title": "Ambiente Seguro e Amoroso", "text": "Cuidamos do aspeto emocional e social da criança acima de tudo" },
+      { "icon": "🎨", "title": "Criatividade e Arte", "text": "Libertamos a energia criativa através das artes e artesanato" },
+      { "icon": "👨‍👩‍👧", "title": "Parceria Familiar", "text": "Comunicação contínua com os pais para acompanhar o progresso da criança" }
+    ]
   },
   "programs": {
     "title": "Nossos Programas",
-    "subtitle": "Programas integrados",
+    "subtitle": "Programas educacionais integrados para todas as faixas etárias",
     "items": [
       {
         "title": "Preliminar 2",
-        "description": "Preparação para escola primária (5-6 anos)",
+        "description": "Preparação abrangente para a escola primária para crianças de 5 a 6 anos",
         "icon": "🎓"
       },
       {
         "title": "Preliminar 1",
-        "description": "Habilidades básicas (4-5 anos)",
+        "description": "Desenvolvimento de habilidades básicas para crianças de 4 a 5 anos",
         "icon": "📚"
       },
       {
         "title": "Jardim de Infância",
-        "description": "Para 3-4 anos",
+        "description": "Programa educacional integrado para crianças de 3 a 4 anos",
         "icon": "🌱"
       }
     ],
@@ -56,7 +66,7 @@
   },
   "contact": {
     "title": "Contato",
-    "subtitle": "Estamos aqui para ajudar",
+    "subtitle": "Estamos aqui para responder a todas as suas perguntas e fornecer o suporte necessário.",
     "phone": "Telefone",
     "email": "Email",
     "location": "Localização",

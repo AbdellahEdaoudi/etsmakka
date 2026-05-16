@@ -20,6 +20,8 @@
     "description": "Chúng tôi cung cấp môi trường giáo dục an toàn và kích thích giúp phát triển các kỹ năng cơ bản của trẻ thông qua các chương trình hiện đại.",
     "cta_contact": "Liên hệ chúng tôi",
     "cta_programs": "Khám phá chương trình",
+    "cta_arrow": "→",
+    "rating": "Đánh giá 4.9",
     "image_alt": "Trẻ em hạnh phúc trong trường mẫu giáo"
   },
   "stats": {
@@ -30,7 +32,15 @@
   "about": {
     "title": "Về chúng tôi",
     "p1": "Quỹ Makka Al Mukarramah về Giáo dục và Tiền tiểu học là một tổ chức giáo dục hàng đầu tại Laayoune, Ma-rốc.",
-    "p2": "Chúng tôi tin rằng những năm đầu đời của một đứa trẻ là nền tảng thiết yếu để xây dựng tính cách và tương lai của chúng."
+    "p2": "Chúng tôi tin rằng những năm đầu đời của một đứa trẻ là nền tảng thiết yếu để xây dựng tính cách và tương lai của chúng.",
+    "badge": "Về chúng tôi",
+    "quote": "Chúng tôi tin rằng mỗi đứa trẻ mang trong mình một tài năng độc đáo đang chờ được khám phá.",
+    "values": [
+      { "icon": "🌱", "title": "Học qua Khám phá", "text": "Các hoạt động tương tác kích thích sự tò mò và tình yêu kiến thức" },
+      { "icon": "🤝", "title": "Môi trường An toàn & Yêu thương", "text": "Chúng tôi quan tâm đến khía cạnh cảm xúc và xã hội của trẻ trước tiên" },
+      { "icon": "🎨", "title": "Sáng tạo & Nghệ thuật", "text": "Chúng tôi giải phóng năng lượng sáng tạo qua nghệ thuật và thủ công" },
+      { "icon": "👨‍👩‍👧", "title": "Đối tác Gia đình", "text": "Liên lạc liên tục với phụ huynh để theo dõi tiến bộ của trẻ" }
+    ]
   },
   "programs": {
     "title": "Chương trình của chúng tôi",

@@ -20,6 +20,8 @@
     "description": "Vi tillhandahåller en säker och stimulerande utbildningsmiljö som hjälper till att utveckla barns grundläggande färdigheter genom moderna program.",
     "cta_contact": "Kontakta oss",
     "cta_programs": "Upptäck program",
+    "cta_arrow": "→",
+    "rating": "Betyg 4.9",
     "image_alt": "Glada barn i förskolan"
   },
   "stats": {
@@ -30,7 +32,15 @@
   "about": {
     "title": "Om oss",
     "p1": "Makka Al Mukarramah Foundation för utbildning och förskola är en ledande utbildningsinstitution i Laayoune, Marocko.",
-    "p2": "Vi tror att de första åren i ett barns liv är den nödvändiga grunden för att bygga deras karaktär och framtid."
+    "p2": "Vi tror att de första åren i ett barns liv är den nödvändiga grunden för att bygga deras karaktär och framtid.",
+    "badge": "Om oss",
+    "quote": "Vi tror att varje barn bär på ett unikt talang som väntar på att bli upptäckt.",
+    "values": [
+      { "icon": "🌱", "title": "Lärande genom Utforskning", "text": "Interaktiva aktiviteter som stimulerar nyfikenhet och kunskapslust" },
+      { "icon": "🤝", "title": "Trygg och Omtänksam Miljö", "text": "Vi prioriterar barnets känslomässiga och sociala välmående" },
+      { "icon": "🎨", "title": "Kreativitet och Konst", "text": "Vi släpper loss kreativ energi genom konst och hantverk" },
+      { "icon": "👨‍👩‍👧", "title": "Familjesamarbete", "text": "Kontinuerlig kommunikation med föräldrar för att följa barnets framsteg" }
+    ]
   },
   "programs": {
     "title": "Våra program",

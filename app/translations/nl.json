@@ -20,6 +20,8 @@
     "description": "Wij bieden een veilige en stimulerende educatieve omgeving die de basisvaardigheden van kinderen helpt ontwikkelen via moderne programma's.",
     "cta_contact": "Neem contact op",
     "cta_programs": "Ontdek Programma's",
+    "cta_arrow": "→",
+    "rating": "Beoordeling 4.9",
     "image_alt": "Blije kinderen op de kleuterschool"
   },
   "stats": {
@@ -30,25 +32,33 @@
   "about": {
     "title": "Over ons",
     "p1": "Makka Al Mukarramah Foundation voor Onderwijs en Voorschoolse opvang is een vooraanstaande onderwijsinstelling in Laayoune, Marokko.",
-    "p2": "Wij geloven dat de vroege jaren in het leven van een kind de essentiële basis vormen voor het opbouwen van hun karakter en toekomst."
+    "p2": "Wij geloven dat de vroege jaren in het leven van een kind de essentiële basis vormen voor het opbouwen van hun karakter en toekomst.",
+    "badge": "Over ons",
+    "quote": "Wij geloven dat elk kind een uniek talent in zich draagt dat wacht om ontdekt te worden.",
+    "values": [
+      { "icon": "🌱", "title": "Leren door Ontdekken", "text": "Interactieve activiteiten die nieuwsgierigheid en kennisliefde stimuleren" },
+      { "icon": "🤝", "title": "Veilige en Liefdevolle Omgeving", "text": "We geven prioriteit aan het emotionele en sociale welzijn van het kind" },
+      { "icon": "🎨", "title": "Creativiteit en Kunst", "text": "We ontketenen creatieve energie door kunst en ambachten" },
+      { "icon": "👨‍👩‍👧", "title": "Familiepartnerschap", "text": "Continue communicatie met ouders om de voortgang van het kind bij te houden" }
+    ]
   },
   "programs": {
     "title": "Onze Programma's",
-    "subtitle": "Geïntegreerde onderwijsprogramma's för alle leeftijdsgroepen",
+    "subtitle": "Geïntegreerde onderwijsprogramma's voor alle leeftijdsgroepen",
     "items": [
       {
         "title": "Tweede Voorbereidend",
-        "description": "Uitgebreide voorbereiding op de basisschool för kinderen van 5-6 jaar",
+        "description": "Uitgebreide voorbereiding op de basisschool voor kinderen van 5-6 jaar",
         "icon": "🎓"
       },
       {
         "title": "Eerste Voorbereidend",
-        "description": "Ontwikkeling van basisvaardigheden för kinderen van 4-5 jaar",
+        "description": "Ontwikkeling van basisvaardigheden voor kinderen van 4-5 jaar",
         "icon": "📚"
       },
       {
         "title": "Kleuterschool",
-        "description": "Geïntegreerd onderwijsprogramma för kinderen van 3-4 jaar",
+        "description": "Geïntegreerd onderwijsprogramma voor kinderen van 3-4 jaar",
         "icon": "🌱"
       }
     ],
