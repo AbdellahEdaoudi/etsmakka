@@ -1,28 +1,32 @@
 {
   "meta": {
-    "title": "Fondation Makka Al Mukarramah - Laayoune",
-    "description": "La Fondation Makka Al Mukarramah offre un environnement éducatif distingué pour les enfants à Laayoune. Nous proposons des programmes modernes de préscolaire et maternelle axés sur le développement des compétences de base.",
-    "keywords": "maternelle, préscolaire, Laayoune, Fondation Makka, éducation, enfants"
+    "title": "Établissement Makka Al Mukarramah d'Enseignement Préscolaire - Laayoune",
+    "description": "L'Établissement Makka Al Mukarramah d'Enseignement Préscolaire offre un environnement éducatif distingué à Laayoune. Préscolaire, maternelle, et cours de soutien scolaire de la 1ère à la 6ème année du primaire dispensés par le fondateur de l'établissement.",
+    "keywords": "maternelle, préscolaire, Laayoune, Établissement Makka, enseignement préscolaire, cours de soutien, primaire"
   },
   "header": {
-    "title": "Fondation Makka Al Mukarramah - Laayoune",
-    "subtitle": "Pour l'Éducation et le Préscolaire",
+    "title": "Établissement Makka",
+    "subtitle": "Enseignement Préscolaire & Soutien",
     "nav": {
       "about": "À propos",
-      "programs": "Programmes",
+      "programs": "Préscolaire",
+      "support": "Cours de soutien",
       "contact": "Contact"
     }
   },
   "hero": {
-    "badge": "Environnement Distingué",
+    "badge": "Enseignement Préscolaire & Cours de Soutien",
     "title_1": "Un Avenir Brillant",
     "title_2": "Pour Vos Enfants",
-    "description": "Nous offrons un environnement éducatif sûr et stimulant qui aide à développer les compétences de base des enfants grâce à des programmes éducatifs modernes.",
+    "description": "Nous offrons un environnement éducatif sûr et stimulant pour le préscolaire et la petite enfance, ainsi que des cours de soutien scolaire personnalisés de la 1ère à la 6ème année du primaire dispensés par le fondateur de l'établissement.",
     "cta_contact": "Contactez-nous",
     "cta_programs": "Découvrir",
     "cta_arrow": "→",
     "rating": "Note 4.9",
-    "image_alt": "Enfants heureux"
+    "image_alt": "Enfants heureux",
+    "highlight_1": "Préscolaire & Maternelle",
+    "highlight_2": "Cours de soutien (1-6)",
+    "highlight_3": "Encadrement personnalisé"
   },
   "stats": {
     "satisfaction": "Satisfaction des Parents",
@@ -31,20 +35,20 @@
   },
   "about": {
     "title": "À propos",
-    "p1": "La Fondation Makka Al Mukarramah pour l'Éducation et le Préscolaire est une institution éducative de premier plan à Laayoune, au Maroc, dédiée à l'éducation de la petite enfance.",
-    "p2": "Nous croyons que les premières années de la vie d'un enfant sont le fondement essentiel de la construction de son caractère et de son avenir.",
+    "p1": "L'Établissement Makka Al Mukarramah d'Enseignement Préscolaire est une institution éducative de premier plan à Laayoune, au Maroc, dédiée à l'épanouissement scolaire de la petite enfance et à la réussite de vos enfants.",
+    "p2": "En plus des programmes préscolaires, le fondateur de l'établissement assure personnellement des cours de soutien scolaire d'une grande qualité professionnelle pour les élèves du primaire, de la 1ère à la 6ème année.",
     "badge": "À propos",
-    "quote": "Nous croyons que chaque enfant porte en lui un talent unique qui attend d'être découvert.",
+    "quote": "Nous croyons que chaque enfant possède un potentiel unique qu'un accompagnement adapté dès le préscolaire permet de faire éclore.",
     "values": [
+      { "icon": "📝", "title": "Cours de Soutien Scolaire", "text": "Cours de soutien de la 1ère à la 6ème année du primaire dispensés professionnellement par le fondateur" },
       { "icon": "🌱", "title": "Apprentissage par l'Exploration", "text": "Activités interactives qui stimulent la curiosité et l'amour du savoir" },
-      { "icon": "🤝", "title": "Environnement Sûr et Bienveillant", "text": "Nous veillons au bien-être émotionnel et social de l'enfant avant tout" },
-      { "icon": "🎨", "title": "Créativité et Arts", "text": "Nous libérons l'énergie créative à travers les arts et l'artisanat" },
+      { "icon": "🤝", "title": "Environnement Sûr et Bienveillant", "text": "Bien-être émotionnel, social et académique de l'enfant avant tout" },
       { "icon": "👨‍👩‍👧", "title": "Partenariat Familial", "text": "Communication continue avec les parents pour suivre la progression de l'enfant" }
     ]
   },
   "programs": {
-    "title": "Nos Programmes",
-    "subtitle": "Programmes éducatifs intégrés pour tous les âges",
+    "title": "Programmes Préscolaires",
+    "subtitle": "Programmes éducatifs intégrés pour la petite enfance",
     "items": [
       {
         "title": "Deuxième Préliminaire",
@@ -64,10 +68,26 @@
     ],
     "more": "En savoir plus"
   },
+  "support": {
+    "badge": "Exclusivité 🎓",
+    "title": "Cours de Soutien (1ère - 6ème Primaire)",
+    "subtitle": "Cours de soutien et de renforcement scolaire dispensés avec grande rigueur par le fondateur de l'établissement",
+    "description": "Nous accompagnons vos enfants de la 1ère à la 6ème année du primaire. Le fondateur dispense des cours de soutien ciblés pour assurer la maîtrise des fondamentaux, combler les lacunes et atteindre la réussite scolaire.",
+    "features": [
+      "Encadrement personnel par le fondateur",
+      "Couverture de la 1ère à la 6ème année du primaire",
+      "Pédagogie adaptée et explications claires",
+      "Préparation efficace aux contrôles et examens"
+    ],
+    "card_title": "Enseignement Primaire",
+    "card_subtitle": "De la 1ère année à la 6ème année du primaire",
+    "card_note": "Encadrement personnel direct par le fondateur"
+  },
   "contact": {
     "title": "Contactez-nous",
-    "subtitle": "Nous sommes là pour répondre à toutes vos questions",
+    "subtitle": "Nous sommes là pour répondre à toutes vos questions sur le préscolaire et les cours de soutien.",
     "phone": "Téléphone",
+    "whatsapp": "WhatsApp",
     "email": "Email",
     "location": "Emplacement",
     "address": "Quartier Al Wahda 01, Rue Araucaria No. 02 - Laayoune",
@@ -76,6 +96,8 @@
       "name_placeholder": "Entrez votre nom complet",
       "email": "Adresse E-mail",
       "email_placeholder": "exemple@email.com",
+      "phone": "Téléphone",
+      "phone_placeholder": "0612345678",
       "subject": "Sujet",
       "subject_placeholder": "Sujet de votre message",
       "message": "Message",
@@ -83,13 +105,14 @@
       "submit": "Envoyer le message",
       "sending": "Envoi en cours...",
       "sent": "Envoyé avec succès",
-      "success_msg": "Merci ! Votre message a été envoyé avec succès.",
+      "success_msg": "Votre message a été envoyé avec succès.",
       "error_required": "Ce champ est obligatoire",
       "error_email": "Veuillez entrer une adresse email valide",
+      "error_phone": "Veuillez entrer un numéro de téléphone valide",
       "error_server": "Une erreur est survenue. Veuillez réessayer plus tard."
     }
   },
   "footer": {
-    "rights": "Tous droits réservés — Fondation Makka — Laayoune"
+    "rights": "Tous droits réservés — Établissement Makka d'Enseignement Préscolaire — Laayoune"
   }
 }

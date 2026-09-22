@@ -1,28 +1,32 @@
 {
   "meta": {
-    "title": "Fondazione Makka Al Mukarramah - El Aaiún",
-    "description": "La Fondazione Makka Al Mukarramah offre un ambiente educativo distinto per i bambini di Laayoune. Offriamo programmi moderni per la scuola dell'infanzia.",
-    "keywords": "asilo, scuola materna, El Aaiún, Fondazione Makka, educazione, bambini"
+    "title": "Istituto di Istruzione Prescolare Makka Al Mukarramah - El Aaiún",
+    "description": "L'Istituto di Istruzione Prescolare Makka Al Mukarramah offre un ambiente educativo di eccellenza a Laayoune. Scuola dell'infanzia, prescolare e corsi di supporto scolastico dalla 1ª alla 6ª elementare.",
+    "keywords": "asilo, scuola materna, El Aaiún, Istituto Prescolare Makka, istruzione prescolare, corsi di supporto, primaria"
   },
   "header": {
-    "title": "Fondazione Makka Al Mukarramah - El Aaiún",
-    "subtitle": "Per l'Istruzione e la Scuola Materna",
+    "title": "Istituto Prescolare Makka",
+    "subtitle": "Istruzione Prescolare & Supporto",
     "nav": {
       "about": "Chi siamo",
-      "programs": "Programmi",
+      "programs": "Prescolare",
+      "support": "Corsi di supporto",
       "contact": "Contattaci"
     }
   },
   "hero": {
-    "badge": "Ambiente d'Eccellenza",
+    "badge": "Istruzione Prescolare & Corsi di Supporto",
     "title_1": "Futuro Radioso",
     "title_2": "Per i vostri Bambini",
-    "description": "Forniamo un ambiente educativo sicuro e stimolante che aiuta a sviluppare le abilità di base dei bambini attraverso programmi moderni.",
+    "description": "Offriamo un ambiente sicuro e stimolante per l'istruzione prescolare e la prima infanzia, oltre a corsi di supporto scolastico personalizzati dalla 1ª alla 6ª elementare tenuti dal fondatore.",
     "cta_contact": "Contattaci",
     "cta_programs": "Scopri i Programmi",
     "cta_arrow": "→",
     "rating": "Valutazione 4.9",
-    "image_alt": "Bambini felici all'asilo"
+    "image_alt": "Bambini felici all'asilo",
+    "highlight_1": "Scuola Materna & Infanzia",
+    "highlight_2": "Corsi di supporto (1-6)",
+    "highlight_3": "Guida personalizzata"
   },
   "stats": {
     "satisfaction": "Soddisfazione dei Genitori",
@@ -31,20 +35,20 @@
   },
   "about": {
     "title": "Chi siamo",
-    "p1": "La Fondazione Makka Al Mukarramah per l'istruzione e la scuola dell'infanzia è un istituto educativo leader a Laayoune, in Marocco.",
-    "p2": "Crediamo che i primi anni della vita di un bambino siano le fondamenta essenziali per costruire il suo carattere e il suo futuro.",
+    "p1": "L'Istituto di Istruzione Prescolare Makka Al Mukarramah è un istituto educativo leader a Laayoune, in Marocco, dedicato alla prima infanzia e al successo scolastico fin dai primi anni.",
+    "p2": "Oltre al percorso della scuola dell'infanzia e prescolare, il fondatore dell'istituto tiene personalmente e con elevata professionalità corsi di supporto e doposcuola per la scuola primaria, dalla 1ª alla 6ª classe.",
     "badge": "Chi siamo",
-    "quote": "Crediamo che ogni bambino porti in sé un talento unico che aspetta di essere scoperto.",
+    "quote": "Crediamo che ogni bambino possieda un talento unico che una guida dedicata fin dal percorso prescolare aiuta a sviluppare appieno.",
     "values": [
+      { "icon": "📝", "title": "Corsi di Supporto Scolastico", "text": "Corsi di supporto scolastico dalla 1ª alla 6ª elementare tenuti direttamente dal fondatore" },
       { "icon": "🌱", "title": "Apprendimento per Esplorazione", "text": "Attività interattive che stimolano la curiosità e l'amore per la conoscenza" },
-      { "icon": "🤝", "title": "Ambiente Sicuro e Amorevole", "text": "Ci prendiamo cura dell'aspetto emotivo e sociale del bambino prima di tutto" },
-      { "icon": "🎨", "title": "Creatività e Arte", "text": "Liberiamo l'energia creativa attraverso arti e artigianato" },
+      { "icon": "🤝", "title": "Ambiente Sicuro e Amorevole", "text": "Curiamo l'aspetto emotivo, sociale e scolastico del bambino" },
       { "icon": "👨‍👩‍👧", "title": "Partnership Familiare", "text": "Comunicazione continua con i genitori per monitorare i progressi del bambino" }
     ]
   },
   "programs": {
-    "title": "I nostri Programmi",
-    "subtitle": "Programmi educativi integrati per tutte le fasce d'età",
+    "title": "Programmi Prescolari",
+    "subtitle": "Programmi educativi integrati per la prima infanzia",
     "items": [
       {
         "title": "Secondo Preliminare",
@@ -64,10 +68,26 @@
     ],
     "more": "Scopri di più"
   },
+  "support": {
+    "badge": "Esclusivo 🎓",
+    "title": "Corsi di Supporto (1ª - 6ª Elementare)",
+    "subtitle": "Corsi di supporto e doposcuola tenuti con grande professionalità direttamente dal fondatore",
+    "description": "Accompagniamo i vostri figli nel percorso della scuola primaria dalla 1ª alla 6ª elementare. Il fondatore tiene corsi di supporto mirati per garantire ottimi risultati scolastici.",
+    "features": [
+      "Supervisione personale del fondatore",
+      "Copertura completa dalla 1ª alla 6ª elementare",
+      "Spiegazioni chiare e metodo efficace",
+      "Preparazione mirata a verifiche ed esami"
+    ],
+    "card_title": "Scuola Primaria",
+    "card_subtitle": "Dalla 1ª alla 6ª classe della scuola primaria",
+    "card_note": "Guida personale diretta dal fondatore"
+  },
   "contact": {
     "title": "Contattaci",
-    "subtitle": "Siamo qui per rispondere a tutte le vostre domande",
+    "subtitle": "Siamo qui per rispondere a tutte le vostre domande sull'asilo e sui corsi di supporto.",
     "phone": "Telefono",
+    "whatsapp": "WhatsApp",
     "email": "Email",
     "location": "Posizione",
     "address": "Quartier Al Wahda 01, Rue Araucaria No. 02 - Laayoune",
@@ -76,6 +96,8 @@
       "name_placeholder": "Inserisci il tuo nome completo",
       "email": "Indirizzo Email",
       "email_placeholder": "esempio@email.com",
+      "phone": "Numero di Telefono",
+      "phone_placeholder": "0612345678",
       "subject": "Oggetto",
       "subject_placeholder": "Oggetto del messaggio",
       "message": "Messaggio",
@@ -83,13 +105,14 @@
       "submit": "Invia Messaggio",
       "sending": "Invio in corso...",
       "sent": "Inviato con successo",
-      "success_msg": "Grazie! Il tuo messaggio è stato inviato con successo.",
+      "success_msg": "Il tuo messaggio è stato inviato con successo.",
       "error_required": "Questo campo è obbligatorio",
       "error_email": "Inserisci un indirizzo email valido",
+      "error_phone": "Inserisci un numero di telefono valido",
       "error_server": "Qualcosa è andato storto. Riprova più tardi."
     }
   },
   "footer": {
-    "rights": "Tutti i diritti riservati — Fondazione Makka per l'Istruzione e la Scuola Materna — El Aaiún"
+    "rights": "Tutti i diritti riservati — Istituto di Istruzione Prescolare Makka — El Aaiún"
   }
 }

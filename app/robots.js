@@ -4,6 +4,6 @@ export default function robots() {
             userAgent: '*',
             allow: '/',
         },
-        sitemap: 'https://makka-edu.vercel.app/sitemap.xml',
+        sitemap: 'https://etsmakka.vercel.app/sitemap.xml',
     }
 }

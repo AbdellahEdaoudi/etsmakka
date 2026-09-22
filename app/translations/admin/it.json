@@ -1,0 +1,113 @@
+{
+  "metaTitle": "Istituzione Makkah | Pannello di Controllo",
+  "loginMetaTitle": "Istituzione Makkah | Accedi",
+  "login": {
+    "title": "Istituzione Makkah Al-Mukarramah",
+    "subtitle": "Portale Amministrativo — Prescolare & Corsi di Supporto",
+    "cardTitle": "Accesso Amministratore",
+    "emailLabel": "Email Amministratore",
+    "emailPlaceholder": "admin@etsmakka.com",
+    "passwordLabel": "Password",
+    "passwordPlaceholder": "••••••••",
+    "signInBtn": "Accedi al Portale",
+    "signingIn": "Accesso in corso...",
+    "fillAllFields": "Compila tutti i campi.",
+    "invalidCredentials": "Email o password errati.",
+    "rateLimitExceeded": "Troppi tentativi. Riprova più tardi."
+  },
+  "dashboard": {
+    "brandName": "Istituzione Makkah Al-Mukarramah",
+    "subBrandName": "Prescolare & Corsi di Supporto",
+    "portalTitle": "Gestione Richieste Genitori",
+    "refreshTitle": "Aggiorna",
+    "logout": "Disconnetti",
+    "loadingData": "Caricamento dati...",
+    "tabs": {
+      "messages": "Consultazioni dei Genitori"
+    },
+    "search": {
+      "contactsPlaceholder": "Cerca per nome, email, telefono o contenuto..."
+    },
+    "filters": {
+      "title": "Filtra per:",
+      "all": "Tutte le richieste",
+      "unread": "Non lette",
+      "starred": "Speciali"
+    },
+    "pagination": {
+      "prev": "← Indietro",
+      "next": "Avanti →",
+      "total": "Totale:"
+    },
+    "table": {
+      "status": "Stato",
+      "sender": "Genitore / Mittente",
+      "phone": "Telefono",
+      "messagePreview": "Oggetto e Messaggio",
+      "date": "Data",
+      "actions": "Azioni"
+    },
+    "empty": {
+      "noContactsTitle": "Nessuna richiesta trovata",
+      "noContactsDesc": "Tutte le richieste sono state gestite o nessun risultato corrisponde."
+    },
+    "actions": {
+      "star": "Aggiungi a speciali",
+      "unstar": "Rimuovi da speciali",
+      "markAsRead": "Segna come letto",
+      "markAsUnread": "Segna come non letto",
+      "read": "Letto",
+      "unread": "Nuovo",
+      "deleteMessage": "Elimina richiesta",
+      "tapToRead": "Clicca per leggere",
+      "newBadge": "NUOVO",
+      "viewDetails": "Vedi dettagli",
+      "callPhone": "Chiama",
+      "whatsappMessage": "Messaggio WhatsApp"
+    },
+    "modal": {
+      "inquiryDetails": "Dettagli Richiesta",
+      "subject": "Oggetto",
+      "senderName": "Nome Genitore",
+      "emailAddress": "Indirizzo Email",
+      "phoneNumber": "Numero di Telefono",
+      "messageContent": "Contenuto del Messaggio",
+      "received": "Data e Ora Ricezione",
+      "notAvailable": "N/D",
+      "delete": "Elimina",
+      "star": "Speciale",
+      "unstar": "Rimuovi speciale",
+      "translateMessage": "Traduci messaggio",
+      "showOriginal": "Mostra originale",
+      "showTranslation": "Mostra traduzione",
+      "translating": "Traduzione...",
+      "reTranslate": "Ritraduci",
+      "translatedTo": "Tradotto in"
+    },
+    "confirmDelete": {
+      "deleteContactTitle": "Eliminare richiesta?",
+      "deleteContactMessage": "Sei sicuro di voler eliminare permanentemente la richiesta di {name}?",
+      "cancel": "Annulla",
+      "confirmDelete": "Sì, elimina",
+      "deleting": "Eliminazione..."
+    },
+    "toasts": {
+      "sessionExpired": "Sessione scaduta. Effettua nuovamente l'accesso.",
+      "unauthorized": "Non autorizzato. Effettua l'accesso.",
+      "forbidden": "Accesso negato.",
+      "networkError": "Errore di rete.",
+      "requestSetupError": "Errore di configurazione.",
+      "dashboardLoadFailed": "Impossibile caricare i dati.",
+      "signedOut": "Disconnesso con successo",
+      "markedStarred": "Aggiunto ai messaggi speciali",
+      "removedStarred": "Rimosso dai messaggi speciali",
+      "starUpdateFailed": "Aggiornamento fallito.",
+      "markedRead": "Segnato come letto",
+      "markedUnread": "Segnato come non letto",
+      "readUpdateFailed": "Aggiornamento fallito.",
+      "messageDeleted": "Richiesta eliminata con successo",
+      "messageDeleteFailed": "Eliminazione fallita.",
+      "operationFailed": "Operazione fallita."
+    }
+  }
+}

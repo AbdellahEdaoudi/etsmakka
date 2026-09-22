@@ -1,0 +1,113 @@
+{
+  "metaTitle": "Makka Establishment | Admin Dashboard",
+  "loginMetaTitle": "Makka Establishment | Sign In",
+  "login": {
+    "title": "Makka Al Mukarramah Establishment",
+    "subtitle": "Administrative Control Panel — Preschool & Support Classes",
+    "cardTitle": "Admin Sign In",
+    "emailLabel": "Admin Email Address",
+    "emailPlaceholder": "admin@etsmakka.com",
+    "passwordLabel": "Password",
+    "passwordPlaceholder": "••••••••",
+    "signInBtn": "Sign In to Dashboard",
+    "signingIn": "Signing in...",
+    "fillAllFields": "Please enter your email and password.",
+    "invalidCredentials": "Invalid email or password.",
+    "rateLimitExceeded": "Too many login attempts. Please wait."
+  },
+  "dashboard": {
+    "brandName": "Makka Al Mukarramah Establishment",
+    "subBrandName": "Preschool & Support Classes",
+    "portalTitle": "Parent Inquiries Dashboard",
+    "refreshTitle": "Refresh",
+    "logout": "Sign Out",
+    "loadingData": "Loading data...",
+    "tabs": {
+      "messages": "Parent Inquiries & Messages"
+    },
+    "search": {
+      "contactsPlaceholder": "Search by parent name, email, phone or message content..."
+    },
+    "filters": {
+      "title": "Filter by:",
+      "all": "All Messages",
+      "unread": "Unread",
+      "starred": "Starred"
+    },
+    "pagination": {
+      "prev": "← Previous",
+      "next": "Next →",
+      "total": "Total:"
+    },
+    "table": {
+      "status": "Status",
+      "sender": "Parent / Sender",
+      "phone": "Phone",
+      "messagePreview": "Subject & Message",
+      "date": "Date",
+      "actions": "Actions"
+    },
+    "empty": {
+      "noContactsTitle": "No messages received",
+      "noContactsDesc": "All inquiries have been handled or no results match your search."
+    },
+    "actions": {
+      "star": "Star Message",
+      "unstar": "Unstar Message",
+      "markAsRead": "Mark as Read",
+      "markAsUnread": "Mark as Unread",
+      "read": "Read",
+      "unread": "New",
+      "deleteMessage": "Delete Message",
+      "tapToRead": "Click to Read",
+      "newBadge": "NEW",
+      "viewDetails": "View Details",
+      "callPhone": "Call",
+      "whatsappMessage": "WhatsApp Message"
+    },
+    "modal": {
+      "inquiryDetails": "Inquiry Details",
+      "subject": "Subject",
+      "senderName": "Parent Name",
+      "emailAddress": "Email Address",
+      "phoneNumber": "Phone Number",
+      "messageContent": "Message Content",
+      "received": "Date & Time Received",
+      "notAvailable": "N/A",
+      "delete": "Delete",
+      "star": "Star",
+      "unstar": "Unstar",
+      "translateMessage": "Translate Message",
+      "showOriginal": "Show Original",
+      "showTranslation": "Show Translation",
+      "translating": "Translating...",
+      "reTranslate": "Re-translate",
+      "translatedTo": "Translate to"
+    },
+    "confirmDelete": {
+      "deleteContactTitle": "Delete Message?",
+      "deleteContactMessage": "Are you sure you want to permanently delete the message from {name}?",
+      "cancel": "Cancel",
+      "confirmDelete": "Yes, Delete",
+      "deleting": "Deleting..."
+    },
+    "toasts": {
+      "sessionExpired": "Session expired. Please sign in again.",
+      "unauthorized": "Unauthorized. Please sign in.",
+      "forbidden": "Forbidden: Access denied.",
+      "networkError": "Network error.",
+      "requestSetupError": "Request error.",
+      "dashboardLoadFailed": "Failed to load data.",
+      "signedOut": "Signed out successfully",
+      "markedStarred": "Marked as starred ⭐",
+      "removedStarred": "Star removed",
+      "starUpdateFailed": "Failed to update star.",
+      "markedRead": "Marked as read ✔",
+      "markedUnread": "Marked as unread",
+      "readUpdateFailed": "Failed to update read status.",
+      "messageDeleted": "Message deleted successfully",
+      "messageDeleteFailed": "Failed to delete message.",
+      "operationFailed": "Operation failed."
+    }
+  }
+}

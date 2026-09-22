@@ -1,1013 +1,932 @@
 "use client";
 
+import React, { useState, useEffect, useMemo, useRef } from "react";
+import { useRouter } from "next/navigation";
 import Link from "next/link";
-import { useEffect, useState, useCallback } from "react";
+import Image from "next/image";
+import axios from "axios";
+import { useToast } from "@/app/components/Toast";
+import { getTranslation } from "@/app/translations/admin";
+import AdminLanguageSelector from "@/app/components/AdminLanguageSelector";
+import { Loader2, Star, Mail, MailOpen, Trash2, Phone, WhatsApp, ChevronDown } from "@/app/components/Icons";
 
-// ─── Utility ────────────────────────────────────────────────────────────────
+export default function AdminDashboard() {
+  const router = useRouter();
+  const toast = useToast();
+  const [lang, setLang] = useState("ar");
+  const [t, setT] = useState(null);
+  const [contacts, setContacts] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [filter, setFilter] = useState("all");
+  const [searchQuery, setSearchQuery] = useState("");
+  const [selectedContact, setSelectedContact] = useState(null);
+  const [contactToDelete, setContactToDelete] = useState(null);
+  const [deleting, setDeleting] = useState(false);
+  const [loggingOut, setLoggingOut] = useState(false);
+  const [starringId, setStarringId] = useState(null);
+  const [readingId, setReadingId] = useState(null);
+  const [contactsPage, setContactsPage] = useState(1);
+  const [contactsTotalPages, setContactsTotalPages] = useState(1);
+  const [contactsTotal, setContactsTotal] = useState(0);
+  const [contactsUnreadTotal, setContactsUnreadTotal] = useState(0);
+  const [contactsStarredTotal, setContactsStarredTotal] = useState(0);
 
-function formatDate(iso) {
-  const d = new Date(iso);
-  return d.toLocaleDateString("en-US", {
-    month: "short",
-    day: "numeric",
-    year: "numeric",
-    hour: "2-digit",
-    minute: "2-digit",
-  });
-}
+  // Translation state
+  const [targetLang, setTargetLang] = useState("ar");
+  const [translating, setTranslating] = useState(false);
+  const [translatedText, setTranslatedText] = useState(null);
+  const [translatedSubject, setTranslatedSubject] = useState(null);
+  const [showOriginal, setShowOriginal] = useState(false);
 
-function getInitials(name = "") {
-  return name
-    .split(" ")
-    .slice(0, 2)
-    .map((w) => w[0]?.toUpperCase())
-    .join("");
-}
-
-const AVATAR_COLORS = [
-  ["#3b82f6", "#1d4ed8"],
-  ["#8b5cf6", "#6d28d9"],
-  ["#ec4899", "#be185d"],
-  ["#10b981", "#047857"],
-  ["#f59e0b", "#b45309"],
-  ["#06b6d4", "#0e7490"],
-];
-
-function avatarColor(name = "") {
-  const i = name.charCodeAt(0) % AVATAR_COLORS.length;
-  return AVATAR_COLORS[i];
-}
-
-// ─── Modal ───────────────────────────────────────────────────────────────────
-
-function MessageModal({ msg, onClose, onDelete }) {
   useEffect(() => {
-    const handler = (e) => e.key === "Escape" && onClose();
-    window.addEventListener("keydown", handler);
-    return () => window.removeEventListener("keydown", handler);
-  }, [onClose]);
+    setTranslatedText(null);
+    setTranslatedSubject(null);
+    setShowOriginal(false);
+  }, [selectedContact, lang]);
 
-  if (!msg) return null;
-  const [from, to] = avatarColor(msg.name);
+  const isArabic = (text) => /[\u0600-\u06FF]/.test(text || "");
 
-  return (
-    <div
-      className="fixed inset-0 z-50 flex items-center justify-center p-4"
-      style={{ background: "rgba(0,0,0,0.75)", backdropFilter: "blur(6px)" }}
-      onClick={onClose}
-    >
-      <div
-        className="relative w-full max-w-2xl rounded-2xl overflow-hidden shadow-2xl"
-        style={{
-          background: "#0f1623",
-          border: "1px solid rgba(255,255,255,0.08)",
-          animation: "modalIn 0.2s cubic-bezier(.34,1.56,.64,1) both",
-        }}
-        onClick={(e) => e.stopPropagation()}
-      >
-        {/* Top gradient bar */}
-        <div
-          className="h-1 w-full"
-          style={{ background: `linear-gradient(90deg, ${from}, ${to})` }}
-        />
+  const handleTranslateMessage = async () => {
+    if (!selectedContact) return;
+    const msgText = selectedContact.message || "";
+    const activeTarget = "ar";
+    setTargetLang(activeTarget);
+    setTranslating(true);
+    try {
+      const subjText = selectedContact.subject || (isArabic(msgText) ? "استفسار وتسجيل عبر الموقع" : "Website Inquiry");
 
-        {/* Header */}
-        <div className="flex items-start gap-4 px-6 pt-6 pb-4">
-          <div
-            className="shrink-0 w-12 h-12 rounded-xl flex items-center justify-center text-white font-semibold text-sm"
-            style={{ background: `linear-gradient(135deg, ${from}, ${to})` }}
-          >
-            {getInitials(msg.name)}
-          </div>
-          <div className="flex-1 min-w-0">
-            <p className="font-semibold text-white text-base leading-tight truncate">
-              {msg.name}
-            </p>
-            <p className="text-sm mt-0.5" style={{ color: "#6b7a99" }}>
-              {msg.email}
-            </p>
-          </div>
-          <button
-            onClick={onClose}
-            className="shrink-0 w-8 h-8 rounded-lg flex items-center justify-center transition-colors"
-            style={{ color: "#6b7a99", background: "rgba(255,255,255,0.04)", cursor: "pointer" }}
-            onMouseEnter={(e) =>
-              (e.currentTarget.style.background = "rgba(255,255,255,0.08)")
-            }
-            onMouseLeave={(e) =>
-              (e.currentTarget.style.background = "rgba(255,255,255,0.04)")
-            }
-          >
-            <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-              <path
-                d="M1 1l12 12M13 1L1 13"
-                stroke="currentColor"
-                strokeWidth="1.8"
-                strokeLinecap="round"
-              />
-            </svg>
-          </button>
-        </div>
+      const msgPromise = msgText
+        ? fetch(`https://translate.googleapis.com/translate_a/single?client=gtx&sl=auto&tl=${activeTarget}&dt=t&q=${encodeURIComponent(msgText)}`).then(r => r.json())
+        : Promise.resolve(null);
 
-        {/* Subject pill */}
-        <div className="px-6 pb-4">
-          <p className="text-xs font-semibold uppercase tracking-widest mb-1.5" style={{ color: "#2d3a52", letterSpacing: "0.08em" }}>
-            Subject
-          </p>
-          <div
-            className="text-xs font-medium px-3 py-1 rounded-full"
-            style={{
-              background: `linear-gradient(135deg, ${from}22, ${to}22)`,
-              color: from,
-              border: `1px solid ${from}33`,
-              display: "inline-block",
-              maxWidth: "100%",
-              overflow: "hidden",
-              textOverflow: "ellipsis",
-              whiteSpace: "nowrap",
-              verticalAlign: "middle",
-            }}
-            title={msg.subject || "No subject"}
-          >
-            {msg.subject || "No subject"}
-          </div>
-        </div>
+      const subjPromise = subjText
+        ? fetch(`https://translate.googleapis.com/translate_a/single?client=gtx&sl=auto&tl=${activeTarget}&dt=t&q=${encodeURIComponent(subjText)}`).then(r => r.json())
+        : Promise.resolve(null);
 
-        {/* Divider */}
-        <div
-          className="mx-6"
-          style={{ height: "1px", background: "rgba(255,255,255,0.06)" }}
-        />
+      const [msgData, subjData] = await Promise.all([msgPromise, subjPromise]);
 
-        {/* Body */}
-        <div className="px-6 py-5 overflow-y-auto" style={{ maxHeight: "300px" }}>
-          <p className="text-xs font-semibold uppercase tracking-widest mb-2" style={{ color: "#2d3a52", letterSpacing: "0.08em" }}>
-            Message
-          </p>
-          <p
-            className="text-sm leading-relaxed"
-            style={{
-              color: "#a0aec0",
-              whiteSpace: "pre-wrap",
-              wordBreak: "break-word",
-            }}
-          >
-            {msg.message}
-          </p>
-        </div>
-
-        {/* Footer */}
-        <div
-          className="flex items-center justify-between px-6 py-4"
-          style={{
-            borderTop: "1px solid rgba(255,255,255,0.06)",
-            background: "rgba(255,255,255,0.02)",
-          }}
-        >
-          <span className="text-xs" style={{ color: "#4a5568" }}>
-            {formatDate(msg.createdAt)}
-          </span>
-          <button
-            onClick={() => {
-              onDelete(msg._id);
-              onClose();
-            }}
-            className="flex items-center gap-2 text-xs font-medium px-4 py-2 rounded-lg transition-colors"
-            style={{
-              background: "rgba(239,68,68,0.1)",
-              color: "#f87171",
-              border: "1px solid rgba(239,68,68,0.2)",
-              cursor: "pointer",
-            }}
-            onMouseEnter={(e) =>
-              (e.currentTarget.style.background = "rgba(239,68,68,0.18)")
-            }
-            onMouseLeave={(e) =>
-              (e.currentTarget.style.background = "rgba(239,68,68,0.1)")
-            }
-          >
-            <TrashIcon />
-            Delete message
-          </button>
-        </div>
-      </div>
-    </div>
-  );
-}
-
-// ─── Delete confirm popover ──────────────────────────────────────────────────
-
-function DeleteConfirm({ onConfirm, onCancel }) {
-  return (
-    <div
-      className="absolute right-0 top-8 z-20 rounded-xl p-4 shadow-xl w-52"
-      style={{
-        background: "#0f1623",
-        border: "1px solid rgba(255,255,255,0.1)",
-        animation: "modalIn 0.15s ease both",
-      }}
-      onClick={(e) => e.stopPropagation()}
-    >
-      <p className="text-xs font-medium text-white mb-1">Delete message?</p>
-      <p className="text-xs mb-3" style={{ color: "#6b7a99" }}>
-        This action cannot be undone.
-      </p>
-      <div className="flex gap-2">
-        <button
-          onClick={onCancel}
-          className="flex-1 text-xs py-1.5 rounded-lg transition-colors"
-          style={{
-            background: "rgba(255,255,255,0.06)",
-            color: "#a0aec0",
-            cursor: "pointer",
-          }}
-          onMouseEnter={(e) =>
-            (e.currentTarget.style.background = "rgba(255,255,255,0.1)")
-          }
-          onMouseLeave={(e) =>
-            (e.currentTarget.style.background = "rgba(255,255,255,0.06)")
-          }
-        >
-          Cancel
-        </button>
-        <button
-          onClick={onConfirm}
-          className="flex-1 text-xs py-1.5 rounded-lg font-medium transition-colors"
-          style={{ background: "#ef4444", color: "#fff", cursor: "pointer" }}
-          onMouseEnter={(e) =>
-            (e.currentTarget.style.background = "#dc2626")
-          }
-          onMouseLeave={(e) =>
-            (e.currentTarget.style.background = "#ef4444")
-          }
-        >
-          Delete
-        </button>
-      </div>
-    </div>
-  );
-}
-
-// ─── Skeleton ────────────────────────────────────────────────────────────────
-
-function SkeletonCard() {
-  return (
-    <div
-      className="rounded-2xl p-5"
-      style={{
-        background: "#0f1623",
-        border: "1px solid rgba(255,255,255,0.06)",
-      }}
-    >
-      <div className="flex items-center gap-3 mb-4">
-        <div
-          className="w-10 h-10 rounded-xl"
-          style={{ background: "#1a2235", animation: "pulse 1.5s infinite" }}
-        />
-        <div className="flex-1 space-y-2">
-          <div
-            className="h-3 w-2/3 rounded-full"
-            style={{ background: "#1a2235", animation: "pulse 1.5s infinite" }}
-          />
-          <div
-            className="h-2.5 w-1/2 rounded-full"
-            style={{
-              background: "#1a2235",
-              animation: "pulse 1.5s 0.2s infinite",
-            }}
-          />
-        </div>
-      </div>
-      <div
-        className="h-2.5 w-3/4 rounded-full mb-2"
-        style={{ background: "#1a2235", animation: "pulse 1.5s 0.1s infinite" }}
-      />
-      <div
-        className="h-2.5 w-full rounded-full mb-1.5"
-        style={{ background: "#1a2235", animation: "pulse 1.5s 0.2s infinite" }}
-      />
-      <div
-        className="h-2.5 w-5/6 rounded-full mb-1.5"
-        style={{ background: "#1a2235", animation: "pulse 1.5s 0.3s infinite" }}
-      />
-      <div
-        className="h-2.5 w-2/3 rounded-full"
-        style={{ background: "#1a2235", animation: "pulse 1.5s 0.4s infinite" }}
-      />
-    </div>
-  );
-}
-
-// ─── Icons ───────────────────────────────────────────────────────────────────
-
-function TrashIcon() {
-  return (
-    <svg width="13" height="13" viewBox="0 0 16 16" fill="none">
-      <path
-        d="M2 4h12M5.333 4V2.667A1.333 1.333 0 016.667 1.333h2.666A1.333 1.333 0 0110.667 2.667V4m2 0l-.667 9.333A1.333 1.333 0 0110.667 14.667H5.333A1.333 1.333 0 014 13.333L3.333 4"
-        stroke="currentColor"
-        strokeWidth="1.4"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
-  );
-}
-
-function SearchIcon() {
-  return (
-    <svg
-      className="absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none"
-      width="15"
-      height="15"
-      viewBox="0 0 16 16"
-      fill="none"
-      style={{ color: "#4a5568" }}
-    >
-      <circle
-        cx="7"
-        cy="7"
-        r="5"
-        stroke="currentColor"
-        strokeWidth="1.5"
-      />
-      <path
-        d="M11 11l3 3"
-        stroke="currentColor"
-        strokeWidth="1.5"
-        strokeLinecap="round"
-      />
-    </svg>
-  );
-}
-
-function ExpandIcon() {
-  return (
-    <svg width="12" height="12" viewBox="0 0 16 16" fill="none">
-      <path
-        d="M10 2h4v4M6 14H2v-4M14 2l-5 5M2 14l5-5"
-        stroke="currentColor"
-        strokeWidth="1.5"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
-  );
-}
-
-// ─── Message Card ─────────────────────────────────────────────────────────────
-
-function MessageCard({ msg, onDelete, onView, style }) {
-  const [confirmOpen, setConfirmOpen] = useState(false);
-  const [from, to] = avatarColor(msg.name);
-
-  const handleDelete = (e) => {
-    e.stopPropagation();
-    setConfirmOpen(true);
+      if (msgData && Array.isArray(msgData[0])) {
+        const text = msgData[0].map((i) => i[0]).join("");
+        if (text) setTranslatedText(text);
+      }
+      if (subjData && Array.isArray(subjData[0])) {
+        const text = subjData[0].map((i) => i[0]).join("");
+        if (text) setTranslatedSubject(text);
+      }
+      setShowOriginal(false);
+      toast.success(t?.dashboard?.toasts?.translated || "تمت الترجمة إلى العربية بنجاح");
+    } catch {
+      toast.error(t?.dashboard?.toasts?.requestSetupError || "حدث خطأ أثناء الترجمة");
+    } finally {
+      setTranslating(false);
+    }
   };
 
-  return (
-    <div
-      className="group relative rounded-2xl overflow-hidden cursor-pointer"
-      style={{
-        background: "#0f1623",
-        border: "1px solid rgba(255,255,255,0.07)",
-        transition: "border-color 0.2s, transform 0.2s, box-shadow 0.2s",
-        ...style,
-      }}
-      onClick={() => onView(msg)}
-      onMouseEnter={(e) => {
-        e.currentTarget.style.borderColor = "rgba(255,255,255,0.14)";
-        e.currentTarget.style.transform = "translateY(-2px)";
-        e.currentTarget.style.boxShadow = "0 12px 40px rgba(0,0,0,0.4)";
-      }}
-      onMouseLeave={(e) => {
-        e.currentTarget.style.borderColor = "rgba(255,255,255,0.07)";
-        e.currentTarget.style.transform = "translateY(0)";
-        e.currentTarget.style.boxShadow = "none";
-      }}
-    >
-      {/* Gradient accent line */}
-      <div
-        className="absolute top-0 left-0 right-0 h-px"
-        style={{
-          background: `linear-gradient(90deg, ${from}66, ${to}66)`,
-          opacity: 0,
-          transition: "opacity 0.2s",
-        }}
-        ref={(el) => {
-          if (el) {
-            const card = el.parentElement;
-            card.addEventListener("mouseenter", () => (el.style.opacity = "1"));
-            card.addEventListener("mouseleave", () => (el.style.opacity = "0"));
-          }
-        }}
-      />
+  const getLocale = (l) => ({ ar: "ar-MA", fr: "fr-FR", en: "en-US", es: "es-ES", de: "de-DE", it: "it-IT", nl: "nl-NL" }[l] || "ar-MA");
 
-      <div className="p-5">
-        {/* Header row */}
-        <div className="flex items-start gap-3 mb-4">
-          <div
-            className="shrink-0 w-10 h-10 rounded-xl flex items-center justify-center text-white font-semibold text-xs"
-            style={{ background: `linear-gradient(135deg, ${from}, ${to})` }}
-          >
-            {getInitials(msg.name)}
-          </div>
+  const handleLangChange = async (newLang) => {
+    setLang(newLang);
+    setTargetLang(newLang);
+    if (typeof window !== "undefined") localStorage.setItem("admin_lang", newLang);
+    const dict = await getTranslation(newLang);
+    setT(dict);
+    if (typeof document !== "undefined")
+      document.title = dict?.metaTitle || "مؤسسة مكة المكرمة | لوحة التحكم";
+  };
 
-          <div className="flex-1 min-w-0">
-            <p
-              className="font-semibold text-sm leading-snug truncate"
-              style={{ color: "#e2e8f0" }}
-            >
-              {msg.name}
-            </p>
-            <p
-              className="text-xs truncate mt-0.5"
-              style={{ color: "#4a5568" }}
-            >
-              {msg.email}
-            </p>
-          </div>
+  const getAuthConfig = () => {
+    return { withCredentials: true };
+  };
 
-          {/* Actions */}
-          <div
-            className="flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity shrink-0"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <button
-              onClick={() => onView(msg)}
-              className="w-7 h-7 rounded-lg flex items-center justify-center transition-colors"
-              style={{
-                background: "rgba(255,255,255,0.04)",
-                color: "#6b7a99",
-                cursor: "pointer",
-              }}
-              onMouseEnter={(e) =>
-                (e.currentTarget.style.background = "rgba(255,255,255,0.1)")
-              }
-              onMouseLeave={(e) =>
-                (e.currentTarget.style.background = "rgba(255,255,255,0.04)")
-              }
-              title="View full message"
-            >
-              <ExpandIcon />
-            </button>
-            <div className="relative">
-              <button
-                onClick={handleDelete}
-                className="w-7 h-7 rounded-lg flex items-center justify-center transition-colors"
-                style={{
-                  background: "rgba(239,68,68,0.08)",
-                  color: "#f87171",
-                  cursor: "pointer",
-                }}
-                onMouseEnter={(e) =>
-                  (e.currentTarget.style.background = "rgba(239,68,68,0.16)")
-                }
-                onMouseLeave={(e) =>
-                  (e.currentTarget.style.background = "rgba(239,68,68,0.08)")
-                }
-                title="Delete message"
-              >
-                <TrashIcon />
-              </button>
-              {confirmOpen && (
-                <DeleteConfirm
-                  onConfirm={() => {
-                    setConfirmOpen(false);
-                    onDelete(msg._id);
-                  }}
-                  onCancel={() => setConfirmOpen(false)}
-                />
-              )}
-            </div>
-          </div>
-        </div>
-
-        {/* Subject */}
-        <div className="mb-3">
-          <p className="text-xs font-semibold uppercase tracking-widest mb-1" style={{ color: "#2d3a52", letterSpacing: "0.08em" }}>
-            Subject
-          </p>
-          <div
-            className="text-xs font-medium truncate px-2.5 py-1 rounded-md"
-            style={{
-              background: `linear-gradient(135deg, ${from}18, ${to}18)`,
-              color: from,
-              border: `1px solid ${from}28`,
-              maxWidth: "100%",
-              overflow: "hidden",
-              textOverflow: "ellipsis",
-              whiteSpace: "nowrap",
-              display: "block",
-            }}
-            title={msg.subject || "No subject"}
-          >
-            {msg.subject || "No subject"}
-          </div>
-        </div>
-
-        {/* Message preview */}
-        <div>
-          <p className="text-xs font-semibold uppercase tracking-widest mb-1" style={{ color: "#2d3a52", letterSpacing: "0.08em" }}>
-            Message
-          </p>
-          <p
-            className="text-xs leading-relaxed"
-            style={{
-              color: "#6b7a99",
-              display: "-webkit-box",
-              WebkitLineClamp: 3,
-              WebkitBoxOrient: "vertical",
-              overflow: "hidden",
-              wordBreak: "break-word",
-            }}
-          >
-            {msg.message}
-          </p>
-        </div>
-
-        {/* Footer */}
-        <div
-          className="mt-4 pt-3 flex items-center justify-between"
-          style={{ borderTop: "1px solid rgba(255,255,255,0.05)" }}
-        >
-          <span className="text-xs" style={{ color: "#374151" }}>
-            {formatDate(msg.createdAt)}
-          </span>
-          <span
-            className="text-xs opacity-0 group-hover:opacity-100 transition-opacity flex items-center gap-1"
-            style={{ color: "#4a5568" }}
-          >
-            Read more
-            <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
-              <path
-                d="M2 5h6M5 2l3 3-3 3"
-                stroke="currentColor"
-                strokeWidth="1.2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
-          </span>
-        </div>
-      </div>
-    </div>
-  );
-}
-
-// ─── Empty State ──────────────────────────────────────────────────────────────
-
-function EmptyState({ isSearch }) {
-  return (
-    <div className="flex flex-col items-center justify-center py-24 text-center">
-      <div
-        className="w-16 h-16 rounded-2xl flex items-center justify-center mb-5"
-        style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.07)" }}
-      >
-        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" style={{ color: "#374151" }}>
-          <path
-            d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"
-            stroke="currentColor"
-            strokeWidth="1.5"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          />
-        </svg>
-      </div>
-      <p className="font-semibold text-base" style={{ color: "#e2e8f0" }}>
-        {isSearch ? "No results found" : "No messages yet"}
-      </p>
-      <p className="text-sm mt-1.5" style={{ color: "#4a5568" }}>
-        {isSearch
-          ? "Try a different search term"
-          : "Messages from your website will appear here"}
-      </p>
-    </div>
-  );
-}
-
-// ─── Global Styles ────────────────────────────────────────────────────────────
-
-const GlobalStyles = () => (
-  <style>{`
-    @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&display=swap');
-    * { font-family: 'DM Sans', sans-serif; box-sizing: border-box; }
-    @keyframes modalIn {
-      from { opacity: 0; transform: scale(0.94) translateY(8px); }
-      to { opacity: 1; transform: scale(1) translateY(0); }
-    }
-    @keyframes pulse {
-      0%, 100% { opacity: 0.4; }
-      50% { opacity: 0.7; }
-    }
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(12px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    @keyframes shake {
-      0%, 100% { transform: translateX(0); }
-      20%, 60% { transform: translateX(-6px); }
-      40%, 80% { transform: translateX(6px); }
-    }
-    ::-webkit-scrollbar { width: 5px; }
-    ::-webkit-scrollbar-track { background: transparent; }
-    ::-webkit-scrollbar-thumb { background: #1e2d42; border-radius: 99px; }
-  `}</style>
-);
-
-// ─── Page Background ──────────────────────────────────────────────────────────
-
-const PageBg = ({ children }) => (
-  <div
-    className="min-h-screen"
-    style={{
-      background: "#070d18",
-      backgroundImage:
-        "radial-gradient(ellipse 80% 50% at 50% -10%, rgba(59,130,246,0.07), transparent)",
-    }}
-  >
-    {children}
-  </div>
-);
-
-// ─── Login Screen ─────────────────────────────────────────────────────────────
-
-function LoginScreen({ onSuccess }) {
-  const [value, setValue] = useState("");
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState("");
-  const [shake, setShake] = useState(false);
-
-  const handleSubmit = async () => {
-    if (!value.trim()) return;
-    setLoading(true);
-    setError("");
-
-    try {
-      const res = await fetch(`/api/contact?secret=${encodeURIComponent(value)}`);
-      const data = await res.json();
-
-      if (res.status === 401 || !data.success) {
-        setError("Incorrect secret key. Please try again.");
-        setShake(true);
-        setTimeout(() => setShake(false), 500);
-        setValue("");
+  const handleApiError = async (error, retryCallback, currentDict = t) => {
+    const dict = currentDict || t;
+    if (error.response) {
+      const code = error.response.data?.code;
+      if (code === "ACCESS_TOKEN_EXPIRED") {
+        try {
+          await axios.post("/api/auth/refresh", {}, { withCredentials: true });
+          if (retryCallback) await retryCallback();
+        } catch {
+          toast.error(dict?.dashboard?.toasts?.sessionExpired || "Session expired.");
+          router.push("/auth/login");
+        }
+      } else if (["TOKEN_MISSING", "ACCESS_TOKEN_INVALID"].includes(code) || error.response.status === 401) {
+        toast.error(dict?.dashboard?.toasts?.unauthorized || "غير مصرح لك بالدخول.");
+        router.push("/auth/login");
+      } else if (error.response.status === 403) {
+        toast.error(dict?.dashboard?.toasts?.forbidden || "Access forbidden.");
+        router.push("/");
       } else {
-        onSuccess(value, data.messages);
+        toast.error(error.response.data?.message || "An error occurred.");
       }
+    } else {
+      toast.error(dict?.dashboard?.toasts?.networkError || "Network error.");
+    }
+  };
+
+  const fetchContacts = async (page = contactsPage, dict = t) => {
+    try {
+      const res = await axios.get(`/api/admin/contacts?page=${page}&limit=20`, getAuthConfig());
+      setContacts(res.data.contacts || []);
+      setContactsTotal(res.data.total || 0);
+      setContactsTotalPages(res.data.totalPages || 1);
+      setContactsUnreadTotal(res.data.unreadCount ?? 0);
+      setContactsStarredTotal(res.data.starredCount ?? 0);
+    } catch (err) {
+      await handleApiError(err, () => fetchContacts(page, dict), dict);
+      throw err;
+    }
+  };
+
+  const fetchData = async (page = contactsPage, currentDict = t) => {
+    setLoading(true);
+    try {
+      await fetchContacts(page, currentDict);
     } catch {
-      setError("Something went wrong. Please try again.");
+      // Error is gracefully handled by handleApiError inside fetchContacts
     } finally {
       setLoading(false);
     }
   };
 
+  useEffect(() => {
+    const savedLang = typeof window !== "undefined" ? localStorage.getItem("admin_lang") || "ar" : "ar";
+    setLang(savedLang);
+    setTargetLang(savedLang);
+
+    const initDashboard = async () => {
+      const dict = await getTranslation(savedLang);
+      setT(dict);
+      if (typeof document !== "undefined") {
+        document.title = dict?.metaTitle || "مؤسسة مكة المكرمة | لوحة التحكم";
+      }
+      await fetchData(contactsPage, dict);
+    };
+
+    initDashboard();
+  }, []);
+
+  const handleLogout = async () => {
+    setLoggingOut(true);
+    try { await axios.post("/api/auth/logout", {}, { withCredentials: true }); }
+    catch { }
+    finally {
+      toast.info(t?.dashboard?.toasts?.signedOut || "Signed out");
+      setTimeout(() => router.push("/auth/login"), 500);
+    }
+  };
+
+  const toggleStar = async (contactId) => {
+    setStarringId(contactId);
+    try {
+      const res = await axios.patch(`/api/admin/contacts/${contactId}/star`, {}, getAuthConfig());
+      const updated = res.data.contact;
+      setContacts((prev) => prev.map((c) => (c._id === contactId ? updated : c)));
+      if (selectedContact?._id === contactId) setSelectedContact(updated);
+      setContactsStarredTotal((prev) => (updated.isStarred ? prev + 1 : Math.max(0, prev - 1)));
+      toast.success(updated.isStarred ? t?.dashboard?.toasts?.markedStarred || "★" : t?.dashboard?.toasts?.removedStarred || "☆");
+    } catch (err) { await handleApiError(err, () => toggleStar(contactId)); }
+    finally { setStarringId(null); }
+  };
+
+  const toggleRead = async (contactId) => {
+    setReadingId(contactId);
+    try {
+      const res = await axios.patch(`/api/admin/contacts/${contactId}/read`, {}, getAuthConfig());
+      const updated = res.data.contact;
+      setContacts((prev) => prev.map((c) => (c._id === contactId ? updated : c)));
+      if (selectedContact?._id === contactId) setSelectedContact(updated);
+      setContactsUnreadTotal((prev) => (updated.isRead ? Math.max(0, prev - 1) : prev + 1));
+      toast.success(updated.isRead ? t?.dashboard?.toasts?.markedRead || "Read" : t?.dashboard?.toasts?.markedUnread || "Unread");
+    } catch (err) { await handleApiError(err, () => toggleRead(contactId)); }
+    finally { setReadingId(null); }
+  };
+
+  const openContact = async (contact) => {
+    setSelectedContact(contact);
+    if (!contact.isRead) {
+      try {
+        const res = await axios.patch(`/api/admin/contacts/${contact._id}/read`, {}, getAuthConfig());
+        const updated = res.data.contact;
+        setContacts((prev) => prev.map((c) => (c._id === contact._id ? updated : c)));
+        setSelectedContact(updated);
+        setContactsUnreadTotal((prev) => Math.max(0, prev - 1));
+      } catch { }
+    }
+  };
+
+  const confirmDeleteContact = async () => {
+    if (!contactToDelete) return;
+    const id = contactToDelete._id;
+    const wasUnread = !contactToDelete.isRead;
+    const wasStarred = contactToDelete.isStarred;
+    setDeleting(true);
+    try {
+      await axios.delete(`/api/admin/contacts/${id}`, getAuthConfig());
+      setContacts((prev) => prev.filter((c) => c._id !== id));
+      if (selectedContact?._id === id) setSelectedContact(null);
+      setContactsTotal((p) => Math.max(0, p - 1));
+      if (wasUnread) setContactsUnreadTotal((p) => Math.max(0, p - 1));
+      if (wasStarred) setContactsStarredTotal((p) => Math.max(0, p - 1));
+      toast.success(t?.dashboard?.toasts?.messageDeleted || "Deleted");
+      setContactToDelete(null);
+    } catch (err) { await handleApiError(err, confirmDeleteContact); }
+    finally { setDeleting(false); }
+  };
+
+  const filteredContacts = useMemo(() => {
+    return (contacts || []).filter((c) => {
+      if (filter === "starred" && !c.isStarred) return false;
+      if (filter === "unread" && c.isRead) return false;
+      if (searchQuery.trim()) {
+        const q = searchQuery.toLowerCase();
+        return c.name?.toLowerCase().includes(q) || c.email?.toLowerCase().includes(q) || c.phone?.toLowerCase().includes(q) || c.subject?.toLowerCase().includes(q) || c.message?.toLowerCase().includes(q);
+      }
+      return true;
+    });
+  }, [contacts, filter, searchQuery]);
+
+  const isRtl = lang === "ar";
+  const prevText = isRtl ? "→ السابق" : (t?.dashboard?.pagination?.prev || "← Previous");
+  const nextText = isRtl ? "التالي ←" : (t?.dashboard?.pagination?.next || "Next →");
+
+  const cleanPhoneForWhatsApp = (phone) => {
+    if (!phone) return "";
+    let n = phone.replace(/[^\d+]/g, "");
+    if (n.startsWith("0")) n = "212" + n.slice(1);
+    else if (n.startsWith("+")) n = n.slice(1);
+    return n;
+  };
+
+  const getAvatarGradient = (name) => {
+    const gradients = [
+      "from-emerald-500 to-teal-700",
+      "from-blue-500 to-indigo-700",
+      "from-violet-500 to-purple-700",
+      "from-amber-500 to-orange-700",
+      "from-pink-500 to-rose-700",
+      "from-cyan-500 to-blue-700",
+    ];
+    let hash = 0;
+    for (let i = 0; i < (name?.length || 0); i++) {
+      hash = name.charCodeAt(i) + ((hash << 5) - hash);
+    }
+    const index = Math.abs(hash) % gradients.length;
+    return gradients[index];
+  };
+
+  const langLabels = { ar: "العربية", fr: "Français", en: "English", es: "Español", de: "Deutsch", it: "Italiano", nl: "Nederlands" };
+
   return (
-    <PageBg>
-      <GlobalStyles />
-      <div className="min-h-screen flex items-center justify-center px-4">
-        <div
-          style={{
-            animation: "fadeUp 0.4s ease both",
-            width: "100%",
-            maxWidth: "400px",
-          }}
-        >
-          {/* Icon */}
-          <div className="flex justify-center mb-6">
-            <div
-              className="w-14 h-14 rounded-2xl flex items-center justify-center"
-              style={{ background: "linear-gradient(135deg, #3b82f6, #1d4ed8)" }}
-            >
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                <path
-                  d="M12 2a5 5 0 015 5v2H7V7a5 5 0 015-5zM5 11h14a2 2 0 012 2v7a2 2 0 01-2 2H5a2 2 0 01-2-2v-7a2 2 0 012-2zm7 3a1.5 1.5 0 100 3 1.5 1.5 0 000-3z"
-                  stroke="#fff"
-                  strokeWidth="1.4"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
+    <div
+      dir={isRtl ? "rtl" : "ltr"}
+      className="min-h-screen bg-slate-950 text-slate-100 flex flex-col relative selection:bg-emerald-500/30 selection:text-emerald-300 font-sans"
+    >
+      {/* Dynamic ambient lighting grid background */}
+      <div
+        className="fixed inset-0 pointer-events-none -z-10 opacity-[0.04]"
+        style={{
+          backgroundImage: "radial-gradient(circle at 1px 1px, #e2e8f0 1px, transparent 0)",
+          backgroundSize: "28px 28px",
+        }}
+      />
+      {/* Glowing ambient light blobs */}
+      <div className="fixed top-0 right-1/4 w-150 h-100 rounded-full bg-emerald-600/10 blur-[150px] pointer-events-none -z-10" />
+      <div className="fixed bottom-0 left-1/4 w-125 h-87.5 rounded-full bg-teal-600/10 blur-[140px] pointer-events-none -z-10" />
+      <div className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-175 h-125 rounded-full bg-indigo-600/5 blur-[160px] pointer-events-none -z-10" />
+
+      {/* ══════════════ HEADER ══════════════ */}
+      <header className="sticky top-0 z-30 bg-slate-900/80 backdrop-blur-2xl border-b border-slate-800/80 shadow-lg shadow-black/20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-4">
+          {/* Brand */}
+          <Link href={"/" + lang} className="flex items-center gap-3.5 group">
+            <div className="relative">
+              <Image
+                src="/etsmakka.jpeg"
+                alt={t?.dashboard?.brandName || "مؤسسة مكة المكرمة"}
+                width={44}
+                height={44}
+                priority
+                className="relative shadow-xs rounded-xs w-10 sm:w-11 h-auto object-cover shrink-0 ring-1 ring-white/10 group-hover:scale-105 transition-transform duration-300"
+              />
             </div>
-          </div>
+            <div className="flex flex-col text-start min-w-0">
+              <div className="flex items-center gap-2">
+                <span className="text-base sm:text-lg font-black tracking-tight text-white group-hover:text-emerald-400 transition-colors leading-snug truncate">
+                  {t?.dashboard?.brandName || "مؤسسة مكة المكرمة"}
+                </span>
+                <span className="px-2 py-0.5 rounded-full text-[10px] font-black bg-emerald-500/15 text-emerald-400 border border-emerald-500/30 uppercase tracking-widest hidden sm:inline-block">
+                  Admin
+                </span>
+              </div>
+              <span className="text-xs text-slate-400 font-medium leading-tight truncate">
+                {t?.dashboard?.subBrandName || "التعليم الأولي ودروس الدعم"}
+              </span>
+            </div>
+          </Link>
 
-          <h1
-            className="text-2xl font-bold text-center mb-1"
-            style={{ color: "#f0f4ff" }}
-          >
-            Admin Access
-          </h1>
-          <p className="text-sm text-center mb-8" style={{ color: "#4a5568" }}>
-            Enter your secret key to view messages
-          </p>
-
-          {/* Card */}
-          <div
-            className="rounded-2xl p-6"
-            style={{
-              background: "#0f1623",
-              border: "1px solid rgba(255,255,255,0.08)",
-              animation: shake ? "shake 0.4s ease" : "none",
-            }}
-          >
-            <label
-              className="block text-xs font-semibold uppercase tracking-widest mb-2"
-              style={{ color: "#2d3a52", letterSpacing: "0.08em" }}
-            >
-              Secret Key
-            </label>
-            <input
-              type="password"
-              value={value}
-              onChange={(e) => { setValue(e.target.value); setError(""); }}
-              onKeyDown={(e) => e.key === "Enter" && handleSubmit()}
-              placeholder="Enter secret key…"
-              autoFocus
-              className="w-full text-sm px-4 py-2.5 rounded-xl outline-none transition-all mb-3"
-              style={{
-                background: "#070d18",
-                border: `1px solid ${error ? "rgba(239,68,68,0.4)" : "rgba(255,255,255,0.08)"}`,
-                color: "#e2e8f0",
-                caretColor: "#3b82f6",
-              }}
-              onFocus={(e) =>
-                !error && (e.target.style.borderColor = "rgba(59,130,246,0.4)")
-              }
-              onBlur={(e) =>
-                !error && (e.target.style.borderColor = "rgba(255,255,255,0.08)")
-              }
-            />
-
-            {/* Error */}
-            {error && (
-              <p className="text-xs mb-3" style={{ color: "#f87171" }}>
-                {error}
-              </p>
-            )}
+          {/* Actions Bar */}
+          <div className="flex items-center gap-2.5 sm:gap-3 shrink-0">
+            <AdminLanguageSelector currentLang={lang} onLangChange={handleLangChange} />
 
             <button
-              onClick={handleSubmit}
-              disabled={loading || !value.trim()}
-              className="w-full text-sm font-semibold py-2.5 rounded-xl transition-all"
-              style={{
-                background:
-                  loading || !value.trim()
-                    ? "rgba(59,130,246,0.3)"
-                    : "linear-gradient(135deg, #3b82f6, #1d4ed8)",
-                color: loading || !value.trim() ? "#4a5568" : "#fff",
-                cursor: loading || !value.trim() ? "not-allowed" : "pointer",
-              }}
+              onClick={() => fetchData()}
+              disabled={loading}
+              title={t?.dashboard?.refreshTitle || "تحديث"}
+              className="p-2.5 rounded-xl bg-slate-800/80 hover:bg-emerald-500/10 border border-slate-700/60 hover:border-emerald-500/40 text-slate-300 hover:text-emerald-400 transition-all cursor-pointer disabled:opacity-50 active:scale-95 shadow-xs"
             >
-              {loading ? "Verifying…" : "Enter Dashboard"}
+              <svg xmlns="http://www.w3.org/2000/svg" className={`w-4 h-4 ${loading ? "animate-spin text-emerald-400" : ""}`} fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+              </svg>
+            </button>
+
+            <button
+              onClick={handleLogout}
+              disabled={loggingOut}
+              className="flex items-center gap-2 px-3.5 py-2 rounded-xl bg-rose-500/10 hover:bg-rose-500/20 text-rose-400 border border-rose-500/25 text-xs font-bold transition-all cursor-pointer disabled:opacity-50 active:scale-95 shadow-xs"
+            >
+              {loggingOut ? <Loader2 className="w-4 h-4" /> : (
+                <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
+                </svg>
+              )}
+              <span className="hidden sm:inline">{t?.dashboard?.logout || "خروج"}</span>
             </button>
           </div>
         </div>
-      </div>
-    </PageBg>
-  );
-}
+      </header>
 
-// ─── Cookie Helpers ───────────────────────────────────────────────────────────
+      {/* ══════════════ MAIN CONTENT ══════════════ */}
+      <main className="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-6">
 
-const COOKIE_NAME = "admin_secret";
-const COOKIE_DAYS = 7;
-
-function setCookie(value) {
-  const expires = new Date(Date.now() + COOKIE_DAYS * 864e5).toUTCString();
-  document.cookie = `${COOKIE_NAME}=${encodeURIComponent(value)}; expires=${expires}; path=/; SameSite=Strict`;
-}
-
-function getCookie() {
-  const match = document.cookie.match(new RegExp(`(?:^|; )${COOKIE_NAME}=([^;]*)`));
-  return match ? decodeURIComponent(match[1]) : null;
-}
-
-function deleteCookie() {
-  document.cookie = `${COOKIE_NAME}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/`;
-}
-
-// ─── Main Component ───────────────────────────────────────────────────────────
-
-export default function AdminPage() {
-  const [secret, setSecret] = useState(null);
-  const [messages, setMessages] = useState([]);
-  const [autoLoading, setAutoLoading] = useState(true); // checking cookie on mount
-  const [search, setSearch] = useState("");
-  const [selectedMsg, setSelectedMsg] = useState(null);
-
-  // On mount: check if cookie exists and auto-login
-  useEffect(() => {
-    const saved = getCookie();
-    if (!saved) { setAutoLoading(false); return; }
-
-    fetch(`/api/contact?secret=${encodeURIComponent(saved)}`)
-      .then((r) => r.json())
-      .then((data) => {
-        if (data.success) {
-          setSecret(saved);
-          setMessages(data.messages);
-        } else {
-          deleteCookie(); // cookie is stale / secret changed
-        }
-      })
-      .catch(() => deleteCookie())
-      .finally(() => setAutoLoading(false));
-  }, []);
-
-  // Called by LoginScreen on success
-  const handleLogin = (secretKey, initialMessages) => {
-    setCookie(secretKey);
-    setSecret(secretKey);
-    setMessages(initialMessages);
-  };
-
-  const handleLogout = () => {
-    deleteCookie();
-    setSecret(null);
-    setMessages([]);
-  };
-
-  const handleDelete = useCallback(async (id) => {
-    try {
-      const res = await fetch("/api/contact", {
-        method: "DELETE",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ id, secret }),
-      });
-      const data = await res.json();
-      if (data.success) {
-        setMessages((prev) => prev.filter((m) => m._id !== id));
-      }
-    } catch (err) {
-      console.error(err);
-    }
-  }, [secret]);
-
-  // Still checking cookie
-  if (autoLoading) {
-    return (
-      <>
-        <GlobalStyles />
-        <PageBg>
-          <div className="min-h-screen flex items-center justify-center">
-            <div className="flex flex-col items-center gap-3">
-              <div
-                className="w-10 h-10 rounded-xl"
-                style={{
-                  background: "linear-gradient(135deg, #3b82f6, #1d4ed8)",
-                  animation: "pulse 1.2s infinite",
-                }}
-              />
-              <p className="text-xs" style={{ color: "#2d3a52" }}>Loading…</p>
+        {/* ── TOOLBAR & FILTERS ── */}
+        <div className="flex flex-col gap-3.5 bg-slate-900/80 backdrop-blur-xl p-3.5 sm:p-4 rounded-2xl border border-slate-800 shadow-md">
+          {/* Top Row: Filter Pills & Pagination */}
+          <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3">
+            {/* Filter Pills */}
+            <div className="grid grid-cols-3 sm:flex items-center gap-1.5 p-1 bg-slate-950/70 rounded-xl border border-slate-800/80 w-full sm:w-auto">
+              {[
+                { key: "all", label: t?.dashboard?.filters?.all || "الكل", count: contactsTotal },
+                { key: "unread", label: t?.dashboard?.filters?.unread || "غير مقروءة", count: contactsUnreadTotal },
+                { key: "starred", label: t?.dashboard?.filters?.starred || "المميزة", count: contactsStarredTotal },
+              ].map((f) => (
+                <button
+                  key={f.key}
+                  onClick={() => setFilter(f.key)}
+                  className={`flex items-center justify-center gap-1.5 px-2.5 sm:px-3.5 py-1.5 rounded-lg text-xs font-bold transition-all duration-200 cursor-pointer whitespace-nowrap ${
+                    filter === f.key
+                      ? "bg-linear-to-r from-emerald-500 to-teal-600 text-white shadow-md shadow-emerald-500/20"
+                      : "text-slate-400 hover:text-slate-200 hover:bg-slate-900"
+                  }`}
+                >
+                  <span className="truncate">{f.label}</span>
+                  <span className={`px-1.5 py-0.5 rounded-full text-[10px] font-mono shrink-0 ${
+                    filter === f.key ? "bg-white/20 text-white" : "bg-slate-800 text-slate-400"
+                  }`}>
+                    {f.count}
+                  </span>
+                </button>
+              ))}
             </div>
-          </div>
-        </PageBg>
-      </>
-    );
-  }
 
-  // Not logged in
-  if (!secret) {
-    return <LoginScreen onSuccess={handleLogin} />;
-  }
-
-  const filtered = messages.filter((m) =>
-    `${m.name} ${m.email} ${m.subject} ${m.message}`
-      .toLowerCase()
-      .includes(search.toLowerCase())
-  );
-
-  return (
-    <>
-      <GlobalStyles />
-      <PageBg>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
-
-          {/* ── Header ── */}
-          <div
-            className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-5 mb-8"
-            style={{ animation: "fadeUp 0.4s ease both" }}
-          >
-            <div>
-              <div className="flex items-center gap-2.5 mb-1.5">
-                <Link href={"/"}
-                  className=" cursor-pointer w-8 h-8 rounded-lg flex items-center justify-center"
-                  style={{ background: "linear-gradient(135deg, #3b82f6, #1d4ed8)" }}
+            {/* Pagination inside Toolbar */}
+            {contactsTotalPages > 1 && (
+              <div className="flex items-center justify-between sm:justify-end gap-2 bg-slate-950/70 p-1 rounded-xl border border-slate-800/80 shrink-0">
+                <button
+                  disabled={contactsPage === 1}
+                  onClick={() => { const p = contactsPage - 1; setContactsPage(p); fetchContacts(p); }}
+                  className="px-3 py-1.5 rounded-lg text-xs font-bold bg-slate-900 border border-slate-800 text-slate-300 hover:border-emerald-500/50 hover:text-emerald-400 disabled:opacity-40 disabled:cursor-not-allowed transition-all cursor-pointer shadow-xs"
                 >
-                  <svg width="15" height="15" viewBox="0 0 16 16" fill="none">
-                    <path
-                      d="M14 10.667A1.333 1.333 0 0112.667 12H4l-2.667 2.667V3.333A1.333 1.333 0 012.667 2h10A1.333 1.333 0 0114 3.333v7.334z"
-                      stroke="#fff"
-                      strokeWidth="1.3"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
-                </Link>
-                <h1
-                  className="text-2xl font-bold tracking-tight"
-                  style={{ color: "#f0f4ff" }}
+                  {prevText}
+                </button>
+                <div className="text-xs font-semibold text-slate-400 font-mono px-2 whitespace-nowrap">
+                  <span className="text-emerald-400 font-extrabold">{contactsPage}</span> / {contactsTotalPages}
+                </div>
+                <button
+                  disabled={contactsPage === contactsTotalPages}
+                  onClick={() => { const p = contactsPage + 1; setContactsPage(p); fetchContacts(p); }}
+                  className="px-3 py-1.5 rounded-lg text-xs font-bold bg-slate-900 border border-slate-800 text-slate-300 hover:border-emerald-500/50 hover:text-emerald-400 disabled:opacity-40 disabled:cursor-not-allowed transition-all cursor-pointer shadow-xs"
                 >
-                  Messages
-                </h1>
+                  {nextText}
+                </button>
               </div>
-              <p className="text-sm" style={{ color: "#4a5568" }}>
-                {messages.length} total
-                {search && filtered.length !== messages.length
-                  ? ` · ${filtered.length} matching`
-                  : ""}
-              </p>
+            )}
+          </div>
+
+          {/* Search Input */}
+          <div className="relative w-full">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className={`w-4 h-4 text-slate-400 absolute top-1/2 -translate-y-1/2 pointer-events-none ${isRtl ? "right-3.5" : "left-3.5"}`}
+              fill="none" viewBox="0 0 24 24" stroke="currentColor"
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+            </svg>
+            <input
+              type="text"
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              placeholder={t?.dashboard?.search?.contactsPlaceholder || "بحث باسم ولي الأمر، الهاتف، البريد..."}
+              className={`w-full bg-slate-950/70 border border-slate-800 rounded-xl py-2 text-xs sm:text-sm text-slate-100 placeholder-slate-500 focus:outline-none focus:border-emerald-500/60 focus:ring-2 focus:ring-emerald-500/20 transition-all ${isRtl ? "pr-10 pl-10" : "pl-10 pr-10"}`}
+            />
+            {searchQuery && (
+              <button
+                onClick={() => setSearchQuery("")}
+                className={`absolute top-1/2 -translate-y-1/2 text-slate-400 hover:text-white cursor-pointer p-1 rounded-md hover:bg-slate-800 transition-colors ${isRtl ? "left-2.5" : "right-2.5"}`}
+              >
+                ✕
+              </button>
+            )}
+          </div>
+        </div>
+
+        {/* ── MESSAGES CONTENT ── */}
+        {loading ? (
+          <div className="flex flex-col items-center justify-center py-28 bg-slate-900/40 border border-slate-800/80 rounded-3xl">
+            <div className="relative">
+              <div className="w-12 h-12 border-4 border-emerald-500/20 border-t-emerald-400 rounded-full animate-spin" />
+              <div className="absolute inset-0 flex items-center justify-center">
+                <div className="w-2 h-2 rounded-full bg-emerald-400" />
+              </div>
+            </div>
+            <p className="text-slate-400 text-sm font-medium mt-4 animate-pulse">{t?.dashboard?.loadingData || "جاري تحميل البيانات..."}</p>
+          </div>
+        ) : filteredContacts.length === 0 ? (
+          /* ── Empty State ── */
+          <div className="text-center py-24 bg-slate-900/50 border border-slate-800/80 rounded-3xl shadow-lg">
+            <div className="w-20 h-20 rounded-3xl bg-slate-800/80 border border-slate-700/50 flex items-center justify-center mx-auto mb-4 text-slate-400 shadow-inner">
+              <Mail className="w-10 h-10 opacity-50" />
+            </div>
+            <h4 className="text-white font-extrabold text-lg">{t?.dashboard?.empty?.noContactsTitle || "لا توجد رسائل حالياً"}</h4>
+            <p className="text-slate-400 text-sm mt-1 max-w-sm mx-auto">{t?.dashboard?.empty?.noContactsDesc || "لم يتم العثور على أي نتائج مطابقة لفلاتر البحث الحالية."}</p>
+          </div>
+        ) : (
+          <>
+            <div className="hidden md:block bg-slate-900/90 border border-slate-800 rounded-3xl overflow-hidden shadow-xl shadow-black/30 backdrop-blur-xl">
+              <table className="w-full border-collapse text-start table-fixed">
+                <thead>
+                  <tr className="border-b border-slate-800 bg-slate-950/70 text-slate-400 text-[11px] font-extrabold uppercase tracking-wider">
+                    <th className="py-3.5 px-4 text-start w-28">{t?.dashboard?.table?.status || "الحالة"}</th>
+                    <th className="py-3.5 px-4 text-start w-56">{t?.dashboard?.table?.sender || "ولي الأمر"}</th>
+                    <th className="py-3.5 px-4 text-start">{t?.dashboard?.table?.messagePreview || "الرسالة والموضوع"}</th>
+                    <th className="py-3.5 px-4 text-start w-36">{t?.dashboard?.table?.date || "التاريخ"}</th>
+                    <th className="py-3.5 px-4 text-end w-36">{t?.dashboard?.table?.actions || "الإجراءات"}</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-slate-800/60 text-sm">
+                    {filteredContacts.map((c) => (
+                      <tr
+                        key={c._id}
+                        onClick={() => openContact(c)}
+                        className={`group hover:bg-slate-800/60 transition-all duration-200 cursor-pointer ${
+                          !c.isRead ? "bg-emerald-950/20 font-medium" : ""
+                        }`}
+                      >
+                        {/* Combined Status (Star + Badge) Column */}
+                        <td className="py-4 px-4 text-start whitespace-nowrap" onClick={(e) => e.stopPropagation()}>
+                          <div className="flex items-center gap-2">
+                            <button
+                              onClick={() => toggleStar(c._id)}
+                              disabled={starringId === c._id}
+                              title={c.isStarred ? "إزالة النجمة" : "تمييز بنجمة"}
+                              className="cursor-pointer transition-transform active:scale-90 disabled:opacity-50 p-1 hover:bg-slate-800 rounded-lg inline-flex items-center justify-center shrink-0"
+                            >
+                              {starringId === c._id ? (
+                                <Loader2 className="w-4 h-4 text-amber-400 animate-spin" />
+                              ) : (
+                                <Star
+                                  className="w-4 h-4 transition-transform group-hover:scale-110"
+                                  fill={c.isStarred ? "#f59e0b" : "none"}
+                                  stroke={c.isStarred ? "#f59e0b" : "#94a3b8"}
+                                />
+                              )}
+                            </button>
+                            {!c.isRead && (
+                              <span className="px-2 py-0.5 rounded-md text-[10px] font-black bg-linear-to-r from-emerald-500 to-teal-500 text-white shadow-xs uppercase tracking-wider shrink-0 inline-block animate-pulse">
+                                {t?.dashboard?.actions?.newBadge || "جديد"}
+                              </span>
+                            )}
+                          </div>
+                        </td>
+
+                        {/* Sender */}
+                        <td className="py-4 px-4">
+                          <div className="flex flex-col min-w-0">
+                            <span className={`truncate ${!c.isRead ? "text-white font-extrabold" : "text-slate-200 font-semibold"}`}>
+                              {c.name}
+                            </span>
+                            <span className="text-xs text-slate-400 font-mono truncate" title={c.email}>{c.email}</span>
+                          </div>
+                        </td>
+
+                        {/* Message Preview & Subject */}
+                        <td className="py-3.5 px-4 min-w-0 overflow-hidden">
+                          <div className="flex flex-col min-w-0">
+                            <span className="text-slate-200 font-bold text-xs truncate">
+                              {c.subject || (isArabic(c.message) ? "استفسار وتسجيل عبر الموقع" : "Website Inquiry")}
+                            </span>
+                            <p dir={isArabic(c.message) ? "rtl" : "ltr"} className="truncate text-[11px] text-slate-400 group-hover:text-slate-300 transition-colors leading-relaxed" title={c.message}>
+                              {c.message}
+                            </p>
+                          </div>
+                        </td>
+
+                        {/* Date */}
+                        <td className="py-4 px-4 text-xs text-slate-400 whitespace-nowrap font-medium">
+                          {new Date(c.createdAt).toLocaleDateString(getLocale(lang), { month: "short", day: "numeric", year: "numeric" })}
+                        </td>
+
+                        {/* Actions */}
+                        <td className="py-4 px-5 text-end whitespace-nowrap" onClick={(e) => e.stopPropagation()}>
+                          <div className="flex items-center justify-end gap-1.5">
+                            <button
+                              onClick={() => openContact(c)}
+                              title={t?.dashboard?.actions?.viewDetails || "عرض المعاينة"}
+                              className="p-2 rounded-xl bg-slate-800 hover:bg-emerald-500/20 text-slate-300 hover:text-emerald-400 border border-slate-700/60 hover:border-emerald-500/40 transition-all cursor-pointer"
+                            >
+                              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor" className="w-3.5 h-3.5">
+                                <path strokeLinecap="round" strokeLinejoin="round" d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z" />
+                                <path strokeLinecap="round" strokeLinejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                              </svg>
+                            </button>
+                            <button
+                              onClick={() => toggleRead(c._id)}
+                              disabled={readingId === c._id}
+                              title={c.isRead ? (t?.dashboard?.actions?.markAsUnread || "تعيين كغير مقروء") : (t?.dashboard?.actions?.markAsRead || "تعيين كمقروء")}
+                              className={`p-2 rounded-xl border transition-all cursor-pointer disabled:opacity-50 ${
+                                c.isRead
+                                  ? "bg-slate-800 text-slate-400 border-slate-700/60 hover:text-white"
+                                  : "bg-emerald-500/20 text-emerald-400 border-emerald-500/40 shadow-sm shadow-emerald-500/10"
+                              }`}
+                            >
+                              {readingId === c._id ? <Loader2 className="w-3.5 h-3.5 animate-spin" /> : c.isRead ? <MailOpen className="w-3.5 h-3.5 text-slate-400" /> : <Mail className="w-3.5 h-3.5" />}
+                            </button>
+                            <button
+                              onClick={() => setContactToDelete(c)}
+                              title={t?.dashboard?.actions?.deleteMessage || "حذف الرسالة"}
+                              className="p-2 rounded-xl bg-rose-500/10 hover:bg-rose-500/20 text-rose-400 border border-rose-500/25 transition-all cursor-pointer"
+                            >
+                              <Trash2 className="w-3.5 h-3.5" />
+                            </button>
+                          </div>
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
             </div>
 
-            {/* Right side: search + logout */}
-            <div className="flex items-center gap-3 w-full sm:w-auto">
-              {/* Search */}
-              <div className="relative flex-1 sm:w-72">
-                <SearchIcon />
-                <input
-                  value={search}
-                  onChange={(e) => setSearch(e.target.value)}
-                  placeholder="Search by name, email, subject…"
-                  className="w-full text-sm pl-9 pr-4 py-2.5 rounded-xl outline-none transition-all"
-                  style={{
-                    background: "#0f1623",
-                    border: "1px solid rgba(255,255,255,0.08)",
-                    color: "#e2e8f0",
-                    caretColor: "#3b82f6",
-                  }}
-                  onFocus={(e) =>
-                    (e.target.style.borderColor = "rgba(59,130,246,0.4)")
-                  }
-                  onBlur={(e) =>
-                    (e.target.style.borderColor = "rgba(255,255,255,0.08)")
-                  }
-                />
-                {search && (
-                  <button
-                    onClick={() => setSearch("")}
-                    className="absolute right-3 top-1/2 -translate-y-1/2 text-xs px-1.5 py-0.5 rounded"
-                    style={{ color: "#4a5568", background: "rgba(255,255,255,0.06)", cursor: "pointer" }}
-                  >
-                    ✕
-                  </button>
+            {/* ── Mobile Cards Layout ── */}
+            <div className="flex flex-col gap-3.5 md:hidden">
+              {filteredContacts.map((c) => (
+                <div
+                  key={c._id}
+                  onClick={() => openContact(c)}
+                  className={`bg-slate-900/90 border rounded-2xl p-4 cursor-pointer transition-all duration-200 space-y-3 ${
+                    !c.isRead ? "border-emerald-500/50 shadow-md shadow-emerald-950/30" : "border-slate-800 hover:border-slate-700"
+                  }`}
+                >
+                  <div className="flex items-start justify-between gap-2">
+                    <div className="flex items-center gap-2.5 min-w-0 flex-1">
+                      <div className={`w-8 h-8 rounded-lg bg-linear-to-tr ${getAvatarGradient(c.name)} flex items-center justify-center text-white font-extrabold text-xs shadow-xs shrink-0`}>
+                        {c.name?.charAt(0) || "م"}
+                      </div>
+                      <div className="min-w-0">
+                        <div className="flex items-center gap-1.5">
+                          <h4 className={`text-sm truncate ${!c.isRead ? "font-black text-white" : "font-semibold text-slate-200"}`}>
+                            {c.name}
+                          </h4>
+                          {!c.isRead && (
+                            <span className="px-1.5 py-0.5 rounded-md text-[9px] font-black bg-linear-to-r from-emerald-500 to-teal-500 text-white shrink-0 animate-pulse">
+                              {t?.dashboard?.actions?.newBadge || "جديد"}
+                            </span>
+                          )}
+                        </div>
+                        <p className="text-[11px] text-slate-400 font-mono truncate">{c.email}</p>
+                      </div>
+                    </div>
+                    <span className="text-[10px] text-slate-400 font-mono shrink-0 bg-slate-950 px-2 py-0.5 rounded-full border border-slate-800">
+                      {new Date(c.createdAt).toLocaleDateString(getLocale(lang), { month: "short", day: "numeric" })}
+                    </span>
+                  </div>
+
+                  <p dir={isArabic(c.message) ? "rtl" : "ltr"} className="text-xs text-slate-300 line-clamp-2 leading-relaxed bg-slate-950/50 p-2.5 rounded-xl border border-slate-800/50">
+                    {c.message}
+                  </p>
+
+                  <div className="flex items-center justify-between gap-2 pt-1 border-t border-slate-800/60" onClick={(e) => e.stopPropagation()}>
+                    <div className="flex items-center gap-1.5">
+                      {c.phone && (
+                        <>
+                          <a
+                            href={`https://wa.me/${cleanPhoneForWhatsApp(c.phone)}`}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="p-1.5 rounded-lg bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 cursor-pointer"
+                          >
+                            <WhatsApp className="w-3.5 h-3.5" />
+                          </a>
+                          <a
+                            href={`tel:${c.phone}`}
+                            className="p-1.5 rounded-lg bg-blue-500/10 text-blue-400 border border-blue-500/30 cursor-pointer"
+                          >
+                            <Phone className="w-3.5 h-3.5" />
+                          </a>
+                        </>
+                      )}
+                    </div>
+                    <div className="flex items-center gap-1.5 shrink-0">
+                      <button
+                        onClick={() => toggleRead(c._id)}
+                        disabled={readingId === c._id}
+                        title={c.isRead ? (t?.dashboard?.actions?.markAsUnread || "تعيين كغير مقروء") : (t?.dashboard?.actions?.markAsRead || "تعيين كمقروء")}
+                        className={`p-1.5 rounded-lg border cursor-pointer transition-all disabled:opacity-50 ${
+                          c.isRead
+                            ? "bg-slate-800 text-slate-400 border-slate-700/60 hover:text-white"
+                            : "bg-emerald-500/20 text-emerald-400 border-emerald-500/40 shadow-sm shadow-emerald-500/10"
+                        }`}
+                      >
+                        {readingId === c._id ? <Loader2 className="w-3.5 h-3.5 animate-spin" /> : c.isRead ? <MailOpen className="w-3.5 h-3.5 text-slate-400" /> : <Mail className="w-3.5 h-3.5" />}
+                      </button>
+                      <button
+                        onClick={() => toggleStar(c._id)}
+                        disabled={starringId === c._id}
+                        className={`p-1.5 rounded-lg border cursor-pointer transition-all disabled:opacity-50 ${
+                          c.isStarred ? "border-yellow-500/40 bg-yellow-500/10 text-yellow-400" : "border-slate-800 text-slate-400"
+                        }`}
+                      >
+                        {starringId === c._id ? <Loader2 className="w-3.5 h-3.5 animate-spin" /> : <Star className="w-3.5 h-3.5" fill={c.isStarred ? "#f59e0b" : "none"} stroke={c.isStarred ? "#f59e0b" : "currentColor"} />}
+                      </button>
+                      <button
+                        onClick={() => setContactToDelete(c)}
+                        className="p-1.5 rounded-lg border border-rose-500/20 text-rose-400 bg-rose-500/10 cursor-pointer"
+                      >
+                        <Trash2 className="w-3.5 h-3.5" />
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* ── PAGINATION ── */}
+            {contactsTotalPages > 1 && (
+              <div className="flex items-center justify-between pt-4 bg-slate-900/60 p-4 rounded-2xl border border-slate-800">
+                <button
+                  disabled={contactsPage === 1}
+                  onClick={() => { const p = contactsPage - 1; setContactsPage(p); fetchContacts(p); }}
+                  className="px-4 py-2 rounded-xl text-xs font-bold bg-slate-950 border border-slate-800 text-slate-300 hover:border-emerald-500/50 hover:text-emerald-400 disabled:opacity-40 disabled:cursor-not-allowed transition-all cursor-pointer shadow-xs"
+                >
+                  {prevText}
+                </button>
+                <div className="text-xs font-semibold text-slate-400 font-mono">
+                  <span className="text-emerald-400 font-extrabold">{contactsPage}</span> / {contactsTotalPages}
+                </div>
+                <button
+                  disabled={contactsPage === contactsTotalPages}
+                  onClick={() => { const p = contactsPage + 1; setContactsPage(p); fetchContacts(p); }}
+                  className="px-4 py-2 rounded-xl text-xs font-bold bg-slate-950 border border-slate-800 text-slate-300 hover:border-emerald-500/50 hover:text-emerald-400 disabled:opacity-40 disabled:cursor-not-allowed transition-all cursor-pointer shadow-xs"
+                >
+                  {nextText}
+                </button>
+              </div>
+            )}
+          </>
+        )}
+      </main>
+
+      {/* ══════════════ CONTACT DETAIL MODAL ══════════════ */}
+      {selectedContact && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-xl animate-in fade-in duration-200">
+          <div className="bg-slate-900 border border-slate-800 rounded-3xl max-w-xl w-full shadow-2xl shadow-black/80 max-h-[90vh] overflow-y-auto overflow-x-hidden scrollbar-thin [scrollbar-color:#334155_transparent] [&::-webkit-scrollbar]:w-1.5 [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-thumb]:bg-slate-700/80 [&::-webkit-scrollbar-thumb]:rounded-full hover:[&::-webkit-scrollbar-thumb]:bg-emerald-500">
+            {/* Modal Header */}
+            <div className="flex items-center justify-between p-5 border-b border-slate-800/80 bg-slate-950/80 backdrop-blur-md">
+              <div className="flex items-center gap-3.5 min-w-0">
+                <div className={`w-11 h-11 rounded-2xl bg-linear-to-tr ${getAvatarGradient(selectedContact.name)} flex items-center justify-center text-white font-black text-base shadow-md shrink-0 ring-1 ring-white/10`}>
+                  {selectedContact.name?.charAt(0) || "م"}
+                </div>
+                <div className="min-w-0">
+                  <div className="flex items-center gap-2">
+                    <h3 className="text-base font-extrabold text-white leading-snug truncate">{selectedContact.name}</h3>
+                    <button
+                      onClick={() => toggleStar(selectedContact._id)}
+                      disabled={starringId === selectedContact._id}
+                      className="p-1 hover:bg-slate-800 rounded-lg transition-transform active:scale-90 cursor-pointer shrink-0"
+                      title={selectedContact.isStarred ? "إزالة النجمة" : "تمييز بنجمة"}
+                    >
+                      {starringId === selectedContact._id ? (
+                        <Loader2 className="w-4 h-4 text-amber-400 animate-spin" />
+                      ) : (
+                        <Star
+                          className="w-4 h-4"
+                          fill={selectedContact.isStarred ? "#f59e0b" : "none"}
+                          stroke={selectedContact.isStarred ? "#f59e0b" : "#94a3b8"}
+                        />
+                      )}
+                    </button>
+                  </div>
+                  <p className="text-xs text-slate-400 font-mono truncate">{selectedContact.email}</p>
+                </div>
+              </div>
+              <button
+                onClick={() => setSelectedContact(null)}
+                className="text-slate-400 hover:text-white p-2 rounded-xl hover:bg-slate-800 transition-all cursor-pointer text-sm font-bold"
+              >
+                ✕
+              </button>
+            </div>
+
+            <div className="p-5 space-y-4">
+              {/* Compact Metadata Card */}
+              <div className="p-4 rounded-2xl bg-slate-950/60 border border-slate-800/80 space-y-3">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
+                  {/* Subject */}
+                  <div className="flex flex-col min-w-0">
+                    <span className="text-[10px] text-slate-500 font-extrabold uppercase tracking-wider">{t?.dashboard?.modal?.subject || "الموضوع"}</span>
+                    <span className="text-slate-100 font-extrabold truncate mt-0.5">
+                      {translatedSubject && !showOriginal
+                        ? translatedSubject
+                        : selectedContact.subject || (isArabic(selectedContact.message) ? "استفسار وتسجيل عبر الموقع" : "Website Inquiry")}
+                    </span>
+                  </div>
+
+                  {/* Date */}
+                  <div className="flex flex-col min-w-0">
+                    <span className="text-[10px] text-slate-500 font-extrabold uppercase tracking-wider">{t?.dashboard?.modal?.received || "التاريخ والوقت"}</span>
+                    <span className="text-slate-300 font-mono text-[11px] truncate mt-0.5">
+                      {new Date(selectedContact.createdAt).toLocaleString(getLocale(lang), { dateStyle: "medium", timeStyle: "short" })}
+                    </span>
+                  </div>
+                </div>
+
+                {/* Phone & Instant Actions */}
+                {selectedContact.phone && (
+                  <div className="flex items-center justify-between pt-3 border-t border-slate-800/60 text-xs">
+                    <div className="flex items-center gap-2">
+                      <span className="text-[10px] text-slate-500 font-extrabold uppercase tracking-wider">{t?.dashboard?.modal?.phoneNumber || "الهاتف"}:</span>
+                      <span className="text-emerald-400 font-mono font-bold">{selectedContact.phone}</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <a
+                        href={`https://wa.me/${cleanPhoneForWhatsApp(selectedContact.phone)}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        title={t?.dashboard?.actions?.whatsappMessage || "واتساب"}
+                        className="flex items-center justify-center p-1.5 rounded-xl bg-emerald-500/15 hover:bg-emerald-500/25 text-emerald-400 border border-emerald-500/30 transition-all cursor-pointer hover:scale-105"
+                      >
+                        <WhatsApp className="w-3.5 h-3.5" />
+                      </a>
+                      <a
+                        href={`tel:${selectedContact.phone}`}
+                        title={t?.dashboard?.actions?.callPhone || "اتصال"}
+                        className="p-1.5 rounded-xl bg-blue-500/15 hover:bg-blue-500/25 text-blue-400 border border-blue-500/30 text-xs font-bold transition-all cursor-pointer hover:scale-105"
+                      >
+                        <Phone className="w-3.5 h-3.5" />
+                      </a>
+                    </div>
+                  </div>
                 )}
               </div>
 
-              {/* Logout */}
+              {/* Message Content & Multi-language Translation Bar */}
+              <div className="space-y-2.5">
+                <div className="flex flex-wrap items-center justify-between gap-2 bg-slate-950/80 p-3 rounded-2xl border border-slate-800">
+                  <div className="flex items-center gap-2">
+                    <label className="text-xs font-extrabold text-emerald-400 uppercase tracking-wider">{t?.dashboard?.modal?.messageContent || "محتوى الرسالة"}</label>
+                    {translatedText && !showOriginal && (
+                      <span className="px-2 py-0.5 rounded-md text-[10px] font-extrabold bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 font-mono uppercase">
+                        {targetLang}
+                      </span>
+                    )}
+                  </div>
+
+                  <div className="flex items-center gap-1.5 flex-wrap">
+                    {translatedText && (
+                      <button
+                        type="button"
+                        onClick={() => setShowOriginal(!showOriginal)}
+                        className="px-2.5 py-1 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs font-semibold cursor-pointer transition-colors"
+                      >
+                        {showOriginal ? (t?.dashboard?.modal?.showTranslation || "عرض الترجمة") : (t?.dashboard?.modal?.showOriginal || "الأصلي")}
+                      </button>
+                    )}
+
+                    <button
+                      type="button"
+                      onClick={handleTranslateMessage}
+                      disabled={translating}
+                      className="flex items-center gap-1.5 px-3 py-1 rounded-xl bg-emerald-500/20 hover:bg-emerald-500/30 text-emerald-400 border border-emerald-500/40 text-xs font-bold transition-all cursor-pointer disabled:opacity-50 active:scale-95 shadow-xs"
+                    >
+                      {translating ? (
+                        <Loader2 className="w-3.5 h-3.5 animate-spin text-emerald-400" />
+                      ) : (
+                        <Image src="/flags/ma.svg" alt="Morocco" width={16} height={12} className="object-cover rounded-xs shrink-0" />
+                      )}
+                      <span>{translating ? (t?.dashboard?.modal?.translating || "جاري...") : (t?.dashboard?.modal?.translateMessage || "ترجمة")}</span>
+                    </button>
+                  </div>
+                </div>
+
+                <div
+                  dir={translatedText && !showOriginal ? (isArabic(translatedText) ? "rtl" : "ltr") : (isArabic(selectedContact.message) ? "rtl" : "ltr")}
+                  className="p-4 rounded-2xl bg-slate-950/90 border border-slate-800 text-xs sm:text-sm text-slate-100 leading-relaxed max-h-56 overflow-y-auto whitespace-pre-wrap font-sans shadow-inner scrollbar-thin [scrollbar-color:#334155_transparent] [&::-webkit-scrollbar]:w-1.5 [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-thumb]:bg-slate-700/80 [&::-webkit-scrollbar-thumb]:rounded-full hover:[&::-webkit-scrollbar-thumb]:bg-emerald-500"
+                >
+                  {translatedText && !showOriginal ? translatedText : selectedContact.message}
+                </div>
+              </div>
+
+              {/* Modal Footer Actions */}
+              <div className="flex flex-wrap items-center justify-between gap-2.5 pt-3 border-t border-slate-800/80">
+                <div className="flex items-center gap-2">
+                  {/* Read / Unread Toggle Button */}
+                  <button
+                    onClick={() => toggleRead(selectedContact._id)}
+                    disabled={readingId === selectedContact._id}
+                    className={`flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs font-bold border transition-all cursor-pointer disabled:opacity-50 ${
+                      selectedContact.isRead
+                        ? "bg-slate-950 text-slate-400 border-slate-800 hover:text-white hover:border-slate-700"
+                        : "bg-emerald-500/20 text-emerald-400 border-emerald-500/40 shadow-sm shadow-emerald-500/10"
+                    }`}
+                  >
+                    {readingId === selectedContact._id ? (
+                      <Loader2 className="w-4 h-4 animate-spin text-emerald-400" />
+                    ) : selectedContact.isRead ? (
+                      <MailOpen className="w-4 h-4 text-slate-400" />
+                    ) : (
+                      <Mail className="w-4 h-4 text-emerald-400" />
+                    )}
+                    <span>
+                      {selectedContact.isRead
+                        ? (t?.dashboard?.actions?.markAsUnread || "تعيين كغير مقروء")
+                        : (t?.dashboard?.actions?.markAsRead || "تعيين كمقروء")}
+                    </span>
+                  </button>
+
+                  {/* Star / Unstar Button */}
+                  <button
+                    onClick={() => toggleStar(selectedContact._id)}
+                    disabled={starringId === selectedContact._id}
+                    className={`flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs font-bold border transition-all cursor-pointer ${
+                      selectedContact.isStarred
+                        ? "bg-amber-500/20 text-amber-400 border-amber-500/40 shadow-amber-500/10 shadow-sm"
+                        : "bg-slate-950 text-slate-400 border-slate-800 hover:text-white hover:border-slate-700"
+                    }`}
+                  >
+                    {starringId === selectedContact._id ? (
+                      <Loader2 className="w-4 h-4 animate-spin text-amber-400" />
+                    ) : (
+                      <Star className="w-4 h-4" fill={selectedContact.isStarred ? "#f59e0b" : "none"} stroke={selectedContact.isStarred ? "#f59e0b" : "currentColor"} />
+                    )}
+                    <span>{selectedContact.isStarred ? (t?.dashboard?.modal?.unstar || "إزالة النجمة") : (t?.dashboard?.modal?.star || "تمييز بنجمة")}</span>
+                  </button>
+                </div>
+
+                {/* Delete Button */}
+                <button
+                  onClick={() => { setContactToDelete(selectedContact); setSelectedContact(null); }}
+                  className="flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs font-bold bg-rose-500/15 text-rose-400 hover:bg-rose-500/25 border border-rose-500/30 transition-all cursor-pointer"
+                >
+                  <Trash2 className="w-4 h-4" />
+                  <span>{t?.dashboard?.modal?.delete || "حذف الرسالة"}</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* ══════════════ DELETE CONFIRM MODAL ══════════════ */}
+      {contactToDelete && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-xl animate-in fade-in duration-200">
+          <div className="bg-slate-900 border border-rose-500/30 rounded-3xl max-w-sm w-full p-6 space-y-5 shadow-2xl text-center">
+            <div className="w-14 h-14 rounded-2xl bg-rose-500/15 border border-rose-500/30 text-rose-400 flex items-center justify-center mx-auto text-2xl shadow-inner">
+              ⚠️
+            </div>
+            <div>
+              <h3 className="text-base font-extrabold text-white">{t?.dashboard?.confirmDelete?.deleteContactTitle || "حذف الرسالة؟"}</h3>
+              <p className="text-xs text-slate-400 mt-2 leading-relaxed">
+                {t?.dashboard?.confirmDelete?.deleteContactMessage?.replace("{name}", contactToDelete.name) || `هل أنت متأكد من حذف رسالة ${contactToDelete.name}؟ هذا الإجراء لا يمكن التراجع عنه.`}
+              </p>
+            </div>
+            <div className="flex items-center gap-3">
               <button
-                onClick={handleLogout}
-                className="shrink-0 text-xs px-3 py-2.5 rounded-xl transition-colors"
-                style={{
-                  background: "rgba(255,255,255,0.04)",
-                  border: "1px solid rgba(255,255,255,0.08)",
-                  color: "#4a5568",
-                  cursor: "pointer",
-                }}
-                onMouseEnter={(e) => (e.currentTarget.style.color = "#e2e8f0")}
-                onMouseLeave={(e) => (e.currentTarget.style.color = "#4a5568")}
-                title="Lock dashboard"
+                onClick={() => setContactToDelete(null)}
+                disabled={deleting}
+                className="flex-1 py-2.5 px-4 rounded-xl text-xs font-bold bg-slate-950 text-slate-300 hover:bg-slate-800 border border-slate-800 transition-all cursor-pointer disabled:opacity-50"
               >
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
-                  <path
-                    d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4M16 17l5-5-5-5M21 12H9"
-                    stroke="currentColor"
-                    strokeWidth="1.8"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
+                {t?.dashboard?.confirmDelete?.cancel || "إلغاء"}
+              </button>
+              <button
+                onClick={confirmDeleteContact}
+                disabled={deleting}
+                className="flex-1 py-2.5 px-4 rounded-xl text-xs font-bold bg-linear-to-r from-rose-600 to-red-600 text-white hover:from-rose-500 hover:to-red-500 shadow-md shadow-rose-950/40 transition-all cursor-pointer disabled:opacity-50 flex items-center justify-center gap-2"
+              >
+                {deleting ? <Loader2 className="w-4 h-4 animate-spin" /> : t?.dashboard?.confirmDelete?.confirmDelete || "نعم، حذف"}
               </button>
             </div>
           </div>
-
-          {/* ── Grid ── */}
-          {filtered.length === 0 ? (
-            <EmptyState isSearch={!!search} />
-          ) : (
-            <div className="grid sm:grid-cols-2 xl:grid-cols-3 gap-4">
-              {filtered.map((msg, i) => (
-                <MessageCard
-                  key={msg._id}
-                  msg={msg}
-                  onDelete={handleDelete}
-                  onView={setSelectedMsg}
-                  style={{ animation: `fadeUp 0.35s ${i * 0.04}s ease both` }}
-                />
-              ))}
-            </div>
-          )}
         </div>
-      </PageBg>
-
-      {/* ── Modal ── */}
-      {selectedMsg && (
-        <MessageModal
-          msg={selectedMsg}
-          onClose={() => setSelectedMsg(null)}
-          onDelete={handleDelete}
-        />
       )}
-    </>
+    </div>
   );
 }

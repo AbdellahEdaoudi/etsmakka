@@ -1,0 +1,113 @@
+{
+  "metaTitle": "مؤسسة مكة المكرمة | لوحة التحكم",
+  "loginMetaTitle": "مؤسسة مكة المكرمة | تسجيل الدخول",
+  "login": {
+    "title": "مؤسسة مكة المكرمة",
+    "subtitle": "لوحة التحكم الخاصة بإدارة المؤسسة",
+    "cardTitle": "تسجيل الدخول للإدارة",
+    "emailLabel": "البريد الإلكتروني للإدارة",
+    "emailPlaceholder": "admin@etsmakka.com",
+    "passwordLabel": "كلمة المرور",
+    "passwordPlaceholder": "••••••••",
+    "signInBtn": "دخول لوحة التحكم",
+    "signingIn": "جاري الدخول...",
+    "fillAllFields": "يرجى كتابة البريد الإلكتروني وكلمة المرور.",
+    "invalidCredentials": "البريد الإلكتروني أو كلمة المرور غير صحيحة.",
+    "rateLimitExceeded": "تم تجاوز عدد محاولات الدخول المسموح بها. يرجى الانتظار."
+  },
+  "dashboard": {
+    "brandName": "مؤسسة مكة المكرمة",
+    "subBrandName": "التعليم الأولي ودروس الدعم",
+    "portalTitle": "لوحة إدارة واستقبال الرسائل",
+    "refreshTitle": "تحديث البيانات",
+    "logout": "تسجيل الخروج",
+    "loadingData": "جاري تحميل بيانات المؤسسة...",
+    "tabs": {
+      "messages": "رسائل واستفسارات أولياء الأمور"
+    },
+    "search": {
+      "contactsPlaceholder": "بحث باسم ولي الأمر، البريد، رقم الهاتف أو محتوى الرسالة..."
+    },
+    "filters": {
+      "title": "تصفية حسب:",
+      "all": "جميع الرسائل",
+      "unread": "غير المقروءة",
+      "starred": "المميزة بنجمة"
+    },
+    "pagination": {
+      "prev": "← السابق",
+      "next": "التالي →",
+      "total": "الإجمالي:"
+    },
+    "table": {
+      "status": "الحالة",
+      "sender": "ولي الأمر / المرسل",
+      "phone": "رقم الهاتف",
+      "messagePreview": "الرسالة والموضوع",
+      "date": "التاريخ",
+      "actions": "إجراءات"
+    },
+    "empty": {
+      "noContactsTitle": "لا توجد رسائل واردة حالياً",
+      "noContactsDesc": "جميع الاستفسارات تم التعامل معها، أو لا توجد نتائج للبحث."
+    },
+    "actions": {
+      "star": "تمييز بنجمة",
+      "unstar": "إزالة النجمة",
+      "markAsRead": "تحديد كمقروء",
+      "markAsUnread": "تحديد كغير مقروء",
+      "read": "مقروء",
+      "unread": "جديد",
+      "deleteMessage": "حذف الرسالة",
+      "tapToRead": "اضغط للتفاصيل",
+      "newBadge": "جديد",
+      "viewDetails": "عرض التفاصيل",
+      "callPhone": "اتصال بالهاتف",
+      "whatsappMessage": "مراسلة عبر الواتساب"
+    },
+    "modal": {
+      "inquiryDetails": "تفاصيل استفسار ولي الأمر",
+      "subject": "الموضوع",
+      "senderName": "اسم ولي الأمر",
+      "emailAddress": "البريد الإلكتروني",
+      "phoneNumber": "رقم الهاتف",
+      "messageContent": "نص الاستفسار",
+      "received": "تاريخ ووقت الاستلام",
+      "notAvailable": "غير متوفر",
+      "delete": "حذف الرسالة",
+      "star": "تمييز بنجمة",
+      "unstar": "إزالة النجمة",
+      "translateMessage": "ترجمة الرسالة",
+      "showOriginal": "عرض النص الأصلي",
+      "showTranslation": "عرض الترجمة",
+      "translating": "جاري الترجمة...",
+      "reTranslate": "إعادة الترجمة",
+      "translatedTo": "الترجمة إلى"
+    },
+    "confirmDelete": {
+      "deleteContactTitle": "تأكيد حذف الرسالة",
+      "deleteContactMessage": "هل أنت متأكد من حذف رسالة {name} من قاعدة البيانات نهائياً؟",
+      "cancel": "إلغاء",
+      "confirmDelete": "نعم، حذف نهائي",
+      "deleting": "جاري الحذف..."
+    },
+    "toasts": {
+      "sessionExpired": "انتهت الجلسة. يرجى إعادة تسجيل الدخول.",
+      "unauthorized": "غير مصرح. يرجى تسجيل الدخول.",
+      "forbidden": "غير مسموح لك بالوصول لهذه الصفحة.",
+      "networkError": "خطأ في الاتصال بالخادم.",
+      "requestSetupError": "حدث خطأ في الطلب.",
+      "dashboardLoadFailed": "تعذر تحميل بيانات الإدارة.",
+      "signedOut": "تم تسجيل الخروج بنجاح",
+      "markedStarred": "تم التمييز بنجمة ⭐",
+      "removedStarred": "تمت إزالة النجمة",
+      "starUpdateFailed": "تعذر تحديث النجمة.",
+      "markedRead": "تم التحديد كمقروء ✔",
+      "markedUnread": "تم التحديد كغير مقروء",
+      "readUpdateFailed": "تعذر تحديث حالة القراءة.",
+      "messageDeleted": "تم حذف الرسالة بنجاح 🗑",
+      "messageDeleteFailed": "تعذر حذف الرسالة.",
+      "operationFailed": "فشلت العملية المطلوبة."
+    }
+  }
+}

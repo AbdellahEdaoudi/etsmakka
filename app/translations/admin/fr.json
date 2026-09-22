@@ -1,0 +1,113 @@
+{
+  "metaTitle": "Établissement Makkah | Tableau de Bord",
+  "loginMetaTitle": "Établissement Makkah | Connexion",
+  "login": {
+    "title": "Établissement Makka Al-Mukarramah",
+    "subtitle": "Portail Administratif — Préscolaire & Soutien Scolaire",
+    "cardTitle": "Connexion Administrateur",
+    "emailLabel": "Adresse e-mail Admin",
+    "emailPlaceholder": "admin@etsmakka.com",
+    "passwordLabel": "Mot de passe",
+    "passwordPlaceholder": "••••••••",
+    "signInBtn": "Accéder au Tableau de Bord",
+    "signingIn": "Connexion en cours...",
+    "fillAllFields": "Veuillez saisir votre e-mail et mot de passe.",
+    "invalidCredentials": "E-mail ou mot de passe incorrect.",
+    "rateLimitExceeded": "Trop de tentatives. Veuillez réessayer plus tard."
+  },
+  "dashboard": {
+    "brandName": "Établissement Makka Al-Mukarramah",
+    "subBrandName": "Enseignement Préscolaire & Cours de Soutien",
+    "portalTitle": "Gestion des Demandes Parentales",
+    "refreshTitle": "Actualiser",
+    "logout": "Déconnexion",
+    "loadingData": "Chargement des données...",
+    "tabs": {
+      "messages": "Messages & Demandes des Parents"
+    },
+    "search": {
+      "contactsPlaceholder": "Rechercher par nom, e-mail, téléphone ou message..."
+    },
+    "filters": {
+      "title": "Filtrer par :",
+      "all": "Tous les messages",
+      "unread": "Non lus",
+      "starred": "Marqués"
+    },
+    "pagination": {
+      "prev": "← Précédent",
+      "next": "Suivant →",
+      "total": "Total :"
+    },
+    "table": {
+      "status": "Statut",
+      "sender": "Parent / Expéditeur",
+      "phone": "Téléphone",
+      "messagePreview": "Sujet & Message",
+      "date": "Date",
+      "actions": "Actions"
+    },
+    "empty": {
+      "noContactsTitle": "Aucun message reçu",
+      "noContactsDesc": "Toutes les demandes ont été traitées ou aucun résultat ne correspond à votre recherche."
+    },
+    "actions": {
+      "star": "Marquer",
+      "unstar": "Démarquer",
+      "markAsRead": "Marquer comme lu",
+      "markAsUnread": "Marquer comme non lu",
+      "read": "Lu",
+      "unread": "Nouveau",
+      "deleteMessage": "Supprimer le message",
+      "tapToRead": "Cliquer pour lire",
+      "newBadge": "NOUVEAU",
+      "viewDetails": "Voir les détails",
+      "callPhone": "Appeler",
+      "whatsappMessage": "Message WhatsApp"
+    },
+    "modal": {
+      "inquiryDetails": "Détails de la demande",
+      "subject": "Sujet",
+      "senderName": "Nom du parent",
+      "emailAddress": "Adresse e-mail",
+      "phoneNumber": "Numéro de téléphone",
+      "messageContent": "Contenu du message",
+      "received": "Date et heure de réception",
+      "notAvailable": "N/D",
+      "delete": "Supprimer",
+      "star": "Marquer",
+      "unstar": "Démarquer",
+      "translateMessage": "Traduire le message",
+      "showOriginal": "Afficher l'original",
+      "showTranslation": "Afficher la traduction",
+      "translating": "Traduction en cours...",
+      "reTranslate": "Retraduire",
+      "translatedTo": "Traduire en"
+    },
+    "confirmDelete": {
+      "deleteContactTitle": "Supprimer le message ?",
+      "deleteContactMessage": "Confirmez-vous la suppression définitive du message de {name} ?",
+      "cancel": "Annuler",
+      "confirmDelete": "Oui, Supprimer",
+      "deleting": "Suppression..."
+    },
+    "toasts": {
+      "sessionExpired": "Session expirée. Veuillez vous reconnecter.",
+      "unauthorized": "Non autorisé. Veuillez vous connecter.",
+      "forbidden": "Interdit : Accès refusé.",
+      "networkError": "Erreur réseau.",
+      "requestSetupError": "Erreur de requête.",
+      "dashboardLoadFailed": "Impossible de charger les données.",
+      "signedOut": "Déconnexion réussie",
+      "markedStarred": "Marqué comme favori ⭐",
+      "removedStarred": "Favori supprimé",
+      "starUpdateFailed": "Échec de la mise à jour.",
+      "markedRead": "Marqué comme lu ✔",
+      "markedUnread": "Marqué comme non lu",
+      "readUpdateFailed": "Échec de la mise à jour.",
+      "messageDeleted": "Message supprimé avec succès",
+      "messageDeleteFailed": "Échec de la suppression.",
+      "operationFailed": "Opération échouée."
+    }
+  }
+}

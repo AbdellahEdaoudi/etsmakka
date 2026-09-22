@@ -1,95 +1,118 @@
 {
   "meta": {
-    "title": "Stichting Makka Al Mukarramah - Laayoune",
-    "description": "Makka Al Mukarramah Foundation biedt een uitstekende educatieve omgeving voor kinderen in Laayoune. Wij bieden moderne peuter- en kleuterprogramma's.",
-    "keywords": "kleuterschool, peuterspeelzaal, Laayoune, Stichting Makka, onderwijs, kinderen"
+    "title": "Voorschools Instituut Makka Al-Mukarramah - Laayoune",
+    "description": "Voorschools Instituut Makka Al-Mukarramah biedt uitstekend voorschools onderwijs in Laayoune. Peuterspeelzaal, kleuterschool en professionele bijlessen voor klas 1 t/m 6 van de basisschool.",
+    "keywords": "peuterspeelzaal, kleuterschool, Laayoune, Instituut Makka, bijles, basisonderwijs"
   },
   "header": {
-    "title": "Stichting Makka Al Mukarramah - Laayoune",
-    "subtitle": "Voor Onderwijs en Voorschool",
+    "title": "Instituut Makka",
+    "subtitle": "Voorschools Onderwijs & Bijlessen",
     "nav": {
-      "about": "Over ons",
-      "programs": "Programma's",
-      "contact": "Neem contact op"
+      "about": "Over Ons",
+      "programs": "Kleuterschool",
+      "support": "Bijlessen",
+      "contact": "Contact"
     }
   },
   "hero": {
-    "badge": "Uitstekende Omgeving",
+    "badge": "Voorschools Onderwijs & Bijlessen",
     "title_1": "Stralende Toekomst",
-    "title_2": "Voor uw Kinderen",
-    "description": "Wij bieden een veilige en stimulerende educatieve omgeving die de basisvaardigheden van kinderen helpt ontwikkelen via moderne programma's.",
-    "cta_contact": "Neem contact op",
-    "cta_programs": "Ontdek Programma's",
+    "title_2": "Voor Uw Kinderen",
+    "description": "Wij bieden een veilige en stimulerende leeromgeving voor jonge kinderen, evenals doelgerichte bijlessen voor klas 1 t/m 6 van de basisschool, persoonlijk gegeven door de oprichter van het instituut.",
+    "cta_contact": "Contact",
+    "cta_programs": "Programma's",
     "cta_arrow": "→",
     "rating": "Beoordeling 4.9",
-    "image_alt": "Blije kinderen op de kleuterschool"
+    "image_alt": "Blije kinderen",
+    "highlight_1": "Kleuterschool & Peuterspeelzaal",
+    "highlight_2": "Bijlessen (Klas 1 t/m 6)",
+    "highlight_3": "Persoonlijke Begeleiding"
   },
   "stats": {
-    "satisfaction": "Tevredenheid Ouders",
-    "graduates": "Gediplomeerde Kinderen",
-    "experience": "Jaren Ervaring"
+    "satisfaction": "Tevredenheid van Ouders",
+    "graduates": "Geslaagde Leerlingen",
+    "experience": "Jaar Ervaring"
   },
   "about": {
-    "title": "Over ons",
-    "p1": "Makka Al Mukarramah Foundation voor Onderwijs en Voorschoolse opvang is een vooraanstaande onderwijsinstelling in Laayoune, Marokko.",
-    "p2": "Wij geloven dat de vroege jaren in het leven van een kind de essentiële basis vormen voor het opbouwen van hun karakter en toekomst.",
-    "badge": "Over ons",
-    "quote": "Wij geloven dat elk kind een uniek talent in zich draagt dat wacht om ontdekt te worden.",
+    "title": "Over Ons",
+    "p1": "Voorschools Instituut Makka Al-Mukarramah is een vooraanstaand onderwijsinstituut in Laayoune, Marokko, toegewijd aan de ontwikkeling van jonge kinderen en academisch succes.",
+    "p2": "Naast ons voorschoolse programma geeft de oprichter van het instituut persoonlijk hoogwaardige bijlessen voor basisschoolleerlingen van klas 1 t/m 6.",
+    "badge": "Over Ons",
+    "quote": "Wij geloven dat ieder kind een uniek talent heeft dat met de juiste begeleiding tot volle bloei komt.",
     "values": [
-      { "icon": "🌱", "title": "Leren door Ontdekken", "text": "Interactieve activiteiten die nieuwsgierigheid en kennisliefde stimuleren" },
-      { "icon": "🤝", "title": "Veilige en Liefdevolle Omgeving", "text": "We geven prioriteit aan het emotionele en sociale welzijn van het kind" },
-      { "icon": "🎨", "title": "Creativiteit en Kunst", "text": "We ontketenen creatieve energie door kunst en ambachten" },
-      { "icon": "👨‍👩‍👧", "title": "Familiepartnerschap", "text": "Continue communicatie met ouders om de voortgang van het kind bij te houden" }
+      { "icon": "📝", "title": "Bijlessen & Ondersteuning", "text": "Kwalitatieve bijlessen voor klas 1 t/m 6 van de basisschool, rechtstreeks gegeven door de oprichter" },
+      { "icon": "🌱", "title": "Leren door Ontdekken", "text": "Interactieve activiteiten die nieuwsgierigheid en leergierigheid stimuleren" },
+      { "icon": "🤝", "title": "Veilige Omgeving", "text": "Het welzijn en de schoolprestaties van uw kind staan bij ons centraal" },
+      { "icon": "👨‍👩‍👧", "title": "Samenwerking met Ouders", "text": "Duidelijke communicatie met ouders om de voortgang van het kind te volgen" }
     ]
   },
   "programs": {
-    "title": "Onze Programma's",
-    "subtitle": "Geïntegreerde onderwijsprogramma's voor alle leeftijdsgroepen",
+    "title": "Kleuterprogramma's",
+    "subtitle": "Geïntegreerde onderwijsprogramma's voor de vroegkinderlijke ontwikkeling",
     "items": [
       {
-        "title": "Tweede Voorbereidend",
-        "description": "Uitgebreide voorbereiding op de basisschool voor kinderen van 5-6 jaar",
+        "title": "Bovenbouw Kleuterschool",
+        "description": "Voorbereiding op de basisschool (5-6 jaar)",
         "icon": "🎓"
       },
       {
-        "title": "Eerste Voorbereidend",
-        "description": "Ontwikkeling van basisvaardigheden voor kinderen van 4-5 jaar",
+        "title": "Onderbouw Kleuterschool",
+        "description": "Ontwikkeling van basisvaardigheden (4-5 jaar)",
         "icon": "📚"
       },
       {
-        "title": "Kleuterschool",
-        "description": "Geïntegreerd onderwijsprogramma voor kinderen van 3-4 jaar",
+        "title": "Peuterspeelzaal",
+        "description": "Programma voor peuters (3-4 jaar)",
         "icon": "🌱"
       }
     ],
-    "more": "Lees meer"
+    "more": "Meer informatie"
+  },
+  "support": {
+    "badge": "Exclusief 🎓",
+    "title": "Bijlessen Basisschool (Klas 1 - 6)",
+    "subtitle": "Doelgerichte ondersteuning en bijlessen van klas 1 t/m 6, persoonlijk verzorgd door de oprichter",
+    "description": "Wij begeleiden uw kinderen gedurende hun hele basisschooltijd. De oprichter geeft persoonlijk bijles om achterstanden in te lopen en uitstekende resultaten te behalen.",
+    "features": [
+      "Persoonlijke begeleiding door de oprichter",
+      "Dekking van klas 1 t/m 6 van de basisschool",
+      "Heldere uitleg & doeltreffende studiemethoden",
+      "Gerichte voorbereiding op toetsen en examens"
+    ],
+    "card_title": "Basisonderwijs",
+    "card_subtitle": "Van klas 1 tot en met 6 van de basisschool",
+    "card_note": "Directe persoonlijke begeleiding door de oprichter"
   },
   "contact": {
-    "title": "Neem contact op",
-    "subtitle": "Wij zijn er om al uw vragen te beantwoorden",
+    "title": "Contact",
+    "subtitle": "Wij staan klaar om al uw vragen over onze kleuterschool en bijlessen te beantwoorden.",
     "phone": "Telefoon",
+    "whatsapp": "WhatsApp",
     "email": "E-mail",
     "location": "Locatie",
     "address": "Quartier Al Wahda 01, Rue Araucaria No. 02 - Laayoune",
     "form": {
       "name": "Volledige Naam",
-      "name_placeholder": "Voer uw volledige naam in",
+      "name_placeholder": "Vul uw volledige naam in",
       "email": "E-mailadres",
       "email_placeholder": "voorbeeld@email.com",
+      "phone": "Telefoonnummer",
+      "phone_placeholder": "0612345678",
       "subject": "Onderwerp",
       "subject_placeholder": "Onderwerp van uw bericht",
       "message": "Bericht",
-      "message_placeholder": "Hoe kunnen we u helpen?",
-      "submit": "Bericht Verzenden",
+      "message_placeholder": "Hoe kunnen wij u helpen?",
+      "submit": "Bericht verzenden",
       "sending": "Verzenden...",
       "sent": "Succesvol verzonden",
-      "success_msg": "Bedankt! Uw bericht is succesvol verzonden.",
+      "success_msg": "Uw bericht is succesvol verzonden.",
       "error_required": "Dit veld is verplicht",
-      "error_email": "Voer een geldig e-mailadres in",
+      "error_email": "Vul een geldig e-mailadres in",
+      "error_phone": "Vul een geldig telefoonnummer in",
       "error_server": "Er is iets misgegaan. Probeer het later opnieuw."
     }
   },
   "footer": {
-    "rights": "Alle rechten voorbehouden — Stichting Makka voor Onderwijs en Voorschool — Laayoune"
+    "rights": "Alle rechten voorbehouden — Voorschools Instituut Makka Al-Mukarramah — Laayoune"
   }
 }

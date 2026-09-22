@@ -1,28 +1,32 @@
 {
   "meta": {
-    "title": "Fundación Makka Al Mukarramah - El Aaiún",
-    "description": "La Fundación Makka Al Mukarramah ofrece un entorno educativo distinguido para los niños de El Aaiún. Ofrecemos programas modernos de preescolar y guardería.",
-    "keywords": "jardín de infancia, preescolar, El Aaiún, Fundación Makka, educación temprana, niños, crianza"
+    "title": "Institución de Educación Preescolar Makka Al Mukarramah - El Aaiún",
+    "description": "La Institución de Educación Preescolar Makka Al Mukarramah ofrece un entorno educativo distinguido en El Aaiún. Educación infantil, preescolar y clases de apoyo escolar del 1º al 6º curso de primaria a cargo del fundador.",
+    "keywords": "jardín de infancia, preescolar, El Aaiún, Institución Preescolar Makka, educación infantil, clases de apoyo, primaria"
   },
   "header": {
-    "title": "Fundación Makka Al Mukarramah - El Aaiún",
-    "subtitle": "Para la Educación y Preescolar",
+    "title": "Institución Preescolar Makka",
+    "subtitle": "Educación Preescolar y Apoyo",
     "nav": {
       "about": "Sobre nosotros",
-      "programs": "Programas",
+      "programs": "Preescolar",
+      "support": "Clases de apoyo",
       "contact": "Contacto"
     }
   },
   "hero": {
-    "badge": "Entorno Distinguido",
+    "badge": "Educación Preescolar y Clases de Apoyo",
     "title_1": "Futuro Brillante",
     "title_2": "Para Sus Hijos",
-    "description": "Ofrecemos un entorno educativo seguro y estimulante que ayuda a desarrollar las habilidades básicas de los niños a través de programas educativos modernos.",
+    "description": "Ofrecemos un entorno seguro en educación preescolar e infantil, así como clases de apoyo escolar personalizadas del 1º al 6º curso de primaria impartidas por el propio fundador.",
     "cta_contact": "Contáctenos",
     "cta_programs": "Descubrir",
     "cta_arrow": "→",
     "rating": "Calificación 4.9",
-    "image_alt": "Niños felices"
+    "image_alt": "Niños felices",
+    "highlight_1": "Preescolar y Guardería",
+    "highlight_2": "Clases de apoyo (1-6)",
+    "highlight_3": "Orientación personal"
   },
   "stats": {
     "satisfaction": "Satisfacción de Padres",
@@ -31,20 +35,20 @@
   },
   "about": {
     "title": "Sobre nosotros",
-    "p1": "La Fundación Makka Al Mukarramah para la Educación y el Preescolar es una institución educativa líder en El Aaiún, Marruecos. Fundada con la visión de ofrecer una educación de alta calidad en la primera infancia, con enfoque en el desarrollo de las mentes jóvenes.",
-    "p2": "Creemos que los primeros años de vida de un niño son la base esencial para construir su carácter y su futuro.",
+    "p1": "La Institución de Educación Preescolar Makka Al Mukarramah es un centro educativo de referencia en El Aaiún, Marruecos, dedicado al aprendizaje infantil y al éxito académico desde la primera infancia.",
+    "p2": "Además del programa de preescolar, el fundador de la institución imparte personalmente clases de apoyo escolar con un alto nivel profesional para alumnos de 1º a 6º curso de primaria.",
     "badge": "Sobre nosotros",
-    "quote": "Creemos que cada niño lleva dentro un talento único que espera ser descubierto.",
+    "quote": "Creemos que cada niño tiene un talento único y una atención orientada desde el preescolar garantiza su éxito académico.",
     "values": [
+      { "icon": "📝", "title": "Clases de Apoyo Escolar", "text": "Clases de refuerzo del 1º al 6º de primaria impartidas directamente por el fundador de la institución" },
       { "icon": "🌱", "title": "Aprendizaje por Exploración", "text": "Actividades interactivas que estimulan la curiosidad y el amor por el conocimiento" },
-      { "icon": "🤝", "title": "Entorno Seguro y Amoroso", "text": "Nos preocupamos por el bienestar emocional y social del niño ante todo" },
-      { "icon": "🎨", "title": "Creatividad y Arte", "text": "Liberamos la energía creativa a través del arte y las manualidades" },
+      { "icon": "🤝", "title": "Entorno Seguro y Amoroso", "text": "Nos preocupamos por el bienestar emocional y académico del niño" },
       { "icon": "👨‍👩‍👧", "title": "Asociación Familiar", "text": "Comunicación continua con los padres para seguir el progreso del niño" }
     ]
   },
   "programs": {
-    "title": "Nuestros Programas",
-    "subtitle": "Programas educativos integrados para todas las etapas de edad",
+    "title": "Programas Preescolares",
+    "subtitle": "Programas de educación infantil integrados",
     "items": [
       {
         "title": "Segundo Preliminar",
@@ -64,10 +68,26 @@
     ],
     "more": "Ver más"
   },
+  "support": {
+    "badge": "Exclusivo de la Institución 🎓",
+    "title": "Clases de Apoyo Escolar (1º - 6º Primaria)",
+    "subtitle": "Clases de refuerzo académico impartidas con alta profesionalidad por el fundador de la institución",
+    "description": "Acompañamos a sus hijos durante la educación primaria (de 1º a 6º curso). El fundador imparte clases de apoyo focalizadas para consolidar los conocimientos, superar dificultades y lograr excelentes resultados.",
+    "features": [
+      "Supervisión personal por el fundador",
+      "Cobertura completa del 1º al 6º curso de primaria",
+      "Explicaciones claras y metodología eficaz",
+      "Preparación rigurosa para exámenes"
+    ],
+    "card_title": "Educación Primaria",
+    "card_subtitle": "Del 1º al 6º curso de primaria",
+    "card_note": "Orientación personal directa del fundador"
+  },
   "contact": {
     "title": "Contáctenos",
-    "subtitle": "Estamos aquí para responder a todas sus consultas y brindarle el apoyo necesario.",
+    "subtitle": "Estamos aquí para responder a sus preguntas sobre preescolar y clases de apoyo.",
     "phone": "Teléfono",
+    "whatsapp": "WhatsApp",
     "email": "Correo",
     "location": "Ubicación",
     "address": "Quartier Al Wahda 01, Rue Araucaria No. 02 - Laayoune",
@@ -76,6 +96,8 @@
       "name_placeholder": "Ingrese su nombre completo",
       "email": "Correo Electrónico",
       "email_placeholder": "ejemplo@email.com",
+      "phone": "Número de Teléfono",
+      "phone_placeholder": "0612345678",
       "subject": "Asunto",
       "subject_placeholder": "Asunto de su mensaje",
       "message": "Mensaje",
@@ -83,13 +105,14 @@
       "submit": "Enviar Mensaje",
       "sending": "Enviando...",
       "sent": "Enviado con éxito",
-      "success_msg": "¡Gracias! Su mensaje ha sido enviado con éxito.",
+      "success_msg": "Su mensaje ha sido enviado con éxito.",
       "error_required": "Este campo es obligatorio",
       "error_email": "Por favor, introduzca una dirección de correo electrónico válida",
+      "error_phone": "Por favor, introduzca un número de teléfono válido",
       "error_server": "Algo salió mal. Por favor, inténtelo de nuevo más tarde."
     }
   },
   "footer": {
-    "rights": "Todos los derechos reservados — Fundación Makka — El Aaiún"
+    "rights": "Todos los derechos reservados — Institución de Educación Preescolar Makka — El Aaiún"
   }
 }

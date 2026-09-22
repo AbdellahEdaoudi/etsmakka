@@ -21,27 +21,26 @@ const amiri = Amiri({
     display: "swap",
 })
 
-export async function generateMetadata({ params }) {
-
+export async function generateMetadata() {
     const lang = 'ar';
     const dict = await getTranslation(lang);
 
     return {
-        metadataBase: new URL('https://makka-edu.vercel.app'),
+        metadataBase: new URL('https://etsmakka.vercel.app'),
         title: {
             template: `%s | ${dict.meta.title}`,
-            default: dict.meta.title, // Default title
+            default: dict.meta.title,
         },
         description: dict.meta.description,
         keywords: dict.meta.keywords ? dict.meta.keywords.split(',') : [],
         openGraph: {
             title: dict.meta.title,
             description: dict.meta.description,
-            url: `https://makka-edu.vercel.app`,
-            siteName: "مؤسسة مكة المكرمة / Makka Foundation",
+            url: `https://etsmakka.vercel.app`,
+            siteName: "Établissement Makka d'Enseignement Préscolaire / مؤسسة مكة المكرمة للتربية والتعليم الأولي",
             images: [
                 {
-                    url: "https://makka-edu.vercel.app/Logo.png",
+                    url: "https://etsmakka.vercel.app/etsmakka.jpeg",
                     alt: dict.meta.title,
                 },
             ],
@@ -52,37 +51,25 @@ export async function generateMetadata({ params }) {
             card: 'summary_large_image',
             title: dict.meta.title,
             description: dict.meta.description,
-            images: ["https://makka-edu.vercel.app/Logo.png"],
+            images: ["https://etsmakka.vercel.app/etsmakka.jpeg"],
         },
         alternates: {
-            canonical: `https://makka-edu.vercel.app`,
+            canonical: `https://etsmakka.vercel.app`,
             languages: {
-                'en': 'https://makka-edu.vercel.app/en',
-                'de': 'https://makka-edu.vercel.app/de',
-                'fr': 'https://makka-edu.vercel.app/fr',
-                'es': 'https://makka-edu.vercel.app/es',
-                'sv': 'https://makka-edu.vercel.app/sv',
-                'vi': 'https://makka-edu.vercel.app/vi',
-                'pt': 'https://makka-edu.vercel.app/pt',
-                'it': 'https://makka-edu.vercel.app/it',
-                'nl': 'https://makka-edu.vercel.app/nl',
-                'ar': 'https://makka-edu.vercel.app',
-                'ru': 'https://makka-edu.vercel.app/ru',
-                'zh': 'https://makka-edu.vercel.app/zh',
-                'ja': 'https://makka-edu.vercel.app/ja',
-                'hi': 'https://makka-edu.vercel.app/hi',
-                'tr': 'https://makka-edu.vercel.app/tr',
-                'ko': 'https://makka-edu.vercel.app/ko',
-                'id': 'https://makka-edu.vercel.app/id',
-                'pl': 'https://makka-edu.vercel.app/pl',
+                'ar': 'https://etsmakka.vercel.app/ar',
+                'fr': 'https://etsmakka.vercel.app/fr',
+                'en': 'https://etsmakka.vercel.app/en',
+                'es': 'https://etsmakka.vercel.app/es',
+                'de': 'https://etsmakka.vercel.app/de',
+                'it': 'https://etsmakka.vercel.app/it',
             },
         },
     };
 }
 
-export default async function RootLayout({ children, params }) {
+export default async function RootLayout({ children }) {
     return (
-        <html>
+        <html data-scroll-behavior="smooth">
             <head>
                 <script
                     type="application/ld+json"
@@ -90,16 +77,16 @@ export default async function RootLayout({ children, params }) {
                         __html: JSON.stringify({
                             "@context": "https://schema.org",
                             "@type": "EducationalOrganization",
-                            "name": "Makka Foundation / مؤسسة مكة المكرمة",
-                            "url": "https://makka-edu.vercel.app",
-                            "logo": "https://makka-edu.vercel.app/Logo.png",
+                            "name": "Établissement Makka d'Enseignement Préscolaire / مؤسسة مكة المكرمة للتربية والتعليم الأولي",
+                            "url": "https://etsmakka.vercel.app",
+                            "logo": "https://etsmakka.vercel.app/etsmakka.jpeg",
                             "sameAs": [],
                             "contactPoint": {
                                 "@type": "ContactPoint",
                                 "telephone": "+212615075314",
                                 "contactType": "customer service",
                                 "areaServed": "MA",
-                                "availableLanguage": ["Arabic", "English", "French", "German", "Spanish", "Swedish", "Vietnamese", "Portuguese", "Italian", "Dutch", "Russian", "Chinese", "Japanese", "Hindi", "Turkish", "Korean", "Indonesian", "Polish"]
+                                "availableLanguage": ["Arabic", "French", "English", "Spanish", "German", "Italian"]
                             },
                             "address": {
                                 "@type": "PostalAddress",

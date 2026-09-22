@@ -1,0 +1,113 @@
+{
+  "metaTitle": "Makkah-Einrichtung | Verwaltungspanel",
+  "loginMetaTitle": "Makkah-Einrichtung | Anmelden",
+  "login": {
+    "title": "Makkah-Einrichtung Al-Mukarramah",
+    "subtitle": "Verwaltungsportal — Vorschule & Förderunterricht",
+    "cardTitle": "Admin-Anmeldung",
+    "emailLabel": "Admin-E-Mail",
+    "emailPlaceholder": "admin@etsmakka.com",
+    "passwordLabel": "Passwort",
+    "passwordPlaceholder": "••••••••",
+    "signInBtn": "Portal aufrufen",
+    "signingIn": "Anmelden...",
+    "fillAllFields": "Bitte alle Felder ausfüllen.",
+    "invalidCredentials": "E-Mail oder Passwort falsch.",
+    "rateLimitExceeded": "Zu viele Versuche. Bitte später erneut versuchen."
+  },
+  "dashboard": {
+    "brandName": "Makkah-Einrichtung Al-Mukarramah",
+    "subBrandName": "Vorschule & Förderunterricht",
+    "portalTitle": "Elternanfragen-Verwaltung",
+    "refreshTitle": "Aktualisieren",
+    "logout": "Abmelden",
+    "loadingData": "Daten werden geladen...",
+    "tabs": {
+      "messages": "Elternanfragen"
+    },
+    "search": {
+      "contactsPlaceholder": "Nach Name, E-Mail, Telefon oder Inhalt suchen..."
+    },
+    "filters": {
+      "title": "Filtern nach:",
+      "all": "Alle Anfragen",
+      "unread": "Ungelesen",
+      "starred": "Markiert"
+    },
+    "pagination": {
+      "prev": "← Zurück",
+      "next": "Weiter →",
+      "total": "Gesamt:"
+    },
+    "table": {
+      "status": "Status",
+      "sender": "Elternteil / Absender",
+      "phone": "Telefon",
+      "messagePreview": "Betreff & Nachricht",
+      "date": "Datum",
+      "actions": "Aktionen"
+    },
+    "empty": {
+      "noContactsTitle": "Keine Anfragen vorhanden",
+      "noContactsDesc": "Alle Anfragen wurden bearbeitet oder keine Ergebnisse gefunden."
+    },
+    "actions": {
+      "star": "Markieren",
+      "unstar": "Markierung entfernen",
+      "markAsRead": "Als gelesen markieren",
+      "markAsUnread": "Als ungelesen markieren",
+      "read": "Gelesen",
+      "unread": "Neu",
+      "deleteMessage": "Anfrage löschen",
+      "tapToRead": "Zum Lesen klicken",
+      "newBadge": "NEU",
+      "viewDetails": "Details anzeigen",
+      "callPhone": "Anrufen",
+      "whatsappMessage": "WhatsApp-Nachricht"
+    },
+    "modal": {
+      "inquiryDetails": "Anfragendetails",
+      "subject": "Betreff",
+      "senderName": "Name des Elternteils",
+      "emailAddress": "E-Mail-Adresse",
+      "phoneNumber": "Telefonnummer",
+      "messageContent": "Nachrichteninhalt",
+      "received": "Empfangsdatum und -uhrzeit",
+      "notAvailable": "N/A",
+      "delete": "Löschen",
+      "star": "Markieren",
+      "unstar": "Markierung entfernen",
+      "translateMessage": "Nachricht übersetzen",
+      "showOriginal": "Original anzeigen",
+      "showTranslation": "Übersetzung anzeigen",
+      "translating": "Übersetzen...",
+      "reTranslate": "Neu übersetzen",
+      "translatedTo": "Übersetzen nach"
+    },
+    "confirmDelete": {
+      "deleteContactTitle": "Anfrage löschen?",
+      "deleteContactMessage": "Sicher, die Anfrage von {name} permanent löschen?",
+      "cancel": "Abbrechen",
+      "confirmDelete": "Ja, löschen",
+      "deleting": "Wird gelöscht..."
+    },
+    "toasts": {
+      "sessionExpired": "Sitzung abgelaufen. Bitte erneut anmelden.",
+      "unauthorized": "Nicht autorisiert. Bitte anmelden.",
+      "forbidden": "Verboten: Zugriff verweigert.",
+      "networkError": "Netzwerkfehler.",
+      "requestSetupError": "Fehler bei der Anfrage.",
+      "dashboardLoadFailed": "Daten konnten nicht geladen werden.",
+      "signedOut": "Erfolgreich abgemeldet",
+      "markedStarred": "Als markiert gesetzt",
+      "removedStarred": "Markierung entfernt",
+      "starUpdateFailed": "Aktualisierung fehlgeschlagen.",
+      "markedRead": "Als gelesen markiert",
+      "markedUnread": "Als ungelesen markiert",
+      "readUpdateFailed": "Aktualisierung fehlgeschlagen.",
+      "messageDeleted": "Anfrage erfolgreich gelöscht",
+      "messageDeleteFailed": "Löschen fehlgeschlagen.",
+      "operationFailed": "Vorgang fehlgeschlagen."
+    }
+  }
+}

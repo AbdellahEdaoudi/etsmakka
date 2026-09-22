@@ -1,109 +1,151 @@
 import Image from "next/image"
+import Link from "next/link"
 import { Sparkles } from "@/app/components/Icons"
 
-export default function Hero({ dict }) {
-    return (
-        <section className="relative container mx-auto px-8 md:px-16 min-h-[calc(100vh-90px)] flex flex-col justify-center py-12 md:py-2">
+export default function Hero({ dict, lang }) {
+    const isArabic = lang === 'ar';
 
+    return (
+        <section className="relative overflow-hidden pt-6 sm:pt-10 pb-12 lg:pb-16 bg-linear-to-b from-background via-primary/3 to-background">
+            {/* Ambient Background Glows */}
             <div className="pointer-events-none absolute inset-0 overflow-hidden -z-10">
-                <div className="absolute -top-20 -right-32 w-[550px] h-[550px] rounded-full bg-primary/5 blur-3xl" />
+                <div className="absolute top-1/4 -right-32 w-150 h-150 rounded-full bg-primary/10 blur-[120px]" />
+                <div className="absolute bottom-10 -left-32 w-125 h-125 rounded-full bg-primary/8 blur-[100px]" />
                 <div
-                    className="absolute bottom-10 -left-8 w-52 h-52 opacity-10"
+                    className="absolute inset-0 opacity-[0.03] dark:opacity-[0.05]"
                     style={{
                         backgroundImage:
-                            "radial-gradient(circle, currentColor 1px, transparent 1px)",
-                        backgroundSize: "20px 20px",
+                            "radial-gradient(circle at 1px 1px, currentColor 1px, transparent 0)",
+                        backgroundSize: "32px 32px",
                     }}
                 />
             </div>
 
-            <div className="grid items-center gap-10 md:grid-cols-2 md:gap-20">
+            <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+                <div className="grid items-center gap-10 lg:grid-cols-12 lg:gap-16">
 
-                {/* النص */}
-                <div className="order-2 text-start md:order-1">
+                    {/* Left Column: Headline & Content */}
+                    <div className="text-start lg:col-span-7 space-y-6">
+                        
+                        {/* Status Badge */}
+                        <div className="inline-flex items-center gap-2 rounded-full bg-primary/10 border border-primary/25 px-4 py-1.5 text-xs sm:text-sm font-semibold text-primary shadow-xs backdrop-blur-md">
+                            <Sparkles className="h-4 w-4" />
+                            <span>{dict.hero.badge}</span>
+                            <Sparkles className="h-4 w-4" />
+                        </div>
 
-                    <div className="mb-5 inline-flex items-center gap-2 rounded-full bg-primary/10 border border-primary/20 px-5 py-2 text-sm font-medium text-primary">
-                        <Sparkles className="h-4 w-4" />
-                        <span>{dict.hero.badge}</span>
-                    </div>
-
-                    <h1 className="mb-6 text-4xl font-bold leading-[1.15] tracking-tight text-foreground sm:text-5xl md:text-6xl lg:text-[3.75rem]">
-                        {dict.hero.title_1}
-                        <br />
-
-                        <span className="relative inline-block text-primary">
-                            {dict.hero.title_2}
-                            <span className="absolute bottom-0.5 left-0 right-0 h-[4px] rounded-full bg-primary/40" />
-                        </span>
-                    </h1>
-
-                    <p className="mb-10 max-w-lg text-lg leading-relaxed text-muted-foreground md:text-xl font-light">
-                        {dict.hero.description}
-                    </p>
-
-                    <div className="flex flex-wrap gap-4">
-
-                        <a
-                            href="#contact"
-                            className="inline-flex items-center justify-center gap-2 rounded-full bg-primary px-8 py-3.5 text-sm font-medium text-primary-foreground transition-all hover:bg-primary/90 hover:-translate-y-0.5 active:scale-95 shadow-lg shadow-primary/25"
-                        >
-                            {dict.hero.cta_contact}
-                        </a>
-
-                        <a
-                            href="#programs"
-                            className="inline-flex items-center justify-center gap-2 rounded-full border border-border bg-transparent px-8 py-3.5 text-sm font-medium transition-all hover:bg-primary/5 hover:border-primary/40 hover:text-primary hover:-translate-y-0.5 active:scale-95"
-                        >
-                            {dict.hero.cta_programs}
-                            <span aria-hidden="true">{dict.hero.cta_arrow}</span>
-                        </a>
-
-                    </div>
-                </div>
-
-                {/* الصورة */}
-                <div className="order-1 flex justify-center md:order-2">
-
-                    <div className="relative w-full max-w-[320px] sm:max-w-[380px] lg:max-w-[480px] mt-8 mb-8 md:mt-0 md:mb-0">
-
-                        <div className="pointer-events-none absolute -inset-4 rounded-[42px] border border-primary/20" />
-                        <div className="pointer-events-none absolute -inset-8 rounded-[52px] border border-primary/10" />
-                        <div className="pointer-events-none absolute -inset-2 rounded-[38px] bg-primary/5 blur-xl" />
-
-                        <Image
-                            src="/happy-children-learning-and-playing-in-kindergarte.jpg"
-                            alt={dict.hero.image_alt}
-                            width={520}
-                            height={520}
-                            priority
-                            className="relative aspect-square rounded-[30px] border border-primary/10 object-cover shadow-2xl shadow-primary/15"
-                        />
-
-                        <div className="absolute -bottom-5 -left-5 flex items-center gap-3 rounded-2xl border border-primary/20 bg-background px-5 py-3 shadow-lg shadow-primary/10">
-
-                            <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary/10 text-lg">
-                                🌱
+                        {/* Title */}
+                        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight text-foreground leading-[1.12]">
+                            {dict.hero.title_1}{" "}
+                            <span className="relative inline-block text-transparent bg-clip-text bg-linear-to-r from-primary via-emerald-600 to-primary">
+                                {dict.hero.title_2}
+                                <svg className="absolute -bottom-2 left-0 w-full text-primary/30" viewBox="0 0 300 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M5 15C50 5 150 5 295 15" stroke="currentColor" strokeWidth="6" strokeLinecap="round"/>
+                                </svg>
                             </span>
+                        </h1>
 
-                            <div>
-                                <p className="text-lg font-bold leading-none text-foreground">
-                                    100%
-                                </p>
+                        {/* Description */}
+                        <p className="max-w-2xl text-base sm:text-lg lg:text-xl leading-relaxed text-muted-foreground font-light">
+                            {dict.hero.description}
+                        </p>
 
-                                <p className="mt-0.5 text-xs text-muted-foreground">
-                                    {dict.stats.satisfaction}
-                                </p>
+                        {/* CTA Buttons */}
+                        <div className="flex flex-wrap items-center gap-4 pt-1">
+                            <Link
+                                href="#contact"
+                                className="inline-flex items-center justify-center gap-3 rounded-2xl bg-primary px-8 py-3.5 text-base font-bold text-primary-foreground shadow-xl shadow-primary/25 hover:shadow-primary/40 hover:bg-primary/95 transition-all hover:scale-[1.02] active:scale-[0.98]"
+                            >
+                                <span>{dict.hero.cta_contact}</span>
+                                <span className="rtl:rotate-180">→</span>
+                            </Link>
+
+                            <Link
+                                href="#programs"
+                                className="inline-flex items-center justify-center gap-2 rounded-2xl border border-border/80 bg-card/60 backdrop-blur-md px-7 py-3.5 text-base font-semibold text-foreground transition-all hover:bg-accent hover:border-primary/40 hover:text-primary hover:scale-[1.02] active:scale-[0.98]"
+                            >
+                                {dict.hero.cta_programs}
+                            </Link>
+                        </div>
+
+                        {/* Key Features Quick Highlights */}
+                        <div className="pt-5 border-t border-border/40 grid grid-cols-2 sm:grid-cols-3 gap-4 text-start">
+                            <div className="flex items-center gap-2.5">
+                                <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary text-base">
+                                    🏫
+                                </div>
+                                <span className="text-xs sm:text-sm font-semibold text-foreground/90">
+                                    {dict.hero.highlight_1 || "التعليم الأولي والروض"}
+                                </span>
+                            </div>
+                            <div className="flex items-center gap-2.5">
+                                <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary text-base">
+                                    ✍️
+                                </div>
+                                <span className="text-xs sm:text-sm font-semibold text-foreground/90">
+                                    {dict.hero.highlight_2 || "دروس الدعم (1 - 6)"}
+                                </span>
+                            </div>
+                            <div className="flex items-center gap-2.5 col-span-2 sm:col-span-1">
+                                <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary text-base">
+                                    🏆
+                                </div>
+                                <span className="text-xs sm:text-sm font-semibold text-foreground/90">
+                                    {dict.hero.highlight_3 || "تأطير شخصي مباشر"}
+                                </span>
                             </div>
                         </div>
 
-                        <div className="absolute -top-4 -right-4 flex items-center gap-1.5 rounded-full bg-primary px-4 py-2 text-xs font-medium text-primary-foreground shadow-md shadow-primary/30">
-                            <span>⭐</span>
-                            {dict.hero.rating}
-                        </div>
-
                     </div>
-                </div>
 
+                    {/* Right Column: Premium Modern Hero Visual Container */}
+                    <div className={`flex justify-center lg:col-span-5 relative ${lang === 'es' ? 'lg:-mt-7 lg:-translate-y-4' : lang === 'ar' ? "" : lang === 'de' ?  "lg:-mt-4 lg:-translate-y-4" : lang === 'it' ?  "lg:-mt-4 lg:-translate-y-4" : "lg:-mt-16 lg:-translate-y-4"}`}>
+                        <div className="relative w-full max-w-sm sm:max-w-md lg:max-w-lg">
+                            
+                            {/* Decorative Animated Glow Behind Image */}
+                            <div className="absolute -inset-2 rounded-3xl bg-linear-to-r from-primary/30 via-emerald-500/20 to-primary/30 blur-2xl opacity-70 animate-pulse" />
+
+                            {/* Main Frame with Glassmorphism Border */}
+                            <div className="relative rounded-3xl border border-primary/20 bg-background/80 p-2.5 shadow-2xl backdrop-blur-sm">
+                                <div className="relative overflow-hidden rounded-2xl aspect-[4/3.8] sm:aspect-square">
+                                    <Image
+                                        src="/happy-children-learning-and-playing-in-kindergarte.jpg"
+                                        alt={dict.hero.image_alt}
+                                        width={600}
+                                        height={600}
+                                        priority
+                                        className="h-full w-full object-cover transition-transform duration-700 hover:scale-105"
+                                    />
+                                    <div className="absolute inset-0 bg-linear-to-t from-black/40 via-transparent to-transparent pointer-events-none" />
+                                </div>
+
+                                {/* Floating Rating Badge (Top Right) */}
+                                <div className="absolute top-6 inset-e-6 flex items-center gap-2 rounded-2xl bg-background/90 backdrop-blur-md px-4 py-2 text-xs font-bold text-foreground shadow-xl border border-primary/20">
+                                    <span className="text-amber-500 text-sm">⭐</span>
+                                    <span>{dict.hero.rating}</span>
+                                </div>
+
+                                {/* Floating Feature Card (Bottom Center) */}
+                                <div className="absolute -bottom-4 inset-x-6 mx-auto flex items-center justify-between gap-4 rounded-2xl border border-primary/20 bg-card/95 backdrop-blur-xl p-4 shadow-xl">
+                                    <div className="flex items-center gap-3">
+                                        <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-primary/15 text-primary text-xl">
+                                            🌟
+                                        </div>
+                                        <div>
+                                            <p className="text-sm font-bold text-foreground">{dict.stats.satisfaction}</p>
+                                            <p className="text-xs font-medium text-muted-foreground">100% {dict.hero.highlight_3}</p>
+                                        </div>
+                                    </div>
+                                    <span className="text-xs font-extrabold text-primary bg-primary/10 px-3 py-1.5 rounded-xl border border-primary/20">
+                                        100%
+                                    </span>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
             </div>
         </section>
     )

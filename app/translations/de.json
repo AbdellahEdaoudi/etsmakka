@@ -1,28 +1,32 @@
 {
   "meta": {
-    "title": "Makka Al-Mukarramah Stiftung - Laayoune",
-    "description": "Die Makka Al Mukarramah Stiftung bietet eine herausragende Bildungsumgebung für Kinder in Laayoune. Wir bieten moderne Vorschul- und Kindergartenprogramme an.",
-    "keywords": "kindergarten, vorschule, Laayoune, Makka Stiftung, bildung, kinder"
+    "title": "Vorschulbildungseinrichtung Makka Al-Mukarramah - Laayoune",
+    "description": "Die Vorschulbildungseinrichtung Makka Al Mukarramah bietet hervorragende Vorschulbildung in Laayoune. Kindergarten, Vorschule und professioneller Nachhilfeunterricht von der 1. bis 6. Klasse.",
+    "keywords": "kindergarten, vorschule, Laayoune, Vorschuleinrichtung Makka, nachhilfe, grundschule"
   },
   "header": {
-    "title": "Makka Al-Mukarramah Stiftung - Laayoune",
-    "subtitle": "Für Bildung und Vorschule",
+    "title": "Vorschuleinrichtung Makka",
+    "subtitle": "Vorschulbildung & Nachhilfe",
     "nav": {
       "about": "Über uns",
-      "programs": "Programme",
+      "programs": "Vorschule",
+      "support": "Nachhilfeunterricht",
       "contact": "Kontakt"
     }
   },
   "hero": {
-    "badge": "Ausgezeichnetes Umfeld",
+    "badge": "Vorschulbildung & Nachhilfeunterricht",
     "title_1": "Strahlende Zukunft",
     "title_2": "Für Ihre Kinder",
-    "description": "Wir bieten eine sichere und anregende Bildungsumgebung, die die Grundfertigkeiten der Kinder durch moderne Bildungsprogramme fördert.",
+    "description": "Wir bieten eine sichere Bildungsumgebung für die Vorschule sowie gezielten Nachhilfeunterricht von der 1. bis zur 6. Grundschulklasse, persönlich durchgeführt vom Gründer der Einrichtung.",
     "cta_contact": "Kontakt",
     "cta_programs": "Programme",
     "cta_arrow": "→",
     "rating": "Bewertung 4.9",
-    "image_alt": "Glückliche Kinder"
+    "image_alt": "Glückliche Kinder",
+    "highlight_1": "Vorschule & Kindergarten",
+    "highlight_2": "Nachhilfe (1.-6. Klasse)",
+    "highlight_3": "Persönliche Betreuung"
   },
   "stats": {
     "satisfaction": "Elternzufriedenheit",
@@ -31,20 +35,20 @@
   },
   "about": {
     "title": "Über uns",
-    "p1": "Die Makka Al Mukarramah Stiftung für Bildung und Vorschule ist eine führende Bildungseinrichtung in Laayoune, Marokko.",
-    "p2": "Wir glauben, dass die frühen Jahre im Leben eines Kindes das wesentliche Fundament für den Aufbau seines Charakters und seiner Zukunft sind.",
+    "p1": "Die Vorschulbildungseinrichtung Makka Al Mukarramah ist eine führende Bildungseinrichtung in Laayoune, Marokko, die sich der frühkindlichen Vorschulbildung und dem akademischen Erfolg widmet.",
+    "p2": "Neben dem Vorschulprogramm erteilt der Gründer der Einrichtung persönlich hochqualifizierten Nachhilfeunterricht für Grundschüler von der 1. bis zur 6. Klasse.",
     "badge": "Über uns",
-    "quote": "Wir glauben, dass jedes Kind ein einzigartiges Talent in sich trägt, das darauf wartet, entdeckt zu werden.",
+    "quote": "Wir glauben, dass jedes Kind ein einzigartiges Talent besitzt, das durch gezielte Vorschulbildung zur Blüte gelangt.",
     "values": [
+      { "icon": "📝", "title": "Nachhilfe & Stützunterricht", "text": "Qualifizierter Nachhilfeunterricht von der 1. bis 6. Grundschulklasse direkt durch den Gründer" },
       { "icon": "🌱", "title": "Lernen durch Entdecken", "text": "Interaktive Aktivitäten, die Neugier und Wissensdurst wecken" },
-      { "icon": "🤝", "title": "Sichere und Fürsorgliche Umgebung", "text": "Wir kümmern uns vor allem um das emotionale und soziale Wohlbefinden des Kindes" },
-      { "icon": "🎨", "title": "Kreativität und Kunst", "text": "Wir entfalten kreative Energie durch Kunst und Handwerk" },
+      { "icon": "🤝", "title": "Sichere Umgebung", "text": "Wir kümmern uns vor allem um das Wohlbefinden und den schulischen Erfolg des Kindes" },
       { "icon": "👨‍👩‍👧", "title": "Familienpartnerschaft", "text": "Kontinuierliche Kommunikation mit Eltern zur Verfolgung des Fortschritts" }
     ]
   },
   "programs": {
-    "title": "Unsere Programme",
-    "subtitle": "Integrierte Bildungsprogramme für alle Altersgruppen",
+    "title": "Vorschulprogramme",
+    "subtitle": "Integrierte Bildungsprogramme für die frühkindliche Entwicklung",
     "items": [
       {
         "title": "Vorstufe 2",
@@ -64,10 +68,26 @@
     ],
     "more": "Mehr erfahren"
   },
+  "support": {
+    "badge": "Exklusiv 🎓",
+    "title": "Nachhilfeunterricht (1. - 6. Klasse)",
+    "subtitle": "Gezielter Nachhilfeunterricht von der 1. bis zur 6. Grundschulklasse, persönlich erteilt vom Gründer",
+    "description": "Wir begleiten Ihre Kinder durch die Grundschule. Der Gründer erteilt persönlich Nachhilfeunterricht, um Wissenslücken zu schließen und Top-Ergebnisse zu erzielen.",
+    "features": [
+      "Persönliche Betreuung durch den Gründer",
+      "Abdeckung der 1. bis 6. Grundschulklasse",
+      "Klares Verständnis & Methodik",
+      "Gezielte Prüfungsvorbereitung"
+    ],
+    "card_title": "Grundschulbildung",
+    "card_subtitle": "Von der 1. bis zur 6. Klasse der Grundschule",
+    "card_note": "Direkte persönliche Anleitung durch den Gründer"
+  },
   "contact": {
     "title": "Kontakt",
-    "subtitle": "Wir sind hier, um alle Ihre Fragen zu beantworten und Unterstützung zu bieten.",
+    "subtitle": "Wir sind hier, um alle Ihre Fragen zu Vorschule und Nachhilfe zu beantworten.",
     "phone": "Telefon",
+    "whatsapp": "WhatsApp",
     "email": "E-Mail",
     "location": "Standort",
     "address": "Quartier Al Wahda 01, Rue Araucaria No. 02 - Laayoune",
@@ -76,6 +96,8 @@
       "name_placeholder": "Geben Sie Ihren vollständigen Namen ein",
       "email": "E-Mail-Adresse",
       "email_placeholder": "beispiel@email.com",
+      "phone": "Telefonnummer",
+      "phone_placeholder": "0612345678",
       "subject": "Betreff",
       "subject_placeholder": "Betreff Ihrer Nachricht",
       "message": "Nachricht",
@@ -83,13 +105,14 @@
       "submit": "Nachricht senden",
       "sending": "Wird gesendet...",
       "sent": "Erfolgreich gesendet",
-      "success_msg": "Vielen Dank! Ihre Nachricht wurde erfolgreich gesendet.",
+      "success_msg": "Ihre Nachricht wurde erfolgreich gesendet.",
       "error_required": "Dieses Feld ist erforderlich",
       "error_email": "Bitte geben Sie eine gültige E-Mail-Adresse ein",
+      "error_phone": "Bitte geben Sie eine gültige Telefonnummer ein",
       "error_server": "Etwas ist schief gelaufen. Bitte versuchen Sie es später noch einmal."
     }
   },
   "footer": {
-    "rights": "Alle Rechte vorbehalten — Makka Stiftung — Laayoune"
+    "rights": "Alle Rechte vorbehalten — Vorschulbildungseinrichtung Makka — Laayoune"
   }
 }

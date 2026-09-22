@@ -1,0 +1,113 @@
+{
+  "metaTitle": "Establecimiento Makkah | Panel de Administración",
+  "loginMetaTitle": "Establecimiento Makkah | Iniciar Sesión",
+  "login": {
+    "title": "Establecimiento Makkah Al-Mukarramah",
+    "subtitle": "Portal Administrativo — Educación Preescolar y Apoyo",
+    "cardTitle": "Acceso Administrativo",
+    "emailLabel": "Correo del Administrador",
+    "emailPlaceholder": "admin@etsmakka.com",
+    "passwordLabel": "Contraseña",
+    "passwordPlaceholder": "••••••••",
+    "signInBtn": "Acceder al Portal",
+    "signingIn": "Iniciando sesión...",
+    "fillAllFields": "Por favor, rellene todos los campos.",
+    "invalidCredentials": "Correo o contraseña incorrectos.",
+    "rateLimitExceeded": "Demasiados intentos. Por favor, espere."
+  },
+  "dashboard": {
+    "brandName": "Establecimiento Makkah Al-Mukarramah",
+    "subBrandName": "Educación Preescolar y Clases de Apoyo",
+    "portalTitle": "Gestión de Consultas de Padres",
+    "refreshTitle": "Actualizar",
+    "logout": "Cerrar Sesión",
+    "loadingData": "Cargando datos...",
+    "tabs": {
+      "messages": "Consultas de Padres"
+    },
+    "search": {
+      "contactsPlaceholder": "Buscar por nombre, email, teléfono o mensaje..."
+    },
+    "filters": {
+      "title": "Filtrar por:",
+      "all": "Todas las consultas",
+      "unread": "No leídas",
+      "starred": "Destacadas"
+    },
+    "pagination": {
+      "prev": "← Anterior",
+      "next": "Siguiente →",
+      "total": "Total:"
+    },
+    "table": {
+      "status": "Estado",
+      "sender": "Padre / Remitente",
+      "phone": "Teléfono",
+      "messagePreview": "Asunto y Mensaje",
+      "date": "Fecha",
+      "actions": "Acciones"
+    },
+    "empty": {
+      "noContactsTitle": "No hay consultas recibidas",
+      "noContactsDesc": "Todas las consultas han sido gestionadas o no hay resultados."
+    },
+    "actions": {
+      "star": "Destacar consulta",
+      "unstar": "Quitar destacado",
+      "markAsRead": "Marcar como leído",
+      "markAsUnread": "Marcar como no leído",
+      "read": "Leído",
+      "unread": "Nuevo",
+      "deleteMessage": "Eliminar Consulta",
+      "tapToRead": "Clic para leer",
+      "newBadge": "NUEVO",
+      "viewDetails": "Ver Detalles",
+      "callPhone": "Llamar",
+      "whatsappMessage": "Mensaje WhatsApp"
+    },
+    "modal": {
+      "inquiryDetails": "Detalles de la Consulta",
+      "subject": "Asunto",
+      "senderName": "Nombre del Padre",
+      "emailAddress": "Dirección de Correo",
+      "phoneNumber": "Número de Teléfono",
+      "messageContent": "Contenido del Mensaje",
+      "received": "Fecha y Hora de Recepción",
+      "notAvailable": "N/D",
+      "delete": "Eliminar",
+      "star": "Destacar",
+      "unstar": "Quitar Destacado",
+      "translateMessage": "Traducir Mensaje",
+      "showOriginal": "Ver Original",
+      "showTranslation": "Ver Traducción",
+      "translating": "Traduciendo...",
+      "reTranslate": "Retraducir",
+      "translatedTo": "Traducir a"
+    },
+    "confirmDelete": {
+      "deleteContactTitle": "¿Eliminar Consulta?",
+      "deleteContactMessage": "¿Confirma que desea eliminar permanentemente el mensaje de {name}?",
+      "cancel": "Cancelar",
+      "confirmDelete": "Sí, Eliminar",
+      "deleting": "Eliminando..."
+    },
+    "toasts": {
+      "sessionExpired": "Sesión expirada. Por favor, inicie sesión.",
+      "unauthorized": "No autorizado. Inicie sesión.",
+      "forbidden": "Prohibido: Acceso denegado.",
+      "networkError": "Error de red.",
+      "requestSetupError": "Error en la solicitud.",
+      "dashboardLoadFailed": "Error al cargar los datos.",
+      "signedOut": "Sesión cerrada correctamente",
+      "markedStarred": "Marcado como destacado ⭐",
+      "removedStarred": "Destacado eliminado",
+      "starUpdateFailed": "Error al actualizar.",
+      "markedRead": "Marcado como leído ✔",
+      "markedUnread": "Marcado como no leído",
+      "readUpdateFailed": "Error al actualizar.",
+      "messageDeleted": "Consulta eliminada correctamente",
+      "messageDeleteFailed": "Error al eliminar.",
+      "operationFailed": "Operación fallida."
+    }
+  }
+}

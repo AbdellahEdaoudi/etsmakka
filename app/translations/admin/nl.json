@@ -1,0 +1,113 @@
+{
+  "metaTitle": "Makkah Instituut | Beheerderspaneel",
+  "loginMetaTitle": "Makkah Instituut | Inloggen",
+  "login": {
+    "title": "Makkah Instituut Al-Mukarramah",
+    "subtitle": "Beheerdersportaal — Voorschools & Ondersteuningslessen",
+    "cardTitle": "Beheerdersinlog",
+    "emailLabel": "Beheerders-e-mail",
+    "emailPlaceholder": "admin@etsmakka.com",
+    "passwordLabel": "Wachtwoord",
+    "passwordPlaceholder": "••••••••",
+    "signInBtn": "Open Portaal",
+    "signingIn": "Inloggen...",
+    "fillAllFields": "Vul alle velden in.",
+    "invalidCredentials": "Ongeldige e-mail of wachtwoord.",
+    "rateLimitExceeded": "Te veel pogingen. Probeer het later opnieuw."
+  },
+  "dashboard": {
+    "brandName": "Makkah Instituut Al-Mukarramah",
+    "subBrandName": "Voorschools & Ondersteuningslessen",
+    "portalTitle": "Beheer Ouder-aanvragen",
+    "refreshTitle": "Vernieuwen",
+    "logout": "Uitloggen",
+    "loadingData": "Gegevens laden...",
+    "tabs": {
+      "messages": "Ouder-aanvragen"
+    },
+    "search": {
+      "contactsPlaceholder": "Zoeken op naam, e-mail, telefoon of inhoud..."
+    },
+    "filters": {
+      "title": "Filteren op:",
+      "all": "Alle aanvragen",
+      "unread": "Ongelezen",
+      "starred": "Met ster"
+    },
+    "pagination": {
+      "prev": "← Vorige",
+      "next": "Volgende →",
+      "total": "Totaal:"
+    },
+    "table": {
+      "status": "Status",
+      "sender": "Ouder / Afzender",
+      "phone": "Telefoon",
+      "messagePreview": "Onderwerp & Bericht",
+      "date": "Datum",
+      "actions": "Acties"
+    },
+    "empty": {
+      "noContactsTitle": "Geen aanvragen gevonden",
+      "noContactsDesc": "Alle aanvragen zijn verwerkt of geen resultaten gevonden."
+    },
+    "actions": {
+      "star": "Ster toevoegen",
+      "unstar": "Ster verwijderen",
+      "markAsRead": "Markeren als gelezen",
+      "markAsUnread": "Markeren als ongelezen",
+      "read": "Gelezen",
+      "unread": "Nieuw",
+      "deleteMessage": "Aanvraag verwijderen",
+      "tapToRead": "Klik om te lezen",
+      "newBadge": "NIEUW",
+      "viewDetails": "Details bekijken",
+      "callPhone": "Bellen",
+      "whatsappMessage": "WhatsApp-bericht"
+    },
+    "modal": {
+      "inquiryDetails": "Aanvraagdetails",
+      "subject": "Onderwerp",
+      "senderName": "Naam ouder",
+      "emailAddress": "E-mailadres",
+      "phoneNumber": "Telefoonnummer",
+      "messageContent": "Berichtinhoud",
+      "received": "Ontvangstdatum en tijd",
+      "notAvailable": "N.v.t.",
+      "delete": "Verwijderen",
+      "star": "Ster toevoegen",
+      "unstar": "Ster verwijderen",
+      "translateMessage": "Bericht vertalen",
+      "showOriginal": "Origineel tonen",
+      "showTranslation": "Vertaling tonen",
+      "translating": "Vertalen...",
+      "reTranslate": "Opnieuw vertalen",
+      "translatedTo": "Vertaald naar"
+    },
+    "confirmDelete": {
+      "deleteContactTitle": "Aanvraag verwijderen?",
+      "deleteContactMessage": "Weet u zeker dat u de aanvraag van {name} permanent wilt verwijderen?",
+      "cancel": "Annuleren",
+      "confirmDelete": "Ja, verwijderen",
+      "deleting": "Verwijderen..."
+    },
+    "toasts": {
+      "sessionExpired": "Sessie verlopen. Log opnieuw in.",
+      "unauthorized": "Niet geautoriseerd. Log in.",
+      "forbidden": "Toegang geweigerd.",
+      "networkError": "Netwerkfout.",
+      "requestSetupError": "Fout bij verzoek.",
+      "dashboardLoadFailed": "Gegevens laden mislukt.",
+      "signedOut": "Succesvol uitgelogd",
+      "markedStarred": "Met ster gemarkeerd",
+      "removedStarred": "Ster verwijderd",
+      "starUpdateFailed": "Update mislukt.",
+      "markedRead": "Gemarkeerd als gelezen",
+      "markedUnread": "Gemarkeerd als ongelezen",
+      "readUpdateFailed": "Update mislukt.",
+      "messageDeleted": "Aanvraag succesvol verwijderd",
+      "messageDeleteFailed": "Verwijderen mislukt.",
+      "operationFailed": "Bewerking mislukt."
+    }
+  }
+}

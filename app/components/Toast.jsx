@@ -1,6 +1,5 @@
 "use client";
 import { createContext, useContext, useState, useCallback, useEffect, useRef } from 'react';
-import { AnimatePresence, motion } from 'framer-motion';
 
 const ToastContext = createContext(null);
 
@@ -34,14 +33,10 @@ function ToastItem({ t, onRemove, icons }) {
     }, [isHovered, startTimer, clearTimer]);
 
     return (
-        <motion.div
-            layout
-            initial={{ opacity: 0, y: -20, scale: 0.8 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
-            exit={{ opacity: 0, scale: 0.9, transition: { duration: 0.15 } }}
+        <div
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
-            className="pointer-events-auto"
+            className="pointer-events-auto transition-all duration-200 animate-in fade-in slide-in-from-top-4"
         >
             <div className="relative group">
                 <div className={`bg-white dark:bg-zinc-900 border-l-4 ${
@@ -73,7 +68,7 @@ function ToastItem({ t, onRemove, icons }) {
                     </button>
                 </div>
             </div>
-        </motion.div>
+        </div>
     );
 }
 
@@ -122,12 +117,10 @@ export function ToastProvider({ children }) {
     return (
         <ToastContext.Provider value={{ ...toast, addToast }}>
             {children}
-            <div className="fixed top-6 right-6 z-[100] flex flex-col items-end gap-3 pointer-events-none">
-                <AnimatePresence mode="popLayout" initial={false}>
-                    {toasts.map((t) => (
-                        <ToastItem key={t.id} t={t} onRemove={removeToast} icons={icons} />
-                    ))}
-                </AnimatePresence>
+            <div className="fixed top-6 right-6 z-100 flex flex-col items-end gap-3 pointer-events-none">
+                {toasts.map((t) => (
+                    <ToastItem key={t.id} t={t} onRemove={removeToast} icons={icons} />
+                ))}
             </div>
         </ToastContext.Provider>
     );

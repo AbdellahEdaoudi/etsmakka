@@ -1,50 +1,54 @@
 {
   "meta": {
-    "title": "Makka Al Mukarramah Foundation - Laayoune",
-    "description": "Makka Al Mukarramah Foundation provides a distinguished educational environment for children in Laayoune. We offer modern preschool and kindergarten programs focused on developing basic skills in a safe and stimulating atmosphere.",
-    "keywords": "kindergarten, preschool, Laayoune, Makka Foundation, education, children"
+    "title": "Makka Al Mukarramah Preschool Education Institution - Laayoune",
+    "description": "Makka Al Mukarramah Preschool Education Institution provides a distinguished educational environment in Laayoune. Preschool, kindergarten, and specialized tutoring support classes from 1st to 6th primary grade taught by the founder.",
+    "keywords": "kindergarten, preschool, Laayoune, Makka Preschool Institution, tutoring, primary education"
   },
   "header": {
-    "title": "Makka Al Mukarramah Foundation - Laayoune",
-    "subtitle": "For Education and Pre-school",
+    "title": "Makka Preschool Institution",
+    "subtitle": "Preschool Education & Tutoring",
     "nav": {
       "about": "About Us",
-      "programs": "Programs",
+      "programs": "Preschool",
+      "support": "Tutoring Classes",
       "contact": "Contact Us"
     }
   },
   "hero": {
-    "badge": "Distinguished Environment",
+    "badge": "Preschool Education & Tutoring Classes",
     "title_1": "Bright Future",
     "title_2": "For Your Children",
-    "description": "We provide a safe and stimulating educational environment that helps develop children's basic skills through modern educational programs and specialized pedagogical approaches.",
+    "description": "We provide a safe, nurturing environment for preschool education and early childhood development, alongside professional tutoring and support classes for 1st to 6th primary grade students personally taught by the founder.",
     "cta_contact": "Contact Us",
     "cta_programs": "Discover Programs",
     "cta_arrow": "→",
     "rating": "Rating 4.9",
-    "image_alt": "Happy children in kindergarten"
+    "image_alt": "Happy children in kindergarten",
+    "highlight_1": "Preschool & Kindergarten",
+    "highlight_2": "Tutoring Classes (1-6)",
+    "highlight_3": "Personal Guidance"
   },
   "stats": {
     "satisfaction": "Parents Satisfaction",
-    "graduates": "Graduated Children",
+    "graduates": "Graduated Students",
     "experience": "Years of Experience"
   },
   "about": {
     "title": "About Us",
-    "p1": "Makka Al Mukarramah Foundation for Education and Pre-school is a leading educational institution in Laayoune, Morocco. Established with a vision to provide quality early childhood education, we focus on nurturing young minds.",
-    "p2": "We believe that the early years of a child's life are the essential foundation for building their character and future. Therefore, we are committed to providing a safe, happy, and engaging environment that fosters growth and learning.",
+    "p1": "Makka Al Mukarramah Preschool Education Institution is a premier educational institution in Laayoune, Morocco, dedicated to fostering early childhood development and academic excellence.",
+    "p2": "In addition to early education, the founder of the institution personally provides high-quality tutoring and academic support classes for primary school students from 1st grade through 6th grade.",
     "badge": "About Us",
-    "quote": "We believe that every child carries within them a unique talent waiting to be discovered.",
+    "quote": "We believe every child carries a unique talent, and personalized guidance empowers them to achieve academic excellence.",
     "values": [
+      { "icon": "📝", "title": "Tutoring & Support Classes", "text": "Professional tutoring from 1st to 6th primary grade directly taught by the founder" },
       { "icon": "🌱", "title": "Learning through Exploration", "text": "Interactive activities that stimulate curiosity and love of knowledge in your child" },
-      { "icon": "🤝", "title": "Safe & Nurturing Environment", "text": "We care about the emotional and social well-being of the child above all" },
-      { "icon": "🎨", "title": "Creativity & Arts", "text": "We unleash creative energy through arts and crafts" },
+      { "icon": "🤝", "title": "Safe & Nurturing Environment", "text": "We prioritize emotional, social, and academic growth above all" },
       { "icon": "👨‍👩‍👧", "title": "Family Partnership", "text": "Continuous communication with parents to track each child's progress" }
     ]
   },
   "programs": {
-    "title": "Our Programs",
-    "subtitle": "Integrated educational programs for all age groups",
+    "title": "Preschool Programs",
+    "subtitle": "Integrated early childhood educational programs",
     "items": [
       {
         "title": "Second Preliminary",
@@ -64,10 +68,26 @@
     ],
     "more": "Learn More"
   },
+  "support": {
+    "badge": "Institution Exclusive 🎓",
+    "title": "Tutoring & Support Classes (1st - 6th Grade)",
+    "subtitle": "High-quality academic support and tutoring provided directly by the founder of the institution",
+    "description": "We accompany your children throughout primary education from 1st to 6th grade. The founder personally conducts focused support classes covering core subjects to ensure deep understanding and top academic achievement.",
+    "features": [
+      "Personal supervision by the institution founder",
+      "Complete coverage of 1st to 6th primary grade",
+      "Clear explanation & skill building",
+      "Thorough preparation for exams & tests"
+    ],
+    "card_title": "Primary Education",
+    "card_subtitle": "From 1st grade to 6th primary grade",
+    "card_note": "Direct personal guidance by the founder"
+  },
   "contact": {
     "title": "Contact Us",
-    "subtitle": "We are here to answer your questions and provide the support you need.",
+    "subtitle": "We are here to answer your questions regarding preschool and tutoring classes.",
     "phone": "Phone",
+    "whatsapp": "WhatsApp",
     "email": "Email",
     "location": "Location",
     "address": "Quartier Al Wahda 01, Rue Araucaria No. 02 - Laayoune",
@@ -76,6 +96,8 @@
       "name_placeholder": "Enter your full name",
       "email": "Email Address",
       "email_placeholder": "example@email.com",
+      "phone": "Phone Number",
+      "phone_placeholder": "0612345678",
       "subject": "Subject",
       "subject_placeholder": "Subject of your message",
       "message": "Message",
@@ -83,13 +105,14 @@
       "submit": "Send Message",
       "sending": "Sending...",
       "sent": "Sent Successfully",
-      "success_msg": "Thank you! Your message has been sent successfully.",
+      "success_msg": "Your message has been sent successfully.",
       "error_required": "This field is required",
       "error_email": "Please enter a valid email address",
+      "error_phone": "Please enter a valid phone number",
       "error_server": "Something went wrong. Please try again later."
     }
   },
   "footer": {
-    "rights": "All rights reserved — Makka Foundation for Education and Pre-school — Laayoune"
+    "rights": "All rights reserved — Makka Preschool Education Institution — Laayoune"
   }
 }

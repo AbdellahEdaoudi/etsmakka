@@ -4,11 +4,12 @@ import Hero from '@/app/components/pages/Hero';
 import Stats from '@/app/components/pages/Stats';
 import About from '@/app/components/pages/About';
 import Programs from '@/app/components/pages/Programs';
+import SupportSection from '@/app/components/pages/SupportSection';
 import Contact from '@/app/components/pages/Contact';
 import Footer from '@/app/components/pages/Footer';
 
 export async function generateStaticParams() {
-    return ['en', 'de', 'fr', 'es', 'sv', 'vi', 'pt', 'it', 'nl', 'ar', 'ru', 'zh', 'ja', 'hi', 'tr', 'ko', 'id', 'pl'].map((lang) => ({ lang }));
+    return ['ar', 'fr', 'en', 'es', 'de', 'it'].map((lang) => ({ lang }));
 }
 
 export async function generateMetadata({ params }) {
@@ -22,12 +23,12 @@ export async function generateMetadata({ params }) {
         openGraph: {
             title: dict.meta.title,
             description: dict.meta.description,
-            url: `https://makka-edu.vercel.app/${lang}`,
+            url: `https://etsmakka.vercel.app/${lang}`,
             locale: lang,
             type: "website",
             images: [
                 {
-                    url: "https://makka-edu.vercel.app/Logo.png",
+                    url: "https://etsmakka.vercel.app/etsmakka.jpeg",
                     alt: dict.meta.title,
                 },
             ],
@@ -36,10 +37,10 @@ export async function generateMetadata({ params }) {
             card: 'summary_large_image',
             title: dict.meta.title,
             description: dict.meta.description,
-            images: ["https://makka-edu.vercel.app/Logo.png"],
+            images: ["https://etsmakka.vercel.app/etsmakka.jpeg"],
         },
         alternates: {
-            canonical: `https://makka-edu.vercel.app/${lang}`,
+            canonical: `https://etsmakka.vercel.app/${lang}`,
         }
     };
 }
@@ -53,10 +54,11 @@ export default async function Page({ params }) {
     return (
         <div dir={isArabic ? 'rtl' : 'ltr'} className={`min-h-screen bg-background ${fontClass}`}>
             <Header dict={dict} />
-            <Hero dict={dict} />
+            <Hero dict={dict} lang={lang} />
             <Stats dict={dict} />
             <About dict={dict} />
             <Programs dict={dict} />
+            <SupportSection dict={dict} />
             <Contact dict={dict} />
             <Footer dict={dict} />
         </div>
